@@ -1,0 +1,55 @@
+---
+id: req-001
+title: 要求タイトル
+sidebar_label: REQ-001：要求タイトル
+description: 要求の簡単な説明
+tags: [タグ1, タグ2]
+draft: true
+---
+
+import { Priority } from '@site/src/components/Priority';
+import { Status } from '@site/src/components/Status';
+import { Tag } from '@site/src/components/Tag';
+import { ChangeHistoryComponent } from '@site/src/components/ChangeHistory';
+
+<div style={{ marginBottom: "1rem" }}>
+  <Priority level="must" />
+  <Status state="draft" />
+</div>
+
+<div style={{ marginBottom: "1rem" }}>
+  {frontMatter.tags.map((tag) => (
+    <Tag key={tag} name={tag} />
+  ))}
+</div>
+
+## 概要
+<!-- 1-2文で要求の概要を記述 -->
+
+## 詳細要件
+<!-- 箇条書きで具体的な要件を記述 -->
+- 要件1
+- 要件2
+- 要件3
+
+## 受け入れ基準
+<!-- この要求が満たされたと判断できる基準を記述 -->
+- [ ] 基準1
+- [ ] 基準2
+
+## 関連する非機能要件
+<!-- 関連するNFRへのリンク -->
+- [NFR-001：パフォーマンス要件](../non-functional/nfr-001.mdx)
+
+## 参考情報
+<!-- 追加の情報、図表、リンクなど -->
+
+export const changes = [
+  {
+    date: "YYYY-MM-DD",
+    author: "作成者名",
+    changes: "初版作成",
+  },
+]
+
+<ChangeHistoryComponent changes={changes} />

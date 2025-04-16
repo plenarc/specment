@@ -1,0 +1,53 @@
+---
+id: nfr-template
+title: 非機能要件テンプレート
+sidebar_label: NFR-XXX：タイトル
+description: 非機能要件の説明
+tags: [タグ1, タグ2]
+draft: true
+---
+
+import { Priority } from '@site/src/components/Priority';
+import { Status } from '@site/src/components/Status';
+import { Tag } from '@site/src/components/Tag';
+import { ChangeHistoryComponent } from '@site/src/components/ChangeHistory';
+
+<div style={{ marginBottom: "1rem" }}>
+  <Priority level="must" />
+  <Status state="draft" />
+</div>
+
+<div style={{ marginBottom: "1rem" }}>
+  {frontMatter.tags.map((tag) => (
+    <Tag key={tag} name={tag} />
+  ))}
+</div>
+
+## 概要
+<!-- 非機能要件の概要を記述 -->
+
+## 詳細要件
+### カテゴリ1
+<!-- 要件の詳細を記述 -->
+
+### カテゴリ2
+<!-- 要件の詳細を記述 -->
+
+## 測定方法
+<!-- 要件の達成を測定する方法を記述 -->
+
+## 制約条件
+<!-- 制約条件があれば記述 -->
+
+## 関連する機能要件
+<!-- 関連する機能要件へのリンク -->
+
+export const changes = [
+  {
+    date: "YYYY-MM-DD",
+    author: "作成者名",
+    changes: "初版作成",
+  },
+]
+
+<ChangeHistoryComponent changes={changes} />

@@ -1,0 +1,27 @@
+# https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md
+# markdownlint.ignore:  # 機能しない(設定の仕方が違う？)ので一旦コメントアウト
+#   - .gitlab/**/*.md
+MD007:
+  indent: 4     # インデントは全部4
+MD013: false    # 一行内の文字長さ制限なし
+MD022:          # 章の前後に空白ゼロ
+  lines_above: 0
+  lines_below: 0
+MD024:          # 同タイトルの章を不許可。ただし別の階層なら可(allow_different_nesting)
+  siblings_only: true
+MD026:
+  punctuation: "？"
+MD031: false    # コードブロック前後の空白判定なし
+MD032: false    # リスト前後に空白判定なし
+MD033:          # allowed_elementsで定義したhtmlタグ以外は使用禁止
+  allowed_elements:
+    - br
+    - details
+    - div
+    - img
+    - span
+    - summary
+    - Priority
+    - Status
+    - Tag
+MD040: false    # コードブロックの言語指定を強制しない
