@@ -1,0 +1,63 @@
+{
+  "name": "docsite-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "format": "biome format . --write",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint . --fix",
+    "check": "biome check --apply .",
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.7.0",
+    "@docusaurus/preset-classic": "3.7.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.7.0",
+    "@docusaurus/tsconfig": "3.7.0",
+    "@docusaurus/types": "3.7.0",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "typescript": "~5.6.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0"
+  },
+  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b",
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "core-js",
+      "core-js-pure"
+    ],
+    "onlyBuiltDependencies": [
+      "core-js-pure"
+    ]
+  }
+}
