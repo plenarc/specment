@@ -1,0 +1,24 @@
+---
+sidebar_position: 6
+tags:
+  - Overview
+  - Scope
+---
+
+# スコープ定義 {#scope}
+
+## 機能的スコープ {#functional-scope}
+1. 例: 商品検索、カート、決済、注文履歴
+
+## 非機能的スコープ {#non-functional-scope}
+1. パフォーマンス: 平均応答200ms以内
+1. セキュリティ: OWASP Top‑10 準拠
+
+## 境界・依存関係 {#boundaries}
+1. 外部サービス
+    1. 決済ゲートウェイ
+    1. 在庫管理API
+1. 前提: ERPはSOAPのみ対応 …
+
+## 前提・除外事項 {#assumptions-and-exclusions}
+1. モバイルアプリは別プロジェクトで実装
