@@ -1,0 +1,35 @@
+---
+sidebar_position: 2
+hide_table_of_contents: true
+---
+import TOCInline from '@theme/TOCInline';
+
+# customers - 会員
+
+<details>
+  <summary>目次</summary>
+
+  <TOCInline toc={toc} />
+</details>
+
+## 説明 {#description}
+1. xxxの会員
+
+## 表領域(schema) {#schema}
+1. `public`
+
+## 定義 {#definition}
+
+| Physical name      | Logical name | Type      | Digit | Not null | Default value     | Comment                      |
+| ------------------ | ------------ | --------- | ----: | :------: | ----------------- | ---------------------------- |
+| id                 | ID           | serial    |     - |   :o:    |                   |                              |
+| login_id           | ログインID   | varchar   |   255 |   :o:    |                   |                              |
+| customer_number    | 顧客番号     | varchar   |   100 |   :o:    |                   |                              |
+| password_encrypted | パスワード   | varchar   |   255 |   :o:    |                   |                              |
+| is_enabled         | is有効       | boolean   |     - |   :o:    | true              | true:有効<br/>false:無効     |
+| is_withdrawn       | is退会       | boolean   |     - |   :o:    | false             | true:退会済<br/>false:未退会 |
+| withdrawn_at       | 退会日時     | timestamp |     - |    -     |                   |                              |
+| created_id         | 作成者ID     | integer   |     - |    -     |                   |                              |
+| created_at         | 作成日時     | timestamp |     - |   :o:    | current_timestamp |                              |
+| last_modified_id   | 更新者ID     | integer   |     - |   :o:    |                   |                              |
+| last_modified_at   | 更新日時     | timestamp |     - |   :o:    | current_timestamp |                              |

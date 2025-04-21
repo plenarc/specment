@@ -21,7 +21,12 @@ MD033:          # allowed_elementsで定義したhtmlタグ以外は使用禁止
     - img
     - span
     - summary
+    - ChangeHistoryComponent
     - Priority
+    - PriorityMatrix
     - Status
     - Tag
+    - TBD
 MD040: false    # コードブロックの言語指定を強制しない
+MD041:
+  front_matter_title: ""

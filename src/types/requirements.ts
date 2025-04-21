@@ -1,15 +1,8 @@
-export type PriorityLevel = "must" | "should" | "could" | "wont"
-export type StatusState = "draft" | "review" | "approved" | "rejected"
+export type PriorityScale = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
-export interface Requirement {
-  id: string
-  title: string
-  description: string
-  priority: PriorityLevel
-  status: StatusState
-  tags: string[]
-  createdAt: Date
-  updatedAt: Date
+export interface PriorityLevel {
+  importance: PriorityScale;
+  urgency: PriorityScale;
 }
 
 export interface ChangeHistory {

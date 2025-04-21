@@ -1,0 +1,31 @@
+---
+sidebar_position: 1
+tag:
+    - Markdown
+---
+
+# 概要
+## フォルダー構成 {#folder-configuration}
+```
+\
+```
+
+## サイドバー {#sidebar}
+1. mdx(md)ファイルで作成すると自動的にコンテンツとなる
+1. 表示順を変更したい場合はファイルの最初にyaml形式で定義する
+    1. 参考: 公式Docusaurus.[Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)
+1. 例
+    ```mdx title="sample.mdx"
+    ---
+    sidebar_position: 1
+    ---
+    # サンプル
+    ```
+
+## 階層表示したい場合 {#to-layerd}
+1. サブフォルダーを作成し、そこにファイル `_category_.yml` を作る
+1. 例
+    ```yml title="_category_.yml"
+    label: 'ドキュメント編集方法'
+    position: 4
+    ```
