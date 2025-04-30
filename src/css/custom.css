@@ -28,3 +28,54 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Chapter number */
+main div.container article div.theme-doc-markdown {
+  counter-reset: ch-lv1;
+}
+main div.container article div.theme-doc-markdown > h2 {
+  counter-reset: ch-lv2;
+}
+main div.container article div.theme-doc-markdown > h3 {
+  counter-reset: ch-lv3;
+}
+main div.container article div.theme-doc-markdown > h4 {
+  counter-reset: ch-lv4;
+}
+
+main div.container article div.theme-doc-markdown > h2::before {
+  counter-increment: ch-lv1;
+  content: counter(ch-lv1) '. ';
+}
+main div.container article div.theme-doc-markdown > h3::before {
+  counter-increment: ch-lv2;
+  content: counter(ch-lv1) '.' counter(ch-lv2) '. ';
+}
+main div.container article div.theme-doc-markdown > h4::before {
+  counter-increment: ch-lv3;
+  content: counter(ch-lv1) '.' counter(ch-lv2) '.' counter(ch-lv3) '. ';
+}
+main div.container article div.theme-doc-markdown > h5::before {
+  counter-increment: ch-lv4;
+  content: counter(ch-lv1) '.' counter(ch-lv2) '.' counter(ch-lv3) '.' counter(ch-lv4) '. ';
+}
+
+/* Table of contents number */
+main div[class^=tableOfContents_] ul {
+  counter-reset: toc-lv;
+  list-style: none;
+}
+main div[class^=tableOfContents_] ul > li > a::before {
+  counter-increment: toc-lv;
+  content: counters(toc-lv, '.') '. ';
+}
