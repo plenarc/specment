@@ -59,8 +59,8 @@ function DocumentSection() {
               <Heading as="h3">運用ポリシー</Heading>
               <ul>
                 <li><Link to="/docs/internal/policies/github">GitHubの利用方法</Link></li>
-                <li><Link to="/docs/internal/policies/github">pull requestまでのフロー</Link></li>
-                <li><Link to="/docs/internal/policies/github">公開範囲</Link></li>
+                <li><Link to="/docs/internal/policies/branch-naming-converntion">branch命名規約</Link></li>
+                <li><Link to="/docs/internal/policies/pull-request-operation-flow">pull request運用フロー</Link></li>
               </ul>
             </div>
           </div>

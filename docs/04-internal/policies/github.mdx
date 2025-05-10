@@ -1,0 +1,100 @@
+---
+sidebar_position: 1
+tags:
+  - git
+  - github
+---
+import { TBD } from '@site/src/components/TBD';
+
+# GitHubの利用方法
+
+## 基本的なGitHubの利用ルール
+
+### コミットメッセージのルール
+1. 簡潔で分かりやすいコミットメッセージを書く
+1. プレフィックスを使用する（例：`feat:`、`fix:`、`docs:`、`style:`、`refactor:`、`test:`、`chore:`）
+1. 現在形の動詞で始める（例：「Add」「Fix」「Update」など）
+1. 50文字以内に収める
+
+### ブランチ戦略
+1. `main`/`master`ブランチは常に安定した状態を保つ
+1. 機能開発は`feature/機能名`ブランチで行う
+1. バグ修正は`fix/バグ内容`ブランチで行う
+1. リリース準備は`release/バージョン番号`ブランチで行う
+
+### プルリクエスト(PR)のルール
+1. 明確なタイトルと説明を書く
+1. 変更内容を詳細に記述する
+1. レビュアーを指定する
+1. 関連するIssueがある場合は参照する
+1. CI/CDのチェックが通過していることを確認する
+
+### イシュー管理
+1. 新機能やバグは必ずイシューとして登録する
+1. イシューには適切なラベルを付ける
+1. 担当者を明確にする
+1. 期限がある場合は設定する
+
+## SSHキー作成からGit Cloneまでの手順
+
+### SSHキーの作成
+
+```bash
+# SSHキーを生成（メールアドレスは自分のものに置き換える）
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# デフォルトの保存場所とパスフレーズを設定（Enterキーで進める）
+# パスフレーズは設定することを推奨
+```
+
+### SSHエージェントへの追加
+
+```bash
+# SSHエージェントを起動
+eval "$(ssh-agent -s)"
+
+# SSHキーをエージェントに追加
+ssh-add ~/.ssh/id_ed25519
+```
+
+### GitHubアカウントにSSH公開キーを追加
+
+```bash
+# 公開キーをクリップボードにコピー（Linuxの場合）
+cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
+```
+
+- GitHubにログイン
+- 右上のプロフィールアイコンをクリック→「Settings」を選択
+- サイドバーの「SSH and GPG keys」をクリック
+- 「New SSH key」ボタンをクリック
+- タイトルを入力（例：「Work Laptop」）
+- 「Key」フィールドに公開キーを貼り付け
+- 「Add SSH key」ボタンをクリック
+
+### SSHキーの動作確認
+
+```bash
+# GitHubとの接続をテスト
+ssh -T git@github.com
+
+# 初回接続時は確認メッセージが表示されるので「yes」と入力
+```
+
+### Gitの初期設定
+
+```bash
+# ユーザー名とメールアドレスを設定
+git config --global user.name "あなたの名前"
+git config --global user.email "your_email@example.com"
+```
+
+### リポジトリのクローン
+
+```bash
+# SSHを使用してリポジトリをクローン
+git clone git@github.com:ユーザー名/リポジトリ名.git
+
+# クローンしたディレクトリに移動
+cd リポジトリ名
+```

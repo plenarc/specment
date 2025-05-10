@@ -4,24 +4,23 @@ title: 要求タイトル
 sidebar_label: REQ-001：要求タイトル
 description: 要求の簡単な説明
 tags: [タグ1, タグ2]
+urgency: 5
+importance: 5
 draft: true
 ---
 
-import { Priority } from '@site/src/components/Priority';
+import { PriorityMatrix } from '@site/src/components/PriorityMatrix';
 import { Status } from '@site/src/components/Status';
-import { Tag } from '@site/src/components/Tag';
+import { TagList } from '@site/src/components/Tag';
 import { ChangeHistoryComponent } from '@site/src/components/ChangeHistory';
 
-<div style={{ marginBottom: "1rem" }}>
-  <Priority level="must" />
-  <Status state="draft" />
-</div>
+<TagList tags={frontMatter.tags} />
 
-<div style={{ marginBottom: "1rem" }}>
+<!-- <div style={{ marginBottom: "1rem" }}>
   {frontMatter.tags.map((tag) => (
     <Tag key={tag} name={tag} />
   ))}
-</div>
+</div> -->
 
 ## 概要
 <!-- 1-2文で要求の概要を記述 -->
@@ -46,7 +45,7 @@ import { ChangeHistoryComponent } from '@site/src/components/ChangeHistory';
 
 export const changes = [
   {
-    date: "YYYY-MM-DD",
+    date: "2025-01-02",
     author: "作成者名",
     changes: "初版作成",
   },

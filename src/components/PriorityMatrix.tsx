@@ -1,3 +1,10 @@
+/**
+ * Priority Matrix Component.
+ * @module PriorityMatrix
+ * @example
+ * import { TBD } from '@site/src/components/TBD';
+ * <TBD/>
+ */
 import React from 'react';
 import type { PriorityScale } from '@site/src/types/requirements';
 
