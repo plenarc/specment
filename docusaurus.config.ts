@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const titleValue = 'プロジェクト名';
 const descriptionValue = 'プロジェクト概要。xxxのためのシステムです';
-const urlValue = process.env.NODE_ENV !== 'development' ? 'https://plenarc.github.io/' : 'http://localhost:3000';
+const urlValue = process.env.NODE_ENV !== 'development' ? 'https://plenarc-docsite.github.io/' : 'http://localhost:3000';
 
 const config: Config = {
   title: titleValue,
@@ -17,7 +17,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'plenarc',    // ToDo: Usually your GitHub org/user name.
-  projectName: 'docsite-template',// ToDo: Usually your repo name.
+  projectName: 'docsite-free',    // ToDo: Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -44,7 +44,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.png',
     docs: {
       sidebar: {
         hideable: true,
@@ -120,6 +120,21 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      {
+        // blogRouteBasePath: '/',
+        language: ['jp'],
+        hashed: true,
+        // blogDir: '/blog',
+        highlightSearchTermsOnTargetPage: true,
+      },
+    ],
+    require.resolve('docusaurus-theme-plantuml'),
+  ],
 };
 
 export default config;

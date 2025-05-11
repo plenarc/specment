@@ -49,8 +49,8 @@ function DocumentSection() {
               <Heading as="h3">編集ガイド</Heading>
               <ul>
                 <li><Link to="/docs/internal/rules/markdown">Markdownの書き方</Link></li>
-                <li><Link to="/docs/internal/rules/markdown">ドキュメント作成ルール</Link></li>
-                <li><Link to="/docs/internal/rules/markdown">レビュープロセス</Link></li>
+                <li><Link to="/docs/internal/rules/document-creation-rules">ドキュメント作成ルール</Link></li>
+                <li><Link to="/docs/internal/rules/review-process">レビュープロセス</Link></li>
               </ul>
             </div>
           </div>
@@ -59,8 +59,8 @@ function DocumentSection() {
               <Heading as="h3">運用ポリシー</Heading>
               <ul>
                 <li><Link to="/docs/internal/policies/github">GitHubの利用方法</Link></li>
-                <li><Link to="/docs/internal/policies/branch-naming-converntion">branch命名規約</Link></li>
                 <li><Link to="/docs/internal/policies/pull-request-operation-flow">pull request運用フロー</Link></li>
+                <li><Link to="/docs/internal/policies/branch-naming-rules">branch命名規約</Link></li>
               </ul>
             </div>
           </div>

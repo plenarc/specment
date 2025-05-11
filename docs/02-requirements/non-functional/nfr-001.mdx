@@ -4,23 +4,18 @@ title: セキュリティ要件
 sidebar_label: NFR-001：セキュリティ要件
 description: システム全体のセキュリティに関する非機能要件
 tags: [セキュリティ, SLA]
+urgency: 9
+importance: 9
 ---
 
-import { Priority } from '@site/src/components/Priority';
+import { PriorityMatrix } from '@site/src/components/PriorityMatrix';
 import { Status } from '@site/src/components/Status';
-import { Tag } from '@site/src/components/Tag';
+import { TagList } from '@site/src/components/Tag';
 import { ChangeHistoryComponent } from '@site/src/components/ChangeHistory';
 
-<div style={{ marginBottom: "1rem" }}>
-  <Priority level="must" />
-  <Status state="approved" />
-</div>
+<TagList tags={frontMatter.tags} />
 
-<div style={{ marginBottom: "1rem" }}>
-  {frontMatter.tags.map((tag) => (
-    <Tag key={tag} name={tag} />
-  ))}
-</div>
+<PriorityMatrix urgency={frontMatter.urgency} importance={frontMatter.importance} />
 
 ## 概要
 システム全体のセキュリティに関する要件を定義する。

@@ -57,13 +57,13 @@ start
 
 :Issueからfeatureブランチを作成する;
 :コード、テストを実装する;
-(A)
+#Aquamarine:(A)
 :テストをする;
 
 if (テストは成功したか?) then (はい)
   :Pull Requestを作成する;
   :レビュアーを指定する;
-  (B)
+  #LightSkyBlue:(B)
   :レビューを受ける;
   
   if (レビューは承認されたか?) then (はい)
@@ -73,15 +73,15 @@ if (テストは成功したか?) then (はい)
   else (いいえ)
     :フィードバックに基づいて修正する;
     :修正をコミットする;
-    (A)
+    #Aquamarine:(A)
     :再レビューを依頼する;
-    (B)
+    #LightSkyBlue:(B)
     detach
   endif
   
 else (いいえ)
   :テストが通るように修正する;
-  (A)
+  #Aquamarine:(A)
   detach
 
 endif
