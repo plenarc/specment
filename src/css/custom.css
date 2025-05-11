@@ -1,0 +1,81 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Chapter number */
+main div.container article div.theme-doc-markdown {
+  counter-reset: ch-lv1;
+}
+main div.container article div.theme-doc-markdown > h2 {
+  counter-reset: ch-lv2;
+}
+main div.container article div.theme-doc-markdown > h3 {
+  counter-reset: ch-lv3;
+}
+main div.container article div.theme-doc-markdown > h4 {
+  counter-reset: ch-lv4;
+}
+
+main div.container article div.theme-doc-markdown > h2::before {
+  counter-increment: ch-lv1;
+  content: counter(ch-lv1) '. ';
+}
+main div.container article div.theme-doc-markdown > h3::before {
+  counter-increment: ch-lv2;
+  content: counter(ch-lv1) '.' counter(ch-lv2) '. ';
+}
+main div.container article div.theme-doc-markdown > h4::before {
+  counter-increment: ch-lv3;
+  content: counter(ch-lv1) '.' counter(ch-lv2) '.' counter(ch-lv3) '. ';
+}
+main div.container article div.theme-doc-markdown > h5::before {
+  counter-increment: ch-lv4;
+  content: counter(ch-lv1) '.' counter(ch-lv2) '.' counter(ch-lv3) '.' counter(ch-lv4) '. ';
+}
+
+/* Table of contents number */
+main div[class^=tableOfContents_] ul {
+  counter-reset: toc-lv;
+  list-style: none;
+}
+main div[class^=tableOfContents_] ul > li > a::before {
+  counter-increment: toc-lv;
+  content: counters(toc-lv, '.') '. ';
+}

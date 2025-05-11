@@ -1,0 +1,102 @@
+---
+sidebar_position: 5
+tags:
+  - To-Be
+---
+import { TBD } from '@site/src/components/TBD';
+
+# To‑Be - 目指すべき姿
+
+<!--
+TBDの使い方
+  <TBD/> コンポーネントは未確定項目を可視化するための占位マークです
+  執筆完了後はimport文といっしょにこのコメントも必ず削除すること
+-->
+
+## 概要 {#target-overview}
+1. 本章で示す「理想状態」と As‑Is との差分を概観する  
+1. ビジネス価値・ユーザ価値・システム観点を 1‒2 文でまとめる
+
+## 改善後業務フロー {#business-flow}
+
+:::tip
+1. BPMN やスイムレーン図で将来の業務プロセスを可視化  
+1. PlantUML を直接埋め込むか、drawio・外部リンクでも可
+:::
+
+```pumld
+@startuml
+skinparam ParticipantPadding 20
+skinparam Shadowing false
+
+|顧客|
+start
+:商品閲覧;
+:ワンクリック購入;
+|ECシステム|
+:在庫自動確保;
+:決済トークン発行;
+|決済ゲートウェイ|
+:即時決済承認;
+|ECシステム|
+:出荷指示;
+|倉庫WMS|
+:自動ピッキング;
+|顧客|
+stop
+@enduml
+```
+
+## システム全体像 {#system-architecture}
+
+```pumld
+@startuml
+!include <C4/C4_Container>
+
+System_Boundary(ec, "EC System") {
+  Container(web, "Next.js Frontend", "TypeScript/React")
+  Container(api, "API Server", "Go + gRPC")
+  ContainerDb(db, "PostgreSQL", "Cloud SQL", "商品・注文DB")
+}
+System_Ext(billing, "Payment Gateway")
+System_Ext(cd, "CDN")
+
+Rel(web, api, "gRPC+JSON")
+Rel(api, db, "JDBC")
+Rel(api, billing, "REST")
+Rel(web, cd, "HTTPS (static assets)")
+@enduml
+```
+
+1. <TBD/> (詳細なサブシステム図や構成表を追加)
+
+## 主要機能一覧 {#features}
+
+| # | 機能 | 概要 | 優先度 |
+| - | ---- | ---- | ------ |
+| F‑01 | リアルタイム在庫同期 | ERP から Webhook で在庫更新 | High |
+| F‑02 | ワンクリック購入 | 顧客の決済トークンを再利用 | High |
+| F‑03 | レコメンド | 行動ログを用いた個別提案 | Medium |
+
+## 非機能要求サマリ {#non-functional-requirements}
+
+| 項目 | 目標値 | 備考 |
+| ---- | ------ | ---- |
+| 可用性 | 99.9 %以上 | マルチ AZ |
+| 性能 | 平均応答 200 ms 以下 | Peak 500 ms 以下 |
+| セキュリティ | OWASP Top‑10 準拠 | WAF / CSP |
+
+## 移行方針・ロードマップ {#migration-strategy}
+
+1. **フェーズ1: MVP**  
+    1. カタログ閲覧 + 決済 (限定 SKU)
+1. **フェーズ2: Full Launch**  
+    1. 全 SKU 移行・レコメンド ON
+1. **フェーズ3: Continuous Improvement**  
+    1. A/B テスト・パフォーマンス最適化
+
+## 期待効果・成功要因 {#expected-effects}
+
+1. 売上 +20 %、離脱率 15 % → 8 %
+1. 運用工数 月 40 h 削減
+1. ユーザ満足度 (NPS) +15

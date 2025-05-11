@@ -1,0 +1,35 @@
+---
+sidebar_position: 3
+hide_table_of_contents: true
+---
+import TOCInline from '@theme/TOCInline';
+
+# customer_details - 会員詳細
+
+<details>
+  <summary>目次</summary>
+
+  <TOCInline toc={toc} />
+</details>
+
+## 説明 {#description}
+1. xxxの会員詳細
+1. 会員の電話番号、住所など
+
+## 表領域(schema) {#schema}
+1. `public`
+
+## 定義 {#definition}
+
+| Physical name    | Logical name | Type      | Digit | Not null | Default value     | Comment |
+| ---------------- | ------------ | --------- | ----: | :------: | ----------------- | ------- |
+| id               | ID           | serial    |     - |   :o:    |                   |         |
+| customer_id      | 顧客ID       | varchar   |   100 |   :o:    |                   |         |
+| phone_number     | 電話番号     | varchar   |    12 |   :o:    |                   |         |
+| postal_code      | 郵便番号     | varchar   |     8 |   :o:    |                   |         |
+| address_1        | 住所1        | varchar   |   500 |   :o:    |                   |         |
+| address_2        | 住所2        | varchar   |   500 |   :o:    |                   |         |
+| created_id       | 作成者ID     | integer   |     - |   :o:    |                   |         |
+| created_at       | 作成日時     | timestamp |     - |   :o:    | current_timestamp |         |
+| last_modified_id | 更新者ID     | integer   |     - |   :o:    |                   |         |
+| last_modified_at | 更新日時     | timestamp |     - |   :o:    | current_timestamp |         |

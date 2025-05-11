@@ -1,0 +1,118 @@
+---
+sidebar_position: 2
+tags:
+  - git
+  - pull request
+---
+# Pull Request運用フロー
+
+## 主な運用フロー
+
+```pumld
+@startuml
+
+skinparam responseMessageBelowArrow true
+autonumber "<b> [00]"
+
+participant local as "branch: feature/ブランチ名"
+participant develop as "branch: develop"
+participant staging as "branch: staging"
+participant main as "branch: main"
+
+develop -> local ** : clone &\ncreate branch feature/ブランチ名
+local -> local: commit changes
+local -> local: create Pull Request & review
+local -> develop: merge feature/ブランチ名 into develop
+local -> local !! : delete feature branch
+
+develop -> develop: CI/CD checks
+develop -> staging: merge develop into staging
+staging -> staging: perform release validation
+staging -> staging: e2e test
+staging -> main: merge staging into main
+
+main -> main: tag version &\nperform release
+@enduml
+```
+
+### 手順
+
+1. \[01\]: developブランチをクローンし、ローカルでfeature/ブランチ名を作成する
+1. \[02\]: feature/ブランチ名でコードを修正しコミットする
+1. \[03\]: feature/ブランチ名内でPull Requestを作成し、レビューを依頼する
+1. \[04\]: レビュー完了後、feature/ブランチ名をdevelopへマージする
+1. \[05\]: feature/ブランチ名を削除する(自動)
+1. \[06\]: developブランチでCI/CDチェックを実行する
+1. \[07\]: developをstagingへマージ
+1. \[08\]: リリース前の検証をする
+1. \[09\]: stagingブランチでE2Eテストを実行する
+1. \[10\]: テスト完了後、stagingをmainへマージし、リリースを実施する
+1. \[11\]: mainブランチでタグを作成し、正式にリリースする
+
+## エンジニアの動き
+
+```pumld
+@startuml
+start
+
+:Issueからfeatureブランチを作成する;
+:コード、テストを実装する;
+#Aquamarine:(A)
+:テストをする;
+
+if (テストは成功したか?) then (はい)
+  :Pull Requestを作成する;
+  :レビュアーを指定する;
+  #LightSkyBlue:(B)
+  :レビューを受ける;
+  
+  if (レビューは承認されたか?) then (はい)
+    :レビュアーがPull Requestをマージする;
+    :Issueをクローズする;
+    stop
+  else (いいえ)
+    :フィードバックに基づいて修正する;
+    :修正をコミットする;
+    #Aquamarine:(A)
+    :再レビューを依頼する;
+    #LightSkyBlue:(B)
+    detach
+  endif
+  
+else (いいえ)
+  :テストが通るように修正する;
+  #Aquamarine:(A)
+  detach
+
+endif
+
+@enduml
+```
+
+## Pull Requestのベストプラクティス
+
+1. **小さくまとめる**: 一つのPRは一つの機能や修正に焦点を当てる
+1. **明確なタイトルと説明**: PRの目的と変更内容を明確に記述する
+1. **テストの実施**: PRを提出する前に必ずテストを実行する
+1. **レビュープロセスの尊重**: レビューコメントに対して建設的に対応する
+1. **マージ前の確認**: マージ前にコンフリクトがないことを確認する
+
+## PRレビューのチェックリスト
+
+### 機能面
+
+1. 要件を満たしているか
+1. エッジケースを考慮しているか
+1. バグやパフォーマンスの問題がないか
+
+### コード品質
+
+1. コードは読みやすく、理解しやすいか
+1. 命名規則に従っているか
+1. コードの重複がないか
+1. セキュリティ上の問題がないか
+
+### ドキュメント
+
+1. コメントやドキュメントが適切か
+1. 必要な場合はドキュメントが更新されているか

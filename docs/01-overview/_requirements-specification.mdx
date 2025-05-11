@@ -1,0 +1,77 @@
+---
+sidebar_position: 8
+---
+# 要求定義書(例)
+## 編集日時(降順)
+1. yyyy-mm-dd: xx氏とxy氏で解決したい課題を追加
+1. yyyy-mm-dd: 作成日
+
+## 参加者(敬称略)
+1. xxx
+1. xxx
+1. xxx(記)
+
+## 解決したい課題
+
+:::tip - TIP
+1. 緊急度と重要度の2軸で考察する
+    1. 緊急度: 高 or 低
+    1. 重要度: 高 or 低
+1. 緊急度が高く、重要度も高いものがシステム化を最優先する
+1. 緊急度が低く、重要度が高いものをいつ取り込むかが重要
+1. 緊急度が低く、重要度が低いものをどう取り扱うかも重要
+    1. システム化を見送るかなど
+:::
+
+1. 緊高+重高: ミスによる時間のロスでお客様へも影響がでてしまう
+1. 緊低+重高: 繰り返し作業による入力ミス(ヒューマンエラー)を解消したい
+1. 緊低+重高: 伝達漏れ、操作忘れを回避したい
+
+## 解決したい方法
+1. 入力の簡素化
+    1. 前回入力情報の再利用
+1. 期限の切れたToDoへのリマインド
+
+## ユースケースの準備
+1. アクターの抽出
+    1. システムを利用する人、例えばお客様やオペレーターといった人物像をアクターとしてすべて洗い出す
+
+### 良くある例
+1. 顧客
+    1. Web利用者
+    1. モバイル利用者
+1. オペレーター
+    1. チャット
+    1. 電話
+1. 社員
+    1. 営業
+    1. 一般社員
+    1. 管理者
+
+## ユースケースの作成
+1. コツはアウトプットから先に書く
+1. 得たい結果からシステムを通して誰がどんなインプットをするか書き出す
+
+```plantuml
+@startuml
+!define uml https://raw.githubusercontent.com/flatring/plantuml-stencils/main
+!include uml/colorset/ocean-blue.iuml
+!include uml/colorset/_skinparams.iuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor 利用者 as customer
+actor 利用者 as customer2
+actor 図書委員 as admin
+actor 図書委員 as admin2
+
+customer -> admin : 借りたい本を\n伝える
+package 図書館システム as system {
+  admin --> (手続きをする)
+  (本の在庫を探す) .> (手続きをする) : << include >>
+  (手続きをする) .> (本を貸出中にする) : << extends >>
+}
+(手続きをする) --> admin2
+admin2 -> customer2 : 本を渡す
+@enduml
+```

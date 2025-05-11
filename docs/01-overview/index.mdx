@@ -1,0 +1,41 @@
+---
+id: index
+sidebar_position: 1
+tags:
+  - Overview
+---
+# プロジェクト概要・分析
+
+1. プロジェクト上流工程に必要なドキュメントです
+1. 上から順に読み進めることで全体像を把握できます
+
+## フォルダー構成と役割 {#structure}
+
+:::tip TIP
+1. ファイル名に接頭辞 `_` を付けているテンプレートは、執筆開始時に接頭辞を外して本運用ファイルへリネームする  
+1. 使用しないテンプレがあれば削除し、以下の一覧からも解除する
+:::
+
+```text
+01-overview/
+├ index.mdx                     ← このファイル
+├ project-charter.mdx           ← 上位ビジョン・非ゴール
+├ odsc.mdx                      ← 目的(o)・成果物(d)・成功基準(sc)
+├ as-is.mdx                     ← 現状分析
+├ to-be.mdx                     ← 目指すべき姿
+├ scope.mdx                     ← 機能・非機能スコープ
+├ business-context.mdx          ← 市場・ユーザ・背景
+├ stakeholders.mdx              ← 役割責任表・RACI
+├ assumptions-constraints.mdx   ← 前提条件・制約
+├ gap-analysis.mdx              ← ギャップ分析
+├ risks.mdx                     ← リスク登録簿
+├ roadmap.mdx                   ← ロードマップ
+├ system-context.mdx            ← システムコンテキスト
+└ glossary.mdx                  ← 用語集
+```
+
+## ドキュメント作成ルール {#rules}
+1. 各ドキュメントは **章立て・箇条書き・コードブロック** の記法ルールに従う
+1. 未確定箇所には `<TBD/>` コンポーネントを置き、確定後に削除する
+1. 章タイトルのひとつ上の行に空行を入れる。ただし直前行が章タイトルの場合は不要  
+1. プロジェクトで使用する用語は **アルファベット順 → かな順 → その他** で管理し、差分比較しやすいように番号付きリストを用いる → [Glossary - 用語集](./glossary.mdx) を参照  

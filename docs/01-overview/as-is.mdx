@@ -1,0 +1,64 @@
+---
+sidebar_position: 4
+tags:
+  - As-Is
+---
+import { TBD } from '@site/src/components/TBD';
+
+# As-Is - 現状分析
+
+<!--
+TBDの使い方
+  <TBD/> コンポーネントは未確定項目を可視化するための占位マークです
+  執筆完了後はimport文といっしょにこのコメントも必ず削除すること
+-->
+
+## 概要 {#current-overview}
+1. 本章の目的と読み手が得られるアウトプットを記述
+1. 分析対象の範囲(業務・システム)を明確にする
+
+## 業務プロセス {#business-process}
+
+:::tip TIP
+1. 図で表示する
+1. もしくは現状の手順・担当・処理時間を箇条書きでも可
+:::
+1. <TBD/>
+
+```pumld
+@startuml
+' レイアウト調整（任意）
+skinparam ParticipantPadding 20
+skinparam Shadowing false
+
+|顧客|
+start
+:商品閲覧;
+:カートへ追加;
+|ECシステム|
+:在庫チェック;
+:決済リクエスト送信;
+|決済ゲートウェイ|
+:決済処理;
+|ECシステム|
+:注文確定;
+|顧客|
+stop
+@enduml
+```
+
+## システム構成 {#system-architecture}
+1. <TBD/> (図 or 表)
+
+## データフロー {#data-flow}
+1. <TBD/>
+
+## 運用状況・サービスレベル {#operations}
+1. 稼働率・障害履歴・主要な監視指標など
+1. <TBD/>
+
+## 問題・課題 (Pain Points) {#issues}
+
+| # | 課題 | 影響度 | 発生頻度 | 備考 |
+| - | ---- | ------ | -------- | ---- |
+| PP-01 | 在庫連携に最長3日遅延 | 高 | 週1回 | 手作業バッチ |
