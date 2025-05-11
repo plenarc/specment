@@ -1,0 +1,33 @@
+name: Test deployment
+
+on:
+  push:
+    branches:
+      - develop
+    # 詳細は公式サイトを参照
+    # https://docs.github.com/ja/actions/writing-workflows/workflow-syntax-for-github-actions#on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: '[1/5] checkout code'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: '[2/5] setup node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: '[3/5] setup pnpm'
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+      - name: '[4/5] install dependencies'
+        run: pnpm install --frozen-lockfile
+      - name: '[5/5] build'
+        run: pnpm build
+
+  test-deploy:
+    name: Test deployment
+    needs: build
