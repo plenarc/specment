@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const titleValue = 'プロジェクト名';
 const descriptionValue = 'プロジェクト概要。xxxのためのシステムです';
-const urlValue = process.env.NODE_ENV !== 'development' ? 'https://plenarc-docsite.github.io/' : 'http://localhost:3000';
+const urlValue = process.env.NODE_ENV !== 'development' ? 'https://plenarc.github.io/docsite-free' : 'http://localhost:3000';
 
 const config: Config = {
   title: titleValue,
