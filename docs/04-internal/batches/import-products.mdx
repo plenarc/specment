@@ -1,0 +1,68 @@
+---
+sidebar_position: 2
+tags:
+  - batch
+  - product
+---
+import { TBD } from '@site/src/components/TBD';
+
+# import-products - 商品取込
+## 概要 {#overview}
+1. 商品情報をTSVファイルで受け取り、テーブル`product`にレコードを追加・更新(upsert)する
+
+## 前提条件 {#prerequisite}
+1. <TBD/>
+1. 読込先フォルダー
+    1. <TBD/>
+1. TSVファイル名
+    1. `abc-yyyymmdd-hhnn-x.tsv`
+1. TSVのmax行数は10000とする
+    1. それより大きい行数だった場合、警告メッセージを出力する
+
+## サイクル {#cycle}
+1. cron
+    1. `5 0 * * MON-FRI`
+    1. 土日はデータ量が少ないため、実行しない
+
+## フロー {#flow}
+
+:::info info
+1. 設計はアクティビティ図ではなく、シーケンス図がオススメ
+1. 各フェーズごとのエラー処理、メッセージ内容は明確にする
+:::
+
+```plantuml
+@startuml
+!define uml https://raw.githubusercontent.com/flatring/plantuml-stencils/main
+!include uml/colorset/ocean-blue.iuml
+!include uml/colorset/_skinparams.iuml
+
+participant User
+User -> A: DoWork
+activate A #FFBBBB
+  A -> A: Internal call
+  activate A #DarkSalmon
+    A -> B: << createRequest >>
+    activate B
+      B --> A: RequestCreated
+    deactivate B
+  deactivate A
+  A -> User: Done
+deactivate A
+@enduml
+```
+
+## 関数 {#functions}
+### funcFileExistenceCheck - TSVファイルの存在確認
+1. <TBD/>
+
+### funcFileRead - TSVファイル読込
+1. <TBD/>
+
+## TSVファイルカラム {#tsv-file-columns}
+
+|   #   | Header    | Logical name | Type    | Digit | Comment                    |
+| :---: | --------- | ------------ | ------- | ----: | -------------------------- |
+|   1   | id        | ID           | integer |     - |                            |
+|   2   | name      | 名前         | string  |   255 |                            |
+|   3   | is_member | is会員       | boolean |     - | true:会員<br/>false:非会員 |

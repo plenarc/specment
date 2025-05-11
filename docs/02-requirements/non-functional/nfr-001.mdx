@@ -1,0 +1,64 @@
+---
+id: nfr-001
+title: セキュリティ要件
+sidebar_label: NFR-001：セキュリティ要件
+description: システム全体のセキュリティに関する非機能要件
+tags: [セキュリティ, SLA]
+urgency: 9
+importance: 9
+---
+
+import { PriorityMatrix } from '@site/src/components/PriorityMatrix';
+import { Status } from '@site/src/components/Status';
+import { TagList } from '@site/src/components/Tag';
+import { ChangeHistoryComponent } from '@site/src/components/ChangeHistory';
+
+<TagList tags={frontMatter.tags} />
+
+<PriorityMatrix urgency={frontMatter.urgency} importance={frontMatter.importance} />
+
+## 概要
+システム全体のセキュリティに関する要件を定義する。
+
+## 性能要件
+### レスポンス時間
+1. 画面表示：2秒以内
+1. API応答：1秒以内
+1. バッチ処理：指定された時間枠内で完了
+
+### スループット
+1. 同時接続ユーザー数：1000ユーザー
+1. トランザクション処理：100 TPS
+
+### リソース使用
+1. CPU使用率：平常時80%以下
+1. メモリ使用率：平常時70%以下
+1. ストレージ使用率：80%以下
+
+## 監視要件
+1. APMツールによる常時監視
+1. パフォーマンスメトリクスの収集
+1. アラート閾値の設定
+
+## 測定方法
+1. 負荷テストツール：JMeter
+1. 監視ツール：Datadog
+1. 測定間隔：5分
+
+## 関連する機能要件
+1. [REQ-001：ユーザー認証](../functional/req-001.mdx)
+
+export const changes = [
+  {
+    date: "2024-01-15",
+    author: "鈴木次郎",
+    changes: "監視要件の追加",
+  },
+  {
+    date: "2024-01-01",
+    author: "山田太郎",
+    changes: "初版作成",
+  },
+]
+
+<ChangeHistoryComponent changes={changes} />

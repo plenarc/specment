@@ -1,0 +1,58 @@
+---
+id: req-001
+title: ユーザー認証機能
+sidebar_label: REQ-001：ユーザー認証
+description: システムへのアクセスを制御するための認証機能
+tags: [認証, セキュリティ, ユーザー管理]
+urgency: 7
+importance: 8
+---
+
+import { PriorityMatrix } from '@site/src/components/PriorityMatrix';
+import { Status } from '@site/src/components/Status';
+import { TagList } from '@site/src/components/Tag';
+import { ChangeHistoryComponent } from '@site/src/components/ChangeHistory';
+
+<TagList tags={frontMatter.tags} />
+
+<PriorityMatrix urgency={frontMatter.urgency} importance={frontMatter.importance} />
+
+<!-- <div style={{ marginBottom: "1rem" }}>
+  {frontMatter.tags.map((tag) => (
+    <Tag key={tag} name={tag} />
+  ))}
+</div> -->
+
+## 概要
+システムへのアクセスを制御するためのユーザー認証機能を提供する。
+
+## 詳細要件
+1. ユーザーはメールアドレスとパスワードでログインできること
+1. パスワードは8文字以上であること
+1. 2要素認証に対応すること
+1. パスワードリセット機能を提供すること
+
+## 受け入れ基準
+- [ ] 正しい認証情報でログインできる
+- [ ] 誤った認証情報ではログインできない
+- [ ] パスワードリセットメールが送信される
+- [ ] 2要素認証が正常に機能する
+
+## 関連する非機能要件
+1. [NFR-001：セキュリティ要件](../non-functional/nfr-001.mdx)
+1. [NFR-002：パフォーマンス要件](../non-functional/nfr-002.mdx)
+
+## 参考情報
+- [OWASP認証のベストプラクティス](https://owasp.org/)
+
+## 更新履歴
+
+export const changes = [
+  {
+    date: "2025-01-02",
+    author: "作成者名",
+    changes: "初版作成",
+  },
+]
+
+<ChangeHistoryComponent changes={changes} />

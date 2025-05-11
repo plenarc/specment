@@ -1,0 +1,22 @@
+---
+sidebar_position: 13
+tags:
+  - Overview
+  - Architecture
+---
+
+# システムコンテキスト {#system-context}
+
+## コンテキスト図 {#context-diagram}
+```pumld
+@startuml
+!include <C4/C4_Container>
+System_Boundary(ec, "EC System") {
+  Container(web, "Web Frontend")
+  Container(api, "API Server")
+}
+System(billing, "Payment Gateway")
+Rel(web, api, "HTTPS/JSON")
+Rel(api, billing, "REST")
+@enduml
+```
