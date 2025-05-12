@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-05-10T08:00:00.000Z" agent="ChatGPT" etag="AmazonBizModel" version="21.6.7" type="device">
+  <diagram id="amazon-biz-model" name="Amazon Business Model">
+    <mxGraphModel dx="1250" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- カスタマー -->
+        <mxCell id="customer" value="顧客\n(買い手)" style="shape=mxgraph.people.user;html=1;fillColor=#fff2cc;strokeColor=#666666;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- Amazon Marketplace -->
+        <mxCell id="marketplace" value="Amazon\nマーケットプレイス" style="shape=mxgraph.basic.rect;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#4b830d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="60" width="160" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- セラー -->
+        <mxCell id="seller" value="セラー\n(出品者)" style="shape=mxgraph.people.user;html=1;fillColor=#fff2cc;strokeColor=#666666;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="120" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- フルフィルメントセンター -->
+        <mxCell id="fba" value="Amazon FC\n(FBA倉庫)" style="shape=mxgraph.office.storage;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="200" width="140" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- 配送業者 -->
+        <mxCell id="carrier" value="配送業者" style="shape=mxgraph.aws4.delivery;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="120" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- Amazon本社 (手数料・サービス) -->
+        <mxCell id="amazoncorp" value="Amazon㈱\n&#xa;・手数料&#xa;・広告/AWS/Prime" style="shape=mxgraph.basic.cube;size=30;direction=south;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="230" width="160" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- 矢印：注文 -->
+        <mxCell id="order" value="注文" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;strokeColor=#000000;endArrow=block;html=1;" edge="1" source="customer" target="marketplace" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- 矢印：支払い -->
+        <mxCell id="pay" value="支払い" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;endArrow=block;html=1;" edge="1" source="customer" target="marketplace" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="140" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 矢印：販売手数料 -->
+        <mxCell id="fee" value="販売手数料" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#b85450;dashed=1;endArrow=open;html=1;" edge="1" source="marketplace" target="amazoncorp" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- 矢印：売上振込 -->
+        <mxCell id="payout" value="売上振込" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#009933;endArrow=block;html=1;" edge="1" source="marketplace" target="seller" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- 矢印：在庫納品 -->
+        <mxCell id="inventory" value="在庫納品" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;endArrow=block;html=1;" edge="1" source="seller" target="fba" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- 矢印：出荷指示 -->
+        <mxCell id="shipinst" value="出荷/配送" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;endArrow=block;html=1;" edge="1" source="fba" target="carrier" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- 矢印：商品配送 -->
+        <mxCell id="delivery" value="商品受取" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;endArrow=block;html=1;" edge="1" source="carrier" target="customer" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- 矢印：マーケットプレイス掲載 -->
+        <mxCell id="listing" value="商品登録/広告" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#666666;dashed=1;endArrow=open;html=1;" edge="1" source="seller" target="marketplace" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
