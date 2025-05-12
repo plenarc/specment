@@ -1,26 +1,26 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type { Config } from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 const titleValue = 'プロジェクト名';
 const descriptionValue = 'プロジェクト概要。xxxのためのシステムです';
-const isDev = process.env.NODE_ENV === 'development';
-const urlValue = isDev
-  ? 'http://localhost:3000'
-  : 'https://plenarc.github.io';
+const urlValue = 'https://plenarc.github.io';
+const baseUrlValue = '/docsite-free/';
+
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 
 const config: Config = {
   title: titleValue,
   tagline: descriptionValue,
   favicon: 'img/favicon.ico',
 
-  url: urlValue,
-  baseUrl: isDev ? '/' : '/docsite-free/',
+  url: isGithubActions ? urlValue : 'http://localhost:3000',
+  baseUrl: isGithubActions ? baseUrlValue : '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'plenarc',    // ToDo: Usually your GitHub org/user name.
-  projectName: 'docsite-free',    // ToDo: Usually your repo name.
+  organizationName: 'plenarc', // ToDo: Usually your GitHub org/user name.
+  projectName: 'docsite-free', // ToDo: Usually your repo name.
   trailingSlash: false,
 
   onBrokenLinks: 'warn',
@@ -117,7 +117,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ${titleValue}, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${titleValue}, Inc. Built with Docsite.`,
     },
     prism: {
       theme: prismThemes.github,

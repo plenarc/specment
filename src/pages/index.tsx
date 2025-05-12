@@ -1,9 +1,9 @@
-import type { ReactNode } from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import Layout from '@theme/Layout';
+import clsx from 'clsx';
+import type { ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -28,7 +28,9 @@ function DocumentSection() {
       <div className="container">
         <Heading as="h2">このサイトについて</Heading>
         <p>
-          このサイトは{siteConfig.title}の設計、仕様を管理するためのドキュメントサイトです。<br/>
+          このサイトは{siteConfig.title}
+          の設計、仕様を管理するためのドキュメントサイトです。
+          <br />
           システムの要件定義から詳細設計まで、プロジェクトに関する技術文書を体系的に管理しています。
         </p>
 
@@ -37,10 +39,18 @@ function DocumentSection() {
             <div className={styles.featureCard}>
               <Heading as="h3">ドキュメント構成</Heading>
               <ul>
-                <li><Link to="/docs/overview">プロジェクト概要・分析</Link></li>
-                <li><Link to="/docs/requirements">要件定義</Link></li>
-                <li><Link to="/docs/external">外部設計</Link></li>
-                <li><Link to="/docs/internal">内部設計</Link></li>
+                <li>
+                  <Link to="/docs/overview">プロジェクト概要・分析</Link>
+                </li>
+                <li>
+                  <Link to="/docs/requirements">要件定義</Link>
+                </li>
+                <li>
+                  <Link to="/docs/external">外部設計</Link>
+                </li>
+                <li>
+                  <Link to="/docs/internal">内部設計</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -48,9 +58,17 @@ function DocumentSection() {
             <div className={styles.featureCard}>
               <Heading as="h3">編集ガイド</Heading>
               <ul>
-                <li><Link to="/docs/internal/rules/markdown">Markdownの書き方</Link></li>
-                <li><Link to="/docs/internal/rules/document-creation-rules">ドキュメント作成ルール</Link></li>
-                <li><Link to="/docs/internal/rules/review-process">レビュープロセス</Link></li>
+                <li>
+                  <Link to="/docs/internal/rules/markdown">Markdownの書き方</Link>
+                </li>
+                <li>
+                  <Link to="/docs/internal/rules/document-creation-rules">
+                    ドキュメント作成ルール
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/docs/internal/rules/review-process">レビュープロセス</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -58,9 +76,17 @@ function DocumentSection() {
             <div className={styles.featureCard}>
               <Heading as="h3">運用ポリシー</Heading>
               <ul>
-                <li><Link to="/docs/internal/policies/github">GitHubの利用方法</Link></li>
-                <li><Link to="/docs/internal/policies/pull-request-operation-flow">pull request運用フロー</Link></li>
-                <li><Link to="/docs/internal/policies/branch-naming-rules">branch命名規約</Link></li>
+                <li>
+                  <Link to="/docs/internal/policies/github">GitHubの利用方法</Link>
+                </li>
+                <li>
+                  <Link to="/docs/internal/policies/pull-request-operation-flow">
+                    pull request運用フロー
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/docs/internal/policies/branch-naming-rules">branch命名規約</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -73,9 +99,7 @@ function DocumentSection() {
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={siteConfig.title}
-      description="システム仕様書管理サイト">
+    <Layout title={siteConfig.title} description="システム仕様書管理サイト">
       <HomepageHeader />
       <main className={styles.mainContent}>
         <DocumentSection />

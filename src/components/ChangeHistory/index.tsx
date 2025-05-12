@@ -1,11 +1,11 @@
-import React from 'react';
-import { ChangeHistory as ChangeHistoryType } from '@site/types/requirements';
+import type { ChangeHistory as ChangeHistoryType } from '@site/types/requirements';
+import type { ReactElement } from 'react';
 
 interface ChangeHistoryProps {
   changes: ChangeHistoryType[];
 }
 
-export const ChangeHistoryComponent: React.FC<ChangeHistoryProps> = ({ changes }) => {
+export function ChangeHistoryComponent({ changes }: ChangeHistoryType): ReactElement {
   return (
     <table>
       <thead>
@@ -26,4 +26,4 @@ export const ChangeHistoryComponent: React.FC<ChangeHistoryProps> = ({ changes }
       </tbody>
     </table>
   );
-};
+}

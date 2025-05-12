@@ -71,11 +71,11 @@ main div.container article div.theme-doc-markdown > h5::before {
 }
 
 /* Table of contents number */
-main div[class^=tableOfContents_] ul {
+main div[class^='tableOfContents_'] ul {
   counter-reset: toc-lv;
   list-style: none;
 }
-main div[class^=tableOfContents_] ul > li > a::before {
+main div[class^='tableOfContents_'] ul > li > a::before {
   counter-increment: toc-lv;
   content: counters(toc-lv, '.') '. ';
 }
