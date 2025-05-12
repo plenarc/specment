@@ -39,6 +39,7 @@ jobs:
   test-deploy:
     name: Test deployment
     needs: build
+    runs-on: ubuntu-latest
     steps:
       - name: Download build output
         uses: actions/download-pages-artifact@v3
