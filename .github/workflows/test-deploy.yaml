@@ -37,6 +37,7 @@ jobs:
         run: pnpm build
       - name: '[6/6] upload Build Artifact'
         uses: actions/upload-pages-artifact@v3
+        id: page_upload
         with:
           path: build
 
@@ -48,6 +49,7 @@ jobs:
       - name: Download build output
         uses: actions/download-pages-artifact@v3
         with:
+          artifact_id: $ {{ needs.build.outputs.pages_artifact_id }}
           path: build
 
       - name: Serve and test
