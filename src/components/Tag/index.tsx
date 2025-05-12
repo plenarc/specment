@@ -1,12 +1,12 @@
-import React from 'react';
 import clsx from 'clsx';
+import type { ReactElement } from 'react';
 
 interface TagProps {
   name: string;
   link?: string;
 }
 
-export const Tag: React.FC<TagProps> = ({ name, link }) => {
+export function Tag({ name, link }: TagProps): ReactElement {
   return (
     <li className="tag_kw9c">
       <a
@@ -17,9 +17,9 @@ export const Tag: React.FC<TagProps> = ({ name, link }) => {
       </a>
     </li>
   );
-};
+}
 
-export const TagList: React.FC<{ tags: string[] }> = ({ tags }) => {
+export function TagList({ tags }: { tags: string[] }): ReactElement {
   return (
     <div className="row margin-top--sm theme-doc-footer-tags-row">
       <div className="col">
@@ -32,4 +32,4 @@ export const TagList: React.FC<{ tags: string[] }> = ({ tags }) => {
       </div>
     </div>
   );
-};
+}

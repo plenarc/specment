@@ -24,12 +24,19 @@
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 80
+    "lineWidth": 100
   },
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "trailingComma": "es5"
+      "trailingCommas": "all"
+    }
+  },
+  "css": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "quoteStyle": "single"
     }
   }
 }
