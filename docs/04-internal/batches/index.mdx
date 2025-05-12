@@ -4,10 +4,10 @@ hide_table_of_contents: true
 ---
 # バッチ一覧
 ## データベースインポート {#database-import}
-| ID                                 | 機能名   | 機能概要                                   |       cron        | input                   | output             |
-| ---------------------------------- | -------- | ------------------------------------------ | :---------------: | ----------------------- | ------------------ |
-| [import-products](import-products) | 商品取込 | tsvの商品情報をテーブル`product`に取り込む | `5 0 * * MON-FRI` | `products-yyyymmdd.tsv` | テーブル `product` |
-| import-orders                      | 注文取込 | tsvの商品情報をテーブル`order`に取り込む   | `9 0 * * MON-FRI` | `orders-yyyymmdd.tsv`   | テーブル `order`   |
+| ID                                     | 機能名   | 機能概要                                   |       cron        | input                   | output             |
+| -------------------------------------- | -------- | ------------------------------------------ | :---------------: | ----------------------- | ------------------ |
+| [import-products](import-products.mdx) | 商品取込 | tsvの商品情報をテーブル`product`に取り込む | `5 0 * * MON-FRI` | `products-yyyymmdd.tsv` | テーブル `product` |
+| import-orders                          | 注文取込 | tsvの商品情報をテーブル`order`に取り込む   | `9 0 * * MON-FRI` | `orders-yyyymmdd.tsv`   | テーブル `order`   |
 
 ## 履歴へ移動 {#move-to-history}
 | ID                 | 機能名         | 機能概要                                                         |     cron     | input                    | output                     |
