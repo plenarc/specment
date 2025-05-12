@@ -13,9 +13,5 @@
     "resolveJsonModule": true
   },
   "include": ["src/**/*", "docs/**/*"],
-  "exclude": [
-    ".docusaurus",
-    "build",
-    "node_modules"
-  ]
+  "exclude": [".docusaurus", "build", "node_modules"]
 }
