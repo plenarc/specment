@@ -19,22 +19,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: '[1/5] checkout code'
+      - name: '[1/6] checkout code'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: '[2/5] setup node.js'
+      - name: '[2/6] setup node.js'
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: '[3/5] setup pnpm'
+      - name: '[3/6] setup pnpm'
         uses: pnpm/action-setup@v3
         with:
           version: 10
-      - name: '[4/5] install dependencies'
+      - name: '[4/6] install dependencies'
         run: pnpm install --frozen-lockfile
-      - name: '[5/5] build'
+      - name: '[5/6] build'
         run: pnpm build
+      - name: '[6/6] upload Build Artifact'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
 
   test-deploy:
     name: Test deployment
@@ -43,6 +47,8 @@ jobs:
     steps:
       - name: Download build output
         uses: actions/download-pages-artifact@v3
+        with:
+          path: build
 
       - name: Serve and test
         run: |
