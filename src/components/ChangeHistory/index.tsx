@@ -26,4 +26,4 @@ export function ChangeHistoryComponent({ changes }: ChangeHistoryType): ReactEle
       </tbody>
     </table>
   );
-};
+}
