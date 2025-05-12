@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="700" height="600" viewBox="0 0 700 600" style="background-color: #ffecdb;">
+  <!-- 人物アイコン：販売者 -->
+  <circle cx="175" cy="80" r="30" fill="none" stroke="black" stroke-width="2" />
+  <path d="M 175 110 L 175 160 M 145 130 L 205 130" fill="none" stroke="black" stroke-width="2" />
+  <text x="175" y="190" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">販売者</text>
+  <text x="175" y="215" text-anchor="middle" font-family="Arial" font-size="14">商品を売りたい</text>
+
+  <!-- 人物アイコン：購入者 -->
+  <circle cx="525" cy="80" r="30" fill="none" stroke="black" stroke-width="2" />
+  <path d="M 525 110 L 525 160 M 495 130 L 555 130" fill="none" stroke="black" stroke-width="2" />
+  <text x="525" y="190" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">購入者</text>
+  <text x="525" y="215" text-anchor="middle" font-family="Arial" font-size="14">商品を買いたい</text>
+
+  <!-- Amazon -->
+  <rect x="300" y="250" width="100" height="100" rx="10" ry="10" fill="white" stroke="black" stroke-width="2" />
+  <text x="350" y="290" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Amazon</text>
+  <text x="350" y="310" text-anchor="middle" font-family="Arial" font-size="12">プラットフォーム</text>
+  <text x="350" y="330" text-anchor="middle" font-family="Arial" font-size="12">運営</text>
+
+  <!-- 倉庫アイコン -->
+  <rect x="100" y="400" width="80" height="60" fill="white" stroke="black" stroke-width="2" />
+  <polygon points="100,400 140,360 180,400" fill="white" stroke="black" stroke-width="2" />
+  <rect x="115" y="420" width="25" height="25" fill="none" stroke="black" stroke-width="1" />
+  <text x="140" y="490" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">FBA倉庫</text>
+
+  <!-- 商品アイコン -->
+  <circle cx="525" cy="400" r="40" fill="#b7e1a1" stroke="black" stroke-width="2" />
+  <text x="525" y="405" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">商品</text>
+
+  <!-- Amazon物流センター -->
+  <rect x="300" y="500" width="100" height="70" fill="white" stroke="black" stroke-width="2" />
+  <rect x="310" y="510" width="20" height="20" fill="none" stroke="black" stroke-width="1" />
+  <rect x="340" y="510" width="20" height="20" fill="none" stroke="black" stroke-width="1" />
+  <rect x="370" y="510" width="20" height="20" fill="none" stroke="black" stroke-width="1" />
+  <rect x="310" y="540" width="20" height="20" fill="none" stroke="black" stroke-width="1" />
+  <rect x="340" y="540" width="20" height="20" fill="none" stroke="black" stroke-width="1" />
+  <rect x="370" y="540" width="20" height="20" fill="none" stroke="black" stroke-width="1" />
+  <text x="350" y="590" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">物流センター</text>
+
+  <!-- 矢印と説明 -->
+  <!-- 販売者 → Amazon -->
+  <path d="M 175 220 L 175 260 L 295 260" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="200" y="250" text-anchor="start" font-family="Arial" font-size="14">出品</text>
+  <circle cx="235" cy="260" r="15" fill="#b7e1a1" stroke="black" stroke-width="1" />
+  <!-- 販売者 → FBA倉庫 -->
+  <path d="M 140 220 L 140 400" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="100" y="300" text-anchor="middle" font-family="Arial" font-size="14">商品</text>
+  <text x="100" y="320" text-anchor="middle" font-family="Arial" font-size="14">発送</text>
+
+  <!-- Amazon → 購入者 -->
+  <path d="M 405 260 L 525 260 L 525 220" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="465" y="250" text-anchor="middle" font-family="Arial" font-size="14">販売</text>
+  <circle cx="465" cy="260" r="15" fill="#b7e1a1" stroke="black" stroke-width="1" />
+
+  <!-- Amazon → 商品 -->
+  <path d="M 400 300 L 525 300 L 525 355" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="465" y="320" text-anchor="middle" font-family="Arial" font-size="14">商品情報</text>
+
+  <!-- FBA倉庫 → 物流センター -->
+  <path d="M 140 460 L 140 535 L 295 535" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="200" y="525" text-anchor="middle" font-family="Arial" font-size="14">在庫移動</text>
+
+  <!-- 物流センター → 購入者 -->
+  <path d="M 405 535 L 580 535 L 580 220" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="500" y="555" text-anchor="middle" font-family="Arial" font-size="14">配送</text>
+
+  <!-- 購入者 → Amazon -->
+  <path d="M 490 190 L 350 190 L 350 245" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <text x="400" y="180" text-anchor="middle" font-family="Arial" font-size="14">支払い</text>
+  <text x="400" y="200" text-anchor="middle" font-family="Arial" font-size="14">(¥)</text>
+
+  <!-- Amazon → 販売者 -->
+  <path d="M 350 155 L 350 130 L 210 130" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  <text x="280" y="120" text-anchor="middle" font-family="Arial" font-size="14">売上金</text>
+  <text x="280" y="140" text-anchor="middle" font-family="Arial" font-size="14">(手数料差引後)</text>
+
+  <!-- マーケットプレイス手数料の説明 -->
+  <rect x="450" y="440" width="180" height="70" fill="#ffcccc" stroke="black" stroke-width="1" rx="5" ry="5" />
+  <text x="540" y="465" text-anchor="middle" font-family="Arial" font-size="14">販売手数料</text>
+  <text x="540" y="485" text-anchor="middle" font-family="Arial" font-size="14">販売価格の8-15%</text>
+
+  <!-- FBAの説明 -->
+  <rect x="50" y="520" width="180" height="60" fill="#ffcccc" stroke="black" stroke-width="1" rx="5" ry="5" />
+  <text x="140" y="545" text-anchor="middle" font-family="Arial" font-size="14">FBA(フルフィルメント)</text>
+  <text x="140" y="565" text-anchor="middle" font-family="Arial" font-size="14">保管・配送代行サービス</text>
+
+  <!-- 矢印マーカー -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Amazonのロゴ -->
+  <g transform="translate(320, 275) scale(0.03)">
+    <path d="M1858.7,806c-48,35.3-117.4,54-177.3,54c-84,0-159.6-31-216.8-82.7c-4.5-4-0.5-9.5,4.9-6.4 c62.3,36,139.2,57.7,218.6,57.7c53.7,0,112.7-11.1,167.1-34c8.2-3.5,15,5.3,7.1,11.4H1858.7z" fill="black"/>
+    <path d="M1900,758.2c-6.1-7.8-40.6-3.7-56.1-1.9c-4.7,0.6-5.4-3.5-1.2-6.5c27.5-19.3,72.6-13.7,77.8-7.3 c5.2,6.5-1.4,51.1-26.8,72.4c-3.9,3.3-7.6,1.5-5.9-2.8C1893.6,797.1,1906.1,766,1900,758.2L1900,758.2z" fill="black"/>
+    <path d="M1696.1,482.8v-58.5c0-8.9,6.7-14.8,14.8-14.8h263.1c8.4,0,15.1,6,15.1,14.8V467c0,8.4-7.2,19.4-19.7,36.8 l-136.2,194.6c50.6-1.2,104-6.3,149.8-31.5c10.3-5.7,13.1-14,13.9-22.2v-60.6c0-8.3,6.9-15.1,15.3-15.1h50.4 c8.6,0,15.7,6.7,15.7,15.1v101.4c0,8-5.5,17.7-15.1,24.3c-39.7,33.1-86.5,48.6-127.9,60.5c-9.7,2.7-15.7,5.4-22.7,9.9 c-15.1,10-38.6,15.7-56.3,15.7H1710c-8.3,0-15.1-6.7-15.1-15.1v-56.8c0-10.8,0.8-18.5,7.8-28.7L1855,537h-144.3 C1702.6,497.9,1695.9,491.2,1696.1,482.8z" fill="black"/>
+    <path d="M676.3,802.8h-54.3c-5.2-0.3-9.3-4.3-9.7-9.2V488.9c0-5.6,4.7-10,10.4-10h50.6c5.2,0.3,9.5,4.3,9.9,9.3v39.8h1 c13.2-35.2,38.1-51.6,71.6-51.6c34,0,55.3,16.4,70.6,51.6c13.2-35.2,43.1-51.6,75.1-51.6c22.8,0,47.6,9.4,62.8,30.4 c17.2,23.3,13.7,57.1,13.7,86.9v174.9c0,5.6-4.7,10-10.4,10h-54.1c-5.4-0.3-9.7-4.7-9.7-10V577.7c0-13,1.2-45.5-1.7-57.9 c-4.5-20.8-18-26.6-35.4-26.6c-14.6,0-29.8,9.7-36,25.3c-6.2,15.6-5.6,41.6-5.6,59.2v215.2c0,5.6-4.7,10-10.4,10h-54.1 c-5.5-0.3-9.7-4.7-9.7-10V577.7c0-34.4,5.7-85-36.9-85c-43.1,0-41.4,49.3-41.4,85v215.2C686.8,798.4,682,802.8,676.3,802.8z" fill="black"/>
+    <path d="M2139,469.3c80.3,0,123.7,68.9,123.7,156.6c0,84.7-48,152-123.7,152c-78.8,0-121.8-68.9-121.8-154.8 C2017.2,537.3,2060.9,469.3,2139,469.3z M2139,517.7c-39.9,0-42.4,54.4-42.4,88.3c0,33.9-0.5,106.4,42,106.4 c42,0,44.1-58.7,44.1-94.3c0-23.5-1-51.6-8.1-73.9C2167.1,526.6,2154.9,517.7,2139,517.7z" fill="black"/>
+    <path d="M2469.9,802.8h-53.9c-5.4-0.3-9.7-4.7-9.7-10V489.6c0.4-5,4.8-8.9,10-8.9h50.2c4.5,0.2,8.3,3.3,9.3,7.5v46.9h1 c15.1-38,36.3-56.3,73.6-56.3c24.2,0,47.8,8.7,62.9,32.7c14.1,22.2,14.1,59.6,14.1,86.4v173.3c-0.6,4.8-4.9,8.6-10,8.6h-54.3 c-4.8-0.3-8.8-3.9-9.5-8.6V611.7c0-33.9,3.9-83.7-37.9-83.7c-14.7,0-28.2,9.9-35,24.8c-8.5,19-9.7,37.9-9.7,58.9v181.2 C2480,798.4,2475.3,802.8,2469.9,802.8L2469.9,802.8z" fill="black"/>
+    <path d="M1082.1,651.2c0,21.2,0.5,38.9-10.2,57.7c-8.6,15.4-22.3,24.8-37.6,24.8c-20.8,0-33-15.9-33-39.4 c0-46.3,41.5-54.7,80.8-54.7V651.2z M1136.9,802.4c-3.6,3.2-8.7,3.4-12.7,1.3c-17.9-14.9-21.1-21.8-30.9-35.9 c-29.5,30.1-50.5,39.1-88.7,39.1c-45.3,0-80.5-28-80.5-83.8c0-43.6,23.6-73.4,57.4-87.8c29.2-12.8,70-15.1,101.2-18.6v-7 c0-12.8,1-28-6.5-39.1c-6.5-9.9-19.1-14-30.2-14c-20.5,0-38.8,10.5-43.3,32.3c-0.9,4.8-4.4,9.5-9.2,9.7l-52.5-5.7 c-4.4-1-9.3-4.6-8.1-11.4c12.1-63.9,69.8-83.1,121.3-83.1c26.4,0,60.9,7,81.7,27c26.4,24.6,23.9,57.4,23.9,93.1v84.4 c0,25.3,10.5,36.4,20.3,50.1c3.4,4.8,4.2,10.6-0.2,14.2C1168,775.9,1148.7,794.2,1136.9,802.4L1136.9,802.4z" fill="black"/>
+    <path d="M345.5,651.2c0,21.2,0.5,38.9-10.2,57.7c-8.6,15.4-22.2,24.8-37.6,24.8c-20.8,0-33-15.9-33-39.4 c0-46.3,41.5-54.7,80.8-54.7V651.2z M400.3,802.4c-3.6,3.2-8.7,3.4-12.7,1.3c-17.9-14.9-21.1-21.8-30.9-35.9 c-29.5,30.1-50.5,39.1-88.7,39.1c-45.3,0-80.5-28-80.5-83.8c0-43.6,23.6-73.4,57.4-87.8c29.2-12.8,70-15.1,101.2-18.6v-7 c0-12.8,1-28-6.5-39.1c-6.5-9.9-19.1-14-30.2-14c-20.5,0-38.8,10.5-43.3,32.3c-0.9,4.8-4.4,9.5-9.2,9.7l-52.5-5.7 c-4.4-1-9.3-4.6-8.1-11.4c12.1-63.9,69.8-83.1,121.3-83.1c26.4,0,60.9,7,81.7,27c26.4,24.6,23.9,57.4,23.9,93.1v84.4 c0,25.3,10.5,36.4,20.3,50.1c3.4,4.8,4.2,10.6-0.2,14.2C431.4,775.9,412.1,794.2,400.3,802.4L400.3,802.4z" fill="black"/>
+  </g>
+</svg>

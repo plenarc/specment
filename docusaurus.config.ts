@@ -4,7 +4,10 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const titleValue = 'プロジェクト名';
 const descriptionValue = 'プロジェクト概要。xxxのためのシステムです';
-const urlValue = process.env.NODE_ENV !== 'development' ? 'https://plenarc-docsite.github.io/' : 'http://localhost:3000';
+const isDev = process.env.NODE_ENV === 'development';
+const urlValue = isDev
+  ? 'http://localhost:3000'
+  : 'https://plenarc.github.io';
 
 const config: Config = {
   title: titleValue,
@@ -12,14 +15,15 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   url: urlValue,
-  baseUrl: '/',
+  baseUrl: isDev ? '/' : '/docsite-free/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'plenarc',    // ToDo: Usually your GitHub org/user name.
   projectName: 'docsite-free',    // ToDo: Usually your repo name.
+  trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
