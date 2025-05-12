@@ -19,38 +19,35 @@ jobs:
   test-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: '[1/8] checkout code'
+      - name: '[1/7] checkout code'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: '[2/8] setup node.js'
+      - name: '[2/7] setup node.js'
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: '[3/8] setup pnpm'
+      - name: '[3/7] setup pnpm'
         uses: pnpm/action-setup@v3
         with:
           version: 10
 
-      - name: '[4/8] install dependencies'
+      - name: '[4/7] install dependencies'
         run: pnpm install --frozen-lockfile
 
-      - name: '[5/8] build'
+      - name: '[5/7] build'
         run: pnpm build
 
-      - name: '[6/8] serve site in background'
+      - name: '[6/7] Serve site in background'
         run: |
-          pnpm exec docusaurus serve --build build --port 3000 &
-          # give it a few seconds to start
-          sleep 5
+          pnpm exec docusaurus serve --dir build --port 3000 &
+          # Wait for server to start
+          npx wait-on http://localhost:3000
 
-      - name: '[7/8] smoke test (HTTP 200)'
+      - name: '[7/7] Smoke test (HTTP 200)'
         run: |
-          if curl --fail http://localhost:3000; then
-            echo 'Smoke test passed'
-          else
-            echo 'Smoke test failed' >&2
-            exit 1
-          fi
+          curl --fail http://localhost:3000 \
+            && echo 'Smoke test passed' \
+            || { echo 'Smoke test failed' >&2; exit 1; }
