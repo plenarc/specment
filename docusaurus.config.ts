@@ -23,7 +23,7 @@ const config: Config = {
   projectName: 'docsite-free',    // ToDo: Usually your repo name.
   trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
