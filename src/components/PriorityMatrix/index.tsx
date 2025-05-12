@@ -1,12 +1,12 @@
+import type { PriorityScale } from '@site/src/types/requirements';
 /**
  * Priority Matrix Component.
  * @module PriorityMatrix
  * @example
- * import { TBD } from '@site/src/components/TBD';
- * <TBD/>
+ * import { PriorityMatrix } from '@site/src/components/PriorityMatrix';
+ * <PriorityMatrix urgency={frontMatter.urgency} importance={frontMatter.importance} />
  */
-import React from 'react';
-import type { PriorityScale } from '@site/src/types/requirements';
+import type { ReactElement } from 'react';
 
 interface PriorityMatrixProps {
   importance: PriorityScale;
@@ -20,28 +20,34 @@ const getBackgroundColor = (value: number, selectedValue: number): string => {
   return 'rgba(40, 167, 69, 0.2)';
 };
 
-export const PriorityMatrix: React.FC<PriorityMatrixProps> = ({ importance, urgency }) => {
+export function PriorityMatrix({ importance, urgency }: PriorityMatrixProps) : ReactElement {
   return (
-    <div style={{
-      marginTop: '1rem',
-      color: 'var(--ifm-color-content)'
-    }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '80px repeat(9, 40px)',
-        gap: '4px',
-        fontSize: '0.875rem',
-      }}>
+    <div
+      style={{
+        marginTop: '1rem',
+        color: 'var(--ifm-color-content)',
+      }}
+    >
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '80px repeat(9, 40px)',
+          gap: '4px',
+          fontSize: '0.875rem',
+        }}
+      >
         {/* 緊急度の行 */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '4px'
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '4px',
+          }}
+        >
           緊急度
         </div>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
           <div
             key={`urgency-${num}`}
             style={{
@@ -59,15 +65,17 @@ export const PriorityMatrix: React.FC<PriorityMatrixProps> = ({ importance, urge
         ))}
 
         {/* 重要度の行 */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '4px'
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '4px',
+          }}
+        >
           重要度
         </div>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
           <div
             key={`importance-${num}`}
             style={{
