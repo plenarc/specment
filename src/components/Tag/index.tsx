@@ -17,7 +17,7 @@ export function Tag({ name, link }: TagProps): ReactElement {
       </a>
     </li>
   );
-};
+}
 
 export function TagList({ tags }: { tags: string[] }): ReactElement {
   return (
@@ -32,4 +32,4 @@ export function TagList({ tags }: { tags: string[] }): ReactElement {
       </div>
     </div>
   );
-};
+}

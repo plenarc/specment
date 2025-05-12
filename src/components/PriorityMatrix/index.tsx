@@ -20,7 +20,7 @@ const getBackgroundColor = (value: number, selectedValue: number): string => {
   return 'rgba(40, 167, 69, 0.2)';
 };
 
-export function PriorityMatrix({ importance, urgency }: PriorityMatrixProps) : ReactElement {
+export function PriorityMatrix({ importance, urgency }: PriorityMatrixProps): ReactElement {
   return (
     <div
       style={{
@@ -94,4 +94,4 @@ export function PriorityMatrix({ importance, urgency }: PriorityMatrixProps) : R
       </div>
     </div>
   );
-};
+}

@@ -31,5 +31,12 @@
       "quoteStyle": "single",
       "trailingCommas": "all"
     }
+  },
+  "css": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "quoteStyle": "single"
+    }
   }
 }
