@@ -16,8 +16,9 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'plenarc',    // ToDo: Usually your GitHub org/user name.
-  projectName: 'docsite-free',    // ToDo: Usually your repo name.
+  organizationName: 'plenarc.github.io',    // ToDo: Usually your GitHub org/user name.
+  projectName: 'docsite-free',              // ToDo: Usually your repo name.
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
