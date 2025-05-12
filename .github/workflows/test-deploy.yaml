@@ -3,13 +3,18 @@ name: Test deployment
 # https://docs.github.com/ja/actions/writing-workflows/workflow-syntax-for-github-actions#on
 
 on:
-  push:
+  pull_request:
     branches:
       - develop
     types:
       - opened
       - synchronize
       - reopened
+  workflow_dispatch:
+    inputs:
+      target-branch:
+        required: true
+        default: develop
 jobs:
   build:
     runs-on: ubuntu-latest
