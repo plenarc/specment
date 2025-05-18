@@ -2,11 +2,17 @@ import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
+// GitHub pages deployment config.
+// ToDo: The first part that needs to be edited.
 const titleValue = 'プロジェクト名';
 const descriptionValue = 'プロジェクト概要。xxxのためのシステムです';
-const urlValue = 'https://plenarc.github.io';
-const baseUrlValue = '/docsite-free/';
+const organizationValue = 'plenarc';
+const projectValue = 'specment';
+const urlValue = `https://${organizationValue}.github.io`;
+const baseUrlValue = `/${projectValue}/`;
 
+// ToDo: Since I don't think GitHub Pages will be used in actual operation, this area needs to be edited according to the environment.
+// ToDo: 実運用時にGitHub Pagesは使わないと思うので、この辺りは環境に合わせて要編集する
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 
 const config: Config = {
@@ -17,10 +23,8 @@ const config: Config = {
   url: isGithubActions ? urlValue : 'http://localhost:3000',
   baseUrl: isGithubActions ? baseUrlValue : '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'plenarc', // ToDo: Usually your GitHub org/user name.
-  projectName: 'docsite-free', // ToDo: Usually your repo name.
+  organizationName: organizationValue,
+  projectName: projectValue,
   trailingSlash: false,
 
   onBrokenLinks: 'warn',
@@ -117,7 +121,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ${titleValue}, Inc. Built with Docsite.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${titleValue}, Inc. Built with Specment.`,
     },
     prism: {
       theme: prismThemes.github,
