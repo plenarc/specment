@@ -1,5 +1,7 @@
-# docsite-free
-https://plenarc.github.io/docsite-free/
+# Specment
+https://plenarc.github.io/specment/
+
+'specification' + 'document' => specment
 
 > [!WARNING]
 > まだ全般的に作成中
@@ -15,6 +17,22 @@ pnpm add -D typescript @types/react @types/node
 ```bash
 pnpm run check
 ```
+
+### lint
+```bash
+pnpm run lint
+or
+pnpm run lint:fix
+```
+
+### localでの動作確認
+```bash
+pnpm run start
+```
+
+### ビルドと開発サーバーの起動
+```bash
+=======
 
 ### lint
 ```bash
