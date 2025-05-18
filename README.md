@@ -1,5 +1,7 @@
-# docsite-free
-https://plenarc.github.io/docsite-free/
+# Specment
+https://plenarc.github.io/specment/
+
+'specification' + 'document' => specment
 
 > [!WARNING]
 > まだ全般的に作成中
