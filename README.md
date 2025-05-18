@@ -32,6 +32,22 @@ pnpm run start
 
 ### ビルドと開発サーバーの起動
 ```bash
+=======
+
+### lint
+```bash
+pnpm run lint
+or
+pnpm run lint:fix
+```
+
+### localでの動作確認
+```bash
+pnpm run start
+```
+
+### ビルドと開発サーバーの起動
+```bash
 pnpm run build
 pnpm run serve
 ```
