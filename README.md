@@ -3,17 +3,41 @@ https://plenarc.github.io/specment/
 
 'specification' + 'document' => specment
 
+Template for making a site for documentation of a development project using Docusaurus.
+
 > [!WARNING]
-> まだ全般的に作成中
+> en: Still being created in ge
+> jp: まだ全般的に作成中
 
-## 依存関係のインストール
-pnpm add -D @biomejs/biome
+## Preparation - 前準備
 
-## TypeScript関連
-pnpm add -D typescript @types/react @types/node
+> [!INFO]
+> 1. Recommended: mise
+>     1. GitHub: https://github.com/jdx/mise
 
-## 利用各種
-### フォーマットの確認
+### Tools to use
+1. Node.js
+    1. LTS Recommended.
+    1. ```bash
+        mise use node@lts
+        ```
+1. pnpm
+    1. ```bash
+        mise use node@latest
+        ```
+
+### Install
+```bash
+pnpm install
+```
+
+## Checking if it works locally - localでの動作確認
+```bash
+pnpm run start
+```
+
+## Pre-commit checks
+### formatter
 ```bash
 pnpm run check
 ```
@@ -25,34 +49,16 @@ or
 pnpm run lint:fix
 ```
 
-### localでの動作確認
-```bash
-pnpm run start
-```
-
-### ビルドと開発サーバーの起動
-```bash
-=======
-
-### lint
-```bash
-pnpm run lint
-or
-pnpm run lint:fix
-```
-
-### localでの動作確認
-```bash
-pnpm run start
-```
-
-### ビルドと開発サーバーの起動
+### Build and start development server - ビルドと開発サーバーの起動
 ```bash
 pnpm run build
 pnpm run serve
 ```
 
-### 新しい要求仕様ファイルの作成例
+## Example of creating a new requirements specification file
+
+ja: 新しい要求仕様ファイルの作成例
+
 ```bash
 cd docs/02-requirements/functional/
 cp _req-template.mdx req-002.mdx

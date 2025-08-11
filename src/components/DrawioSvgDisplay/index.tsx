@@ -18,7 +18,7 @@ export interface DrawioSvgDisplayProps {
   readonly width?: string | number;
   /** 高さ。数値なら px 扱い */
   readonly height?: string | number;
-};
+}
 
 function unwrapModule(mod: unknown): string {
   let v: unknown = mod;
@@ -34,22 +34,17 @@ function unwrapModule(mod: unknown): string {
 }
 
 export function DrawioSvgDisplay(props: DrawioSvgDisplayProps): ReactElement {
-  const {
-    src,
-    alt = 'drawio svg',
-    width = '100%',
-    height = 'auto',
-  } = props;
+  const { src, alt = 'drawio svg', width = '100%', height = 'auto' } = props;
 
-   const url = unwrapModule(src);
+  const url = unwrapModule(src);
 
   return (
     <object
-      type='image/svg+xml'
+      type="image/svg+xml"
       data={url}
       width={width}
       height={height}
-      style={{display: 'block', margin: '0 auto'}}
+      style={{ display: 'block', margin: '0 auto' }}
     >
       {/* SVG が読み込めなかった場合のフォールバック */}
       <img src={url} alt={alt} width={width} height={height} />

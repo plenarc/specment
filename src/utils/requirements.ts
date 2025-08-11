@@ -1,6 +1,6 @@
 import type { Requirement } from '@site/types/requirements';
 
-export const validateRequirement = (req: Requirement): boolean => {
+export const validateRequirement = (_req: Requirement): boolean => {
   // 要求の妥当性チェックロジック
   return true;
 };
