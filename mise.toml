@@ -1,0 +1,4 @@
+[tools]
+nodejs = 'lts'
+pnpm = 'latest'
+
