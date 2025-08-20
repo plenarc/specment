@@ -13,6 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       target-branch:
+        description: 'Target branch for test deployment'
         required: true
         default: develop
 jobs:
@@ -38,11 +39,11 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: '[5/7] build'
-        run: pnpm build
+        run: pnpm --filter apps/docs build
 
       - name: '[6/7] Serve site in background'
         run: |
-          pnpm exec docusaurus serve --dir build --port 3000 &
+          pnpm --filter apps/docs exec docusaurus serve --dir build --port 3000 &
           # Wait for server to start
           npx wait-on http://localhost:3000
 
