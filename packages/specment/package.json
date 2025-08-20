@@ -1,0 +1,58 @@
+{
+  "name": "@plenarc/specment",
+  "version": "0.1.0",
+  "description": "A CLI tool for managing specification documents and templates",
+  "type": "module",
+  "main": "./bin/specment.js",
+  "bin": {
+    "specment": "./bin/specment.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": [
+    "cli",
+    "documentation",
+    "specification",
+    "template",
+    "generator"
+  ],
+  "author": "Plenarc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plenarc/specment.git",
+    "directory": "packages/specment"
+  },
+  "bugs": {
+    "url": "https://github.com/plenarc/specment/issues"
+  },
+  "homepage": "https://github.com/plenarc/specment#readme",
+  "engines": {
+    "node": ">=22.0"
+  },
+  "files": [
+    "bin",
+    "templates",
+    "recipes",
+    "migrations",
+    "assets",
+    "README.md"
+  ],
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.0",
+    "fs-extra": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.0",
+    "@types/inquirer": "^9.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}

@@ -12,10 +12,15 @@
     "docs:serve": "pnpm --filter @specment/docs serve",
     "specment:build": "pnpm --filter @plenarc/specment build",
     "build:all": "pnpm --filter @plenarc/specment build && pnpm --filter @specment/docs build",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish",
+    "changeset:status": "changeset status"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.4",
+    "@changesets/cli": "^2.29.6",
     "@types/node": "^24.2.1",
     "typescript": "~5.9.2"
   },
