@@ -5,10 +5,10 @@
     "src/content/docs/en/reference/error-reference.mdx": true
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[mdx]": {
     "files.trimTrailingWhitespace": false
