@@ -39,13 +39,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: '[5/7] build'
-        run: pnpm --filter apps/docs build
+        run: pnpm --filter @specment/docs build
 
       - name: '[6/7] Serve site in background'
         run: |
-          pnpm --filter apps/docs exec docusaurus serve --dir build --port 3000 &
+          pnpm --filter @specment/docs exec docusaurus serve --dir build --port 3000 &
           # Wait for server to start
-          npx wait-on http://localhost:3000
+          pnpm dlx wait-on http://localhost:3000
 
       - name: '[7/7] Smoke test (HTTP 200)'
         run: |
