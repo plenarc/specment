@@ -1,0 +1,5 @@
+{
+  "enable-proposed-api": [
+    "jeanp413.open-remote-wsl",
+  ]
+}
