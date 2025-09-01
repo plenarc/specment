@@ -1,18 +1,13 @@
 {
   "name": "@plenarc/specment",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "A CLI tool for managing specification documents and templates",
   "type": "module",
+  "author": "Plenarc",
+  "license": "MIT",
   "main": "./bin/specment.js",
   "bin": {
     "specment": "./bin/specment.js"
-  },
-  "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "test": "vitest",
-    "lint": "eslint src/**/*.ts",
-    "format": "prettier --write src/**/*.ts"
   },
   "keywords": [
     "cli",
@@ -21,8 +16,7 @@
     "template",
     "generator"
   ],
-  "author": "Plenarc",
-  "license": "MIT",
+  "homepage": "https://github.com/plenarc/specment#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/plenarc/specment.git",
@@ -31,7 +25,43 @@
   "bugs": {
     "url": "https://github.com/plenarc/specment/issues"
   },
-  "homepage": "https://github.com/plenarc/specment#readme",
+
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "check": "biome check --apply .",
+    "format": "biome format . --write",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint . --fix",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.0",
+    "fs-extra": "^11.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.1.4",
+    "@types/fs-extra": "^11.0.0",
+    "@types/inquirer": "^9.0.0",
+    "@types/node": "^24.2.1",
+    "typescript": "~5.9.2",
+    "vitest": "^1.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
   "engines": {
     "node": ">=22.0"
   },
@@ -43,16 +73,4 @@
     "assets",
     "README.md"
   ],
-  "dependencies": {
-    "commander": "^11.0.0",
-    "chalk": "^5.3.0",
-    "inquirer": "^9.2.0",
-    "fs-extra": "^11.1.0"
-  },
-  "devDependencies": {
-    "@types/fs-extra": "^11.0.0",
-    "@types/inquirer": "^9.0.0",
-    "typescript": "^5.0.0",
-    "vitest": "^1.0.0"
-  }
 }

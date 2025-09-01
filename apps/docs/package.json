@@ -1,7 +1,9 @@
 {
   "name": "@specment/docs",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
+  "author": "Plenarc",
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -12,7 +14,16 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "check": "biome check --apply .",
+    "format": "biome format . --write",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint . --fix",
+    "typecheck": "tsc",
+    "spec:init": "specment init",
+    "spec:create": "specment create",
+    "spec:validate": "specment validate",
+    "spec:generate": "specment generate",
+    "spec:list": "specment list"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.1",
@@ -26,9 +37,11 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.1.4",
     "@docusaurus/module-type-aliases": "3.8.1",
     "@docusaurus/tsconfig": "3.8.1",
     "@docusaurus/types": "3.8.1",
+    "@plenarc/specment": "workspace:*",
     "@types/node": "^24.2.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

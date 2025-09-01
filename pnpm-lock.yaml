@@ -51,6 +51,9 @@ importers:
         specifier: ^19.0.0
         version: 19.1.1(react@19.1.1)
     devDependencies:
+      '@biomejs/biome':
+        specifier: ^2.1.4
+        version: 2.1.4
       '@docusaurus/module-type-aliases':
         specifier: 3.8.1
         version: 3.8.1(acorn@8.15.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -60,6 +63,9 @@ importers:
       '@docusaurus/types':
         specifier: 3.8.1
         version: 3.8.1(acorn@8.15.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@plenarc/specment':
+        specifier: workspace:*
+        version: link:../../packages/specment
       '@types/node':
         specifier: ^24.2.1
         version: 24.2.1
@@ -88,14 +94,20 @@ importers:
         specifier: ^9.2.0
         version: 9.3.7
     devDependencies:
+      '@biomejs/biome':
+        specifier: ^2.1.4
+        version: 2.1.4
       '@types/fs-extra':
         specifier: ^11.0.0
         version: 11.0.4
       '@types/inquirer':
         specifier: ^9.0.0
         version: 9.0.9
+      '@types/node':
+        specifier: ^24.2.1
+        version: 24.2.1
       typescript:
-        specifier: ^5.0.0
+        specifier: ~5.9.2
         version: 5.9.2
       vitest:
         specifier: ^1.0.0

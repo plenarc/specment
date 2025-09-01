@@ -7,7 +7,7 @@ This monorepo uses Changesets to manage versioning and publishing of packages. T
 ## Configuration
 
 - **Access**: Public packages (can be published to npm)
-- **Base Branch**: develop
+- **Base Branch**: main
 - **Ignored Packages**: @specment/docs (documentation app, not published)
 - **Internal Dependencies**: Patch updates for workspace dependencies
 
