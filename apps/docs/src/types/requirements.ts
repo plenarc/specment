@@ -11,3 +11,11 @@ export interface ChangeHistory {
   author: string;
   changes: string;
 }
+
+export interface Requirement {
+  id: string;
+  title: string;
+  description: string;
+  priority: PriorityLevel;
+  changeHistory: ChangeHistory[];
+}

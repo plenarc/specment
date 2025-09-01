@@ -1,0 +1,123 @@
+---
+sidebar_position: {{ position }}
+---
+
+# {{ title }}
+
+## 概要
+
+{{ description }}
+
+## テーブル情報
+
+- **テーブル名**: {{ table_name }}
+- **物理名**: {{ physical_name }}
+- **用途**: {{ purpose }}
+- **データ保持期間**: {{ retention_period }}
+
+## テーブル構造
+
+| カラム名 | 物理名 | データ型 | 桁数 | NULL | PK | FK | デフォルト値 | 説明 |
+|----------|--------|----------|------|------|----|----|--------------|------|
+| {{ col_1_name }} | {{ col_1_physical }} | {{ col_1_type }} | {{ col_1_length }} | {{ col_1_null }} | {{ col_1_pk }} | {{ col_1_fk }} | {{ col_1_default }} | {{ col_1_desc }} |
+| {{ col_2_name }} | {{ col_2_physical }} | {{ col_2_type }} | {{ col_2_length }} | {{ col_2_null }} | {{ col_2_pk }} | {{ col_2_fk }} | {{ col_2_default }} | {{ col_2_desc }} |
+
+## インデックス
+
+| インデックス名 | 種類 | カラム | 説明 |
+|----------------|------|--------|------|
+| {{ idx_1_name }} | {{ idx_1_type }} | {{ idx_1_columns }} | {{ idx_1_desc }} |
+| {{ idx_2_name }} | {{ idx_2_type }} | {{ idx_2_columns }} | {{ idx_2_desc }} |
+
+## 制約
+
+### 主キー制約
+
+- **制約名**: {{ pk_constraint_name }}
+- **対象カラム**: {{ pk_columns }}
+
+### 外部キー制約
+
+| 制約名 | 対象カラム | 参照テーブル | 参照カラム | 削除時動作 |
+|--------|------------|--------------|------------|------------|
+| {{ fk_1_name }} | {{ fk_1_column }} | {{ fk_1_ref_table }} | {{ fk_1_ref_column }} | {{ fk_1_action }} |
+
+### チェック制約
+
+| 制約名 | 対象カラム | 制約条件 |
+|--------|------------|----------|
+| {{ chk_1_name }} | {{ chk_1_column }} | {{ chk_1_condition }} |
+
+## データ例
+
+| {{ col_1_name }} | {{ col_2_name }} | {{ col_3_name }} |
+|------------------|------------------|------------------|
+| {{ sample_1_1 }} | {{ sample_1_2 }} | {{ sample_1_3 }} |
+| {{ sample_2_1 }} | {{ sample_2_2 }} | {{ sample_2_3 }} |
+
+## 関連テーブル
+
+```plantuml
+@startuml
+!theme plain
+skinparam backgroundColor white
+
+entity "{{ table_name }}" {
+  * {{ pk_column }} : {{ pk_type }}
+  --
+  {{ other_columns }}
+}
+
+entity "{{ related_table_1 }}" {
+  * {{ rel_pk_1 }} : {{ rel_type_1 }}
+  --
+  {{ rel_columns_1 }}
+}
+
+{{ table_name }} ||--o{ {{ related_table_1 }} : {{ relationship_1 }}
+@enduml
+```
+
+## アクセスパターン
+
+### 主要なクエリ
+
+1. **{{ query_1_name }}**
+   ```sql
+   {{ query_1_sql }}
+   ```
+
+2. **{{ query_2_name }}**
+   ```sql
+   {{ query_2_sql }}
+   ```
+
+### パフォーマンス要件
+
+- 検索応答時間: {{ search_time }}
+- 更新処理時間: {{ update_time }}
+- 同時接続数: {{ concurrent_users }}
+
+## 運用仕様
+
+### バックアップ
+
+- 頻度: {{ backup_frequency }}
+- 保持期間: {{ backup_retention }}
+
+### メンテナンス
+
+- 統計情報更新: {{ stats_update }}
+- インデックス再構築: {{ index_rebuild }}
+
+## 関連文書
+
+- [関連テーブル](./{{ related_table }}.mdx)
+- [関連画面](../screens/{{ related_screen }}.mdx)
+- [データベース設計](../rules/database.mdx)
+
+## 変更履歴
+
+| 日付 | バージョン | 変更内容 | 変更者 |
+|------|------------|----------|--------|
+| {{ date }} | 1.0 | 初版作成 | {{ author }} |

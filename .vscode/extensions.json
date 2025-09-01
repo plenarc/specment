@@ -1,3 +1,7 @@
 {
-  "recommendations": ["biomejs.biome", "hediet.vscode-drawio", "unifiedjs.vscode-mdx"]
+  "recommendations": [
+    "biomejs.biome",
+    "hediet.vscode-drawio",
+    "unifiedjs.vscode-mdx"
+  ]
 }
