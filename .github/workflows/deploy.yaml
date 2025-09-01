@@ -1,5 +1,5 @@
 name: Deploy to GitHub Pages
-# 詳細は公式サイトを参照
+# See official website for details - 詳細は公式サイトを参照
 # https://docs.github.com/ja/actions/writing-workflows/workflow-syntax-for-github-actions
 
 on:
