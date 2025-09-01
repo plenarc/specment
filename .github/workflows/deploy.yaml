@@ -1,5 +1,5 @@
 name: Deploy to GitHub Pages
-# 詳細は公式サイトを参照
+# See official website for details - 詳細は公式サイトを参照
 # https://docs.github.com/ja/actions/writing-workflows/workflow-syntax-for-github-actions
 
 on:
@@ -31,12 +31,12 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: '[5/6] build'
-        run: pnpm build
+        run: pnpm --filter @specment/docs build
 
       - name: '[6/6] upload Build Artifact'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: apps/docs/build
 
   deploy:
     name: deploy to GitHub Pages

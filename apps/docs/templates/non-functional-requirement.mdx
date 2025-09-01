@@ -1,0 +1,66 @@
+---
+sidebar_position: {{ position }}
+---
+
+# {{ title }}
+
+## 概要
+
+{{ description }}
+
+## 要件分類
+
+- **カテゴリ**: {{ category }}
+- **優先度**: {{ priority }}
+- **重要度**: {{ importance }}
+
+## 詳細要件
+
+### 測定可能な基準
+
+| 項目 | 基準値 | 測定方法 |
+|------|--------|----------|
+| {{ metric_1 }} | {{ value_1 }} | {{ method_1 }} |
+| {{ metric_2 }} | {{ value_2 }} | {{ method_2 }} |
+
+### 制約条件
+
+- 制約1: {{ constraint_1 }}
+- 制約2: {{ constraint_2 }}
+
+## 検証方法
+
+### テスト手法
+
+1. {{ test_method_1 }}
+2. {{ test_method_2 }}
+
+### 合格基準
+
+- [ ] 基準1: {{ pass_criteria_1 }}
+- [ ] 基準2: {{ pass_criteria_2 }}
+
+## 影響範囲
+
+### システムコンポーネント
+
+- コンポーネント1: {{ component_1 }}
+- コンポーネント2: {{ component_2 }}
+
+### 関連要件
+
+- [機能要件](../functional/{{ related_functional }}.mdx)
+- [他の非機能要件](./{{ related_nfr }}.mdx)
+
+## リスクと対策
+
+| リスク | 影響度 | 対策 |
+|--------|--------|------|
+| {{ risk_1 }} | {{ impact_1 }} | {{ mitigation_1 }} |
+| {{ risk_2 }} | {{ impact_2 }} | {{ mitigation_2 }} |
+
+## 変更履歴
+
+| 日付 | バージョン | 変更内容 | 変更者 |
+|------|------------|----------|--------|
+| {{ date }} | 1.0 | 初版作成 | {{ author }} |
