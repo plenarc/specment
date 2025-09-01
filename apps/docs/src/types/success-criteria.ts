@@ -11,8 +11,4 @@ export interface SuccessCriterion {
   priority: Priority;
 }
 
-// モジュール宣言
-declare module '*.tsv' {
-  const content: string;
-  export default content;
-}
+

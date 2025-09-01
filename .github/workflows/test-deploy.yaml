@@ -1,5 +1,5 @@
 name: Test deployment
-# 詳細は公式サイトを参照
+# See official website for details - 詳細は公式サイトを参照
 # https://docs.github.com/ja/actions/writing-workflows/workflow-syntax-for-github-actions
 
 on:
@@ -13,6 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       target-branch:
+        description: 'Target branch for test deployment'
         required: true
         default: develop
 jobs:
@@ -38,13 +39,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: '[5/7] build'
-        run: pnpm build
+        run: pnpm --filter @specment/docs build
 
       - name: '[6/7] Serve site in background'
         run: |
-          pnpm exec docusaurus serve --dir build --port 3000 &
+          pnpm --filter @specment/docs exec docusaurus serve --dir build --port 3000 &
           # Wait for server to start
-          npx wait-on http://localhost:3000
+          pnpm dlx wait-on http://localhost:3000
 
       - name: '[7/7] Smoke test (HTTP 200)'
         run: |
