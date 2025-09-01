@@ -25,7 +25,6 @@
   "bugs": {
     "url": "https://github.com/plenarc/specment/issues"
   },
-
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -72,5 +71,5 @@
     "migrations",
     "assets",
     "README.md"
-  ],
+  ]
 }
