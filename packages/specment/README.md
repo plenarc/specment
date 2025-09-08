@@ -1,5 +1,9 @@
 # @plenarc/specment
 
+[![npm version](https://badge.fury.io/js/@plenarc%2Fspecment.svg)](https://badge.fury.io/js/@plenarc%2Fspecment)
+[![npm downloads](https://img.shields.io/npm/dm/@plenarc/specment.svg)](https://www.npmjs.com/package/@plenarc/specment)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A CLI tool for managing specification documents and templates.
 
 ## Installation
