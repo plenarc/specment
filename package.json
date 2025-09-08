@@ -1,6 +1,6 @@
 {
   "name": "specment",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -8,11 +8,11 @@
     "format": "exec biome format . --write",
     "lint": "exec biome lint .",
     "lint:fix": "exec biome lint . --fix",
-    "docs:start": "pnpm --filter @specment/docs start",
-    "docs:build": "pnpm --filter @specment/docs build",
-    "docs:serve": "pnpm --filter @specment/docs serve",
+    "docs:start": "pnpm --filter @specment/website start",
+    "docs:build": "pnpm --filter @specment/website build",
+    "docs:serve": "pnpm --filter @specment/website serve",
     "specment:build": "pnpm --filter @plenarc/specment build",
-    "build:all": "pnpm --filter @plenarc/specment build && pnpm --filter @specment/docs build",
+    "build:all": "pnpm --filter @plenarc/specment build && pnpm --filter @specment/website build",
     "typecheck": "tsc",
     "changeset": "changeset",
     "changeset:version": "changeset version",
