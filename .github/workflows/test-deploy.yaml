@@ -39,11 +39,11 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: '[5/7] build'
-        run: pnpm --filter @specment/docs build
+        run: pnpm --filter @specment/website build
 
       - name: '[6/7] Serve site in background'
         run: |
-          pnpm --filter @specment/docs exec docusaurus serve --dir build --port 3000 &
+          pnpm --filter @specment/website exec docusaurus serve --dir build --port 3000 &
           # Wait for server to start
           pnpm dlx wait-on http://localhost:3000
 
