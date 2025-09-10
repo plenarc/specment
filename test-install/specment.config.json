@@ -1,0 +1,11 @@
+{
+  "templatesDir": "./templates",
+  "outputDir": "./docs",
+  "defaultTemplate": "feature-spec",
+  "validation": {
+    "rules": [
+      "markdown-lint",
+      "frontmatter-required"
+    ]
+  }
+}

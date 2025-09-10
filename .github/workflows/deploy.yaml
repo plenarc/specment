@@ -36,7 +36,7 @@ jobs:
       - name: '[6/6] upload Build Artifact'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/docs/build
+          path: apps/website/build
 
   deploy:
     name: deploy to GitHub Pages

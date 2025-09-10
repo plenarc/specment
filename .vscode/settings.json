@@ -1,11 +1,12 @@
 {
+  "editor.tabSize": 2,
   "files.readonlyInclude": {
     "src/content/docs/en/reference/errors/*": true,
     "src/content/docs/en/reference/configuration-reference.mdx": true,
     "src/content/docs/en/reference/error-reference.mdx": true
   },
   "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"

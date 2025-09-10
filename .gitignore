@@ -3,11 +3,11 @@
 /**/node_modules
 
 # Production
-/apps/docs/build
+/apps/website/build
 
 # Generated files
 .cache-loader
-/apps/docs/.docusaurus
+/apps/website/.docusaurus
 tree.txt
 
 # Misc

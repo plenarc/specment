@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <defs>
+    <style>
+      .browser-bg { fill: #f5f5f5; }
+      .browser-header { fill: #e0e0e0; }
+      .sidebar { fill: #2e3440; }
+      .content { fill: #ffffff; }
+      .nav-text { font-family: Arial, sans-serif; font-size: 12px; fill: #d8dee9; }
+      .content-text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+      .title { font-family: Arial, sans-serif; font-size: 24px; fill: #2e3440; font-weight: bold; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: #666; }
+      .url-bar { fill: #ffffff; stroke: #ccc; }
+      .button { fill: #4caf50; }
+      .button-text { font-family: Arial, sans-serif; font-size: 12px; fill: white; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <!-- Browser Window -->
+  <rect width="1000" height="700" rx="8" class="browser-bg"/>
+  <rect width="1000" height="40" rx="8" class="browser-header"/>
+  
+  <!-- Window Controls -->
+  <circle cx="20" cy="20" r="6" fill="#ff5f56"/>
+  <circle cx="40" cy="20" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="20" r="6" fill="#27ca3f"/>
+  
+  <!-- URL Bar -->
+  <rect x="100" y="10" width="600" height="20" rx="10" class="url-bar"/>
+  <text x="110" y="23" style="font-family: Arial, sans-serif; font-size: 12px; fill: #666;">https://plenarc.github.io/specment/</text>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="40" width="250" height="660" class="sidebar"/>
+  
+  <!-- Sidebar Navigation -->
+  <text x="20" y="70" class="nav-text" style="font-weight: bold;">Specment Docs</text>
+  
+  <text x="20" y="100" class="nav-text">📖 Overview</text>
+  <text x="20" y="120" class="nav-text">🚀 Getting Started</text>
+  <text x="20" y="140" class="nav-text">📋 Requirements</text>
+  <text x="30" y="160" class="nav-text">• Functional</text>
+  <text x="30" y="180" class="nav-text">• Non-functional</text>
+  <text x="20" y="200" class="nav-text">🏗️ Architecture</text>
+  <text x="20" y="220" class="nav-text">📱 UI Specifications</text>
+  <text x="20" y="240" class="nav-text">🔧 API Documentation</text>
+  <text x="20" y="260" class="nav-text">✅ Test Cases</text>
+  
+  <!-- Main Content Area -->
+  <rect x="250" y="40" width="750" height="660" class="content"/>
+  
+  <!-- Content Header -->
+  <text x="280" y="80" class="title">Welcome to Specment</text>
+  <text x="280" y="110" class="subtitle">Specification Document Management Made Easy</text>
+  
+  <!-- Content Body -->
+  <text x="280" y="150" class="content-text">Specment is a comprehensive tool for managing specification documents</text>
+  <text x="280" y="170" class="content-text">and generating beautiful documentation sites.</text>
+  
+  <text x="280" y="210" class="content-text" style="font-weight: bold;">Key Features:</text>
+  <text x="290" y="235" class="content-text">• CLI tool for document creation and management</text>
+  <text x="290" y="255" class="content-text">• Built-in templates for common specification types</text>
+  <text x="290" y="275" class="content-text">• Automatic documentation site generation</text>
+  <text x="290" y="295" class="content-text">• Validation and quality assurance</text>
+  
+  <!-- Code Example -->
+  <rect x="280" y="320" width="680" height="120" fill="#f8f8f8" stroke="#ddd" rx="4"/>
+  <text x="290" y="340" style="font-family: 'Courier New', monospace; font-size: 12px; fill: #666;"># Install Specment CLI</text>
+  <text x="290" y="360" style="font-family: 'Courier New', monospace; font-size: 12px; fill: #d32f2f;">npm install -g @plenarc/specment</text>
+  <text x="290" y="385" style="font-family: 'Courier New', monospace; font-size: 12px; fill: #666;"># Create a new project</text>
+  <text x="290" y="405" style="font-family: 'Courier New', monospace; font-size: 12px; fill: #d32f2f;">specment init my-project</text>
+  <text x="290" y="430" style="font-family: 'Courier New', monospace; font-size: 12px; fill: #d32f2f;">specment create feature-spec</text>
+  
+  <!-- Action Buttons -->
+  <rect x="280" y="470" width="120" height="35" rx="4" class="button"/>
+  <text x="340" y="490" class="button-text">Get Started</text>
+  
+  <rect x="420" y="470" width="120" height="35" rx="4" fill="#2196f3"/>
+  <text x="480" y="490" class="button-text">View Examples</text>
+  
+  <!-- Sample Document Preview -->
+  <text x="280" y="540" class="content-text" style="font-weight: bold;">Sample Specification:</text>
+  <rect x="280" y="550" width="680" height="130" fill="#f9f9f9" stroke="#eee" rx="4"/>
+  
+  <text x="290" y="575" style="font-family: Arial, sans-serif; font-size: 14px; fill: #333; font-weight: bold;">User Authentication Feature</text>
+  <text x="290" y="595" style="font-family: Arial, sans-serif; font-size: 12px; fill: #666;">Status: In Progress | Priority: High</text>
+  
+  <text x="290" y="620" style="font-family: Arial, sans-serif; font-size: 12px; fill: #333;">This specification defines the user authentication system including</text>
+  <text x="290" y="635" style="font-family: Arial, sans-serif; font-size: 12px; fill: #333;">login, registration, password reset, and session management.</text>
+  
+  <text x="290" y="660" style="font-family: Arial, sans-serif; font-size: 12px; color: #2196f3;">→ View full specification</text>
+</svg>

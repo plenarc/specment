@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: #666; }
+      .step-box { fill: #e8f5e8; stroke: #4caf50; stroke-width: 2; rx: 8; }
+      .decision-box { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; rx: 8; }
+      .output-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; rx: 8; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; text-anchor: middle; }
+      .small-text { font-family: Arial, sans-serif; font-size: 12px; fill: #666; text-anchor: middle; }
+      .command { font-family: 'Courier New', monospace; font-size: 12px; fill: #d32f2f; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" class="title">Specment Usage Workflow</text>
+  <text x="450" y="55" class="subtitle">From Installation to Documentation Site</text>
+  
+  <!-- Step 1: Installation -->
+  <rect x="350" y="80" width="200" height="60" class="step-box"/>
+  <text x="450" y="105" class="text">1. Installation</text>
+  <text x="450" y="125" class="command">npm install -g @plenarc/specment</text>
+  
+  <!-- Step 2: Project Init -->
+  <rect x="350" y="180" width="200" height="60" class="step-box"/>
+  <text x="450" y="205" class="text">2. Initialize Project</text>
+  <text x="450" y="225" class="command">specment init my-project</text>
+  
+  <!-- Decision: Usage Pattern -->
+  <polygon points="450,280 550,320 450,360 350,320" class="decision-box"/>
+  <text x="450" y="315" class="text">Choose Usage</text>
+  <text x="450" y="330" class="text">Pattern</text>
+  
+  <!-- Standalone Path -->
+  <rect x="100" y="400" width="180" height="80" class="step-box"/>
+  <text x="190" y="425" class="text">Standalone Project</text>
+  <text x="190" y="445" class="small-text">• Dedicated docs repo</text>
+  <text x="190" y="460" class="small-text">• Independent workflow</text>
+  <text x="190" y="475" class="command">specment create feature-spec</text>
+  
+  <!-- Monorepo Path -->
+  <rect x="620" y="400" width="180" height="80" class="step-box"/>
+  <text x="710" y="425" class="text">Monorepo Integration</text>
+  <text x="710" y="445" class="small-text">• Docs with source code</text>
+  <text x="710" y="460" class="small-text">• Unified development</text>
+  <text x="710" y="475" class="command">git clone specment.git</text>
+  
+  <!-- Document Creation -->
+  <rect x="350" y="520" width="200" height="60" class="step-box"/>
+  <text x="450" y="545" class="text">3. Create Documents</text>
+  <text x="450" y="565" class="small-text">Using templates and CLI</text>
+  
+  <!-- Site Generation -->
+  <rect x="350" y="620" width="200" height="60" class="step-box"/>
+  <text x="450" y="645" class="text">4. Generate Site</text>
+  <text x="450" y="665" class="command">specment generate</text>
+  
+  <!-- Arrows -->
+  <line x1="450" y1="140" x2="450" y2="180" class="arrow"/>
+  <line x1="450" y1="240" x2="450" y2="280" class="arrow"/>
+  <line x1="350" y1="320" x2="280" y2="400" class="arrow"/>
+  <line x1="550" y1="320" x2="620" y2="400" class="arrow"/>
+  <line x1="190" y1="480" x2="350" y2="540" class="arrow"/>
+  <line x1="710" y1="480" x2="550" y2="540" class="arrow"/>
+  <line x1="450" y1="580" x2="450" y2="620" class="arrow"/>
+  
+  <!-- Labels -->
+  <text x="280" y="360" class="small-text">Standalone</text>
+  <text x="620" y="360" class="small-text">Monorepo</text>
+</svg>
