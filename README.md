@@ -1,216 +1,241 @@
+<div align="center">
+
+<img src=".github/images/logos/specment-logo.svg" alt="Specment Logo" width="200" height="200" />
+
 # Specment
+
+[![NPM Package](.github/images/icons/npm-badge.svg)](https://www.npmjs.com/package/@plenarc/specment)
+[![MIT License](.github/images/icons/license-badge.svg)](LICENSE)
+
+[English](README.md) | [日本語](README-jp.md)
+
 https://plenarc.github.io/specment/
 
-'specification' + 'document' => specment
+'specification' + 'document' => Specment
 
-A monorepo containing a CLI tool for managing specification documents and a Docusaurus documentation site.
+</div>
 
-> [!WARNING]
-> en: Still being created in general
-> jp: まだ全般的に作成中
+## About Specment
 
-## Project Structure - プロジェクト構成
+Specment is a repository-based solution for **creating specification sites with markdown (MDX) and managing specifications with Git**. It solves common problems of inconsistent documentation practices and scattered specification files in software projects.
 
-This is a pnpm workspace monorepo with the following structure:
+### What Problems Does Specment Solve?
 
-```
-specment/
-├── apps/
-│   └── docs/          # Docusaurus documentation site (@specment/docs)
-└── packages/
-    └── specment/      # CLI tool package (@plenarc/specment)
-```
+1. **Inconsistent Documentation**: Teams often struggle with different documentation formats and structures across projects
+1. **Template Management**: Creating and maintaining consistent document templates is time-consuming
+1. **Documentation Generation**: Converting specifications into readable documentation sites requires manual effort
+1. **Validation and Quality**: Ensuring documentation follows standards and conventions is difficult to enforce
 
-## Preparation - 前準備
+### Core Concept
+
+Specment follows two fundamental principles:
+
+1. **Create specification sites with markdown (MDX)** - Transform your specifications into professional websites
+1. **Manage specifications with Git** - Full version control, branching, and collaboration workflow
+
+### Key Features
+
+1. **Repository-Based Architecture**: This repository serves as the foundation for your specification projects
+1. **Markdown/MDX Support**: Write specifications in familiar markdown with React component support
+1. **Docusaurus Integration**: Automatic generation of professional documentation websites
+1. **Git Workflow**: Full version control with branching, merging, and collaboration features
+1. **Template System**: Pre-built templates and structures for common specification types
+1. **Development Tools**: CLI utilities to support the specification development workflow
+
+<div align="center">
+
+<img src=".github/images/screenshots/cli-demo.svg" alt="CLI Demo" width="100%" style="max-width: 600px;" />
+
+*CLI tools for specification development and validation*
+
+</div>
+
+## Usage Patterns
+
+Specment supports two main usage patterns to fit different project needs:
+
+<div align="center">
+
+<img src=".github/images/architecture/usage-patterns.svg" alt="Usage Patterns Diagram" width="100%" style="max-width: 800px;" />
+
+*Two main usage patterns: Standalone Project vs Monorepo Integration*
+
+</div>
+
+### Standalone Project Usage
+
+Use this repository as the foundation for a dedicated specification website project.
+
+**Benefits:**
+1. Clear separation of documentation from source code
+1. Easy sharing and collaboration on specifications
+1. Lightweight setup for documentation-focused projects
+1. Independent versioning and release cycles
+
+**Best for:**
+1. API documentation projects
+1. Product specification repositories
+1. Cross-team documentation initiatives
+1. External-facing specification sites
+
+### Monorepo Integration
+
+Ideal for integrating specification management directly into your existing monorepo workflow.
+
+**Benefits:**
+1. Specifications live alongside the code they describe
+1. Unified development workflow
+1. Shared tooling and configuration
+1. Synchronized versioning with code changes
+
+**Best for:**
+1. Large-scale applications with multiple components
+1. Teams that prefer keeping docs close to code
+1. Projects with complex interdependencies
+1. Continuous integration workflows
+
+## Prerequisites
+
+### Recommended Tools
 
 > [!INFO]
-> 1. Recommended: mise
->     1. GitHub: https://github.com/jdx/mise
+> Recommended: mise
+> GitHub: https://github.com/jdx/mise
 
-### Tools to use
+### Required Tools
 1. Node.js (>=22.0)
-    1. LTS Recommended.
-    1. ```bash
-        mise use node@lts
-        ```
+   1. LTS recommended
+   1. ```bash
+      mise use node@lts
+      ```
+
+### Recommended Package Manager
 1. pnpm
-    1. ```bash
-        mise use pnpm@latest
-        ```
+   1. ```bash
+      mise use pnpm@latest
+      ```
 
-### Install
+## Quick Start
+
+Follow one of the procedures below depending on your usage pattern:
+
+<div align="center">
+
+<img src=".github/images/architecture/usage-workflow.svg" alt="Usage Workflow" width="100%" style="max-width: 700px;" />
+
+*Step-by-step workflow for getting started with Specment*
+
+</div>
+
+### Pattern 1: Standalone Project Usage
+
+When creating a dedicated documentation project:
 
 ```bash
+# Navigate to where you want to create the documentation project
+cd ~/projects
+
+# Clone this repository to create a dedicated specification site
+git clone https://github.com/plenarc/specment.git my-spec-site
+cd my-spec-site
+
+# Install dependencies
 pnpm install
-```
 
-## Development - 開発
-
-### Documentation Site (apps/docs)
-
-#### Start development server - 開発サーバーの起動
-
-```bash
-# From root
+# Start the documentation site to verify
 pnpm docs:start
-
-# Or from apps/docs directory
-cd apps/docs
-pnpm start
 ```
 
-#### Build documentation site - ドキュメントサイトのビルド
+<div align="center">
+
+<img src=".github/images/screenshots/top-view.png" alt="Documentation Site Top View" width="100%" style="max-width: 800px;" />
+
+*Top view of the generated documentation site*
+
+</div>
+
+<div align="center">
+
+<img src=".github/images/screenshots/overview.png" alt="Project Overview" width="100%" style="max-width: 800px;" />
+
+*Example: Project Overview*
+
+</div>
+
+<div align="center">
+
+<img src=".github/images/screenshots/as-is.png" alt="As-Is Current State Analysis" width="100%" style="max-width: 800px;" />
+
+*Example: As-Is Current State Analysis*
+
+</div>
+
+**Folder Structure:**
+
+```
+my-spec-site/
+├── apps/
+│ └── website/              # Specment - Documentation site
+│   ├── docs/               # Specification files (markdown/mdx)
+│   ├── src/                # Site customization
+│   └── docusaurus.config.ts
+├── packages/
+│ └── specment/             # CLI development tools
+├── package.json            # Workspace configuration
+└── pnpm-workspace.yaml
+```
+
+### Pattern 2: Monorepo Integration
+
+When adding a specification site to an existing monorepo project:
 
 ```bash
-# From root
-pnpm docs:build
+# Navigate to your existing monorepo folder
+cd ~/projects/my-existing-monorepo
 
-# Or from apps/docs directory
-cd apps/docs
-pnpm build
+# Clone Specment to the appropriate location in your monorepo
+#  For turborepo: apps/
+#  For Nx: apps/ or libs/
+#  For custom setup: packages/ etc.
+git clone https://github.com/plenarc/specment.git apps/specment
+
+# Install dependencies
+pnpm install
+
+# Start the documentation site
+pnpm --filter specment docs:start
 ```
 
-#### Serve built site - ビルド済みサイトの配信
+**Example folder structure after integration:**
 
-```bash
-# From root
-pnpm docs:serve
-
-# Or from apps/docs directory
-cd apps/docs
-pnpm serve
+```
+my-existing-monorepo/
+├── apps/
+│ ├── web/                  # Existing web app, etc.
+│ ├── api/                  # Existing API, etc.
+│ └── specment/             # Specment - Documentation site
+├── packages/
+│ └── shared/               # Existing shared packages
+└── package.json            # Existing workspace configuration
 ```
 
-### CLI Tool (packages/specment)
+## Detailed Information
 
-#### Build CLI tool - CLIツールのビルド
+### CLI Development Tools
 
-```bash
-# From root
-pnpm specment:build
+For installation, commands, configuration, and advanced CLI usage:
 
-# Or from packages/specment directory
-cd packages/specment
-pnpm build
-```
+**🔧 [CLI Tool Documentation](packages/specment/README.md)** - Complete CLI reference and development tools
 
-#### Development mode - 開発モード
+### Real-world Implementation Example
 
-```bash
-cd packages/specment
-pnpm dev
-```
+This Specment project demonstrates practical usage through its own documentation workflow:
 
-#### Run tests - テスト実行
+**🔗 [Dogfooding Guide](apps/website/README-specment.md)** - Real-world usage patterns and best practices
 
-```bash
-cd packages/specment
-pnpm test
-```
+### Complete Documentation
 
-### Build All - 全体ビルド
-
-```bash
-pnpm build:all
-```
-
-## Code Quality - コード品質
-
-### Formatter - フォーマッター
-
-```bash
-# From root (all workspaces)
-pnpm format
-
-# Individual workspace
-cd apps/docs
-pnpm format
-
-cd packages/specment
-pnpm format
-```
-
-### Linter - リンター
-
-```bash
-# From root (all workspaces)
-pnpm lint
-# or with auto-fix
-pnpm lint:fix
-
-# Individual workspace
-cd apps/docs
-pnpm lint
-
-cd packages/specment
-pnpm lint
-```
-
-### Type checking - 型チェック
-
-```bash
-# From root
-pnpm typecheck
-
-# Individual workspace
-cd apps/docs
-pnpm typecheck
-
-cd packages/specment
-pnpm typecheck
-```
-
-### Pre-commit checks - コミット前チェック
-
-```bash
-pnpm check
-```
-
-## Release Management - リリース管理
-
-This project uses [Changesets](https://github.com/changesets/changesets) for version management.
-
-### Create a changeset - 変更セットの作成
-
-```bash
-pnpm changeset
-```
-
-### Version packages - パッケージのバージョン更新
-
-```bash
-pnpm changeset:version
-```
-
-### Publish packages - パッケージの公開
-
-```bash
-pnpm changeset:publish
-```
-
-### Full release workflow - 完全なリリースワークフロー
-
-```bash
-pnpm release
-```
-
-## Example of creating a new requirements specification file
-
-ja: 新しい要求仕様ファイルの作成例
-
-```bash
-cd apps/docs/docs/02-requirements/functional/
-cp _req-template.mdx req-002.mdx
-```
-
-## Contributing - 貢献
-
-1. Fork the repository
-1. Create a feature branch
-1. Make your changes
-1. Run tests and quality checks
-1. Create a changeset if needed
-1. Submit a pull request
+**🌐 [Specment Official Site](https://plenarc.github.io/specment/)** - Comprehensive guides, tutorials, and API reference
 
 ## License
 
