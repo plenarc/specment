@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: #666; }
+      .box { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; rx: 8; }
+      .cli-box { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; rx: 8; }
+      .docs-box { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; rx: 8; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; text-anchor: middle; }
+      .small-text { font-family: Arial, sans-serif; font-size: 12px; fill: #666; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Specment Architecture</text>
+  <text x="400" y="55" class="subtitle">Specification Document Management System</text>
+  
+  <!-- CLI Tool -->
+  <rect x="50" y="100" width="200" height="120" class="cli-box"/>
+  <text x="150" y="130" class="text">CLI Tool</text>
+  <text x="150" y="150" class="small-text">@plenarc/specment</text>
+  <text x="150" y="175" class="small-text">• Document creation</text>
+  <text x="150" y="190" class="small-text">• Template management</text>
+  <text x="150" y="205" class="small-text">• Validation</text>
+  
+  <!-- Documentation Site -->
+  <rect x="550" y="100" width="200" height="120" class="docs-box"/>
+  <text x="650" y="130" class="text">Documentation Site</text>
+  <text x="650" y="150" class="small-text">@specment/docs</text>
+  <text x="650" y="175" class="small-text">• Docusaurus-based</text>
+  <text x="650" y="190" class="small-text">• Live examples</text>
+  <text x="650" y="205" class="small-text">• Best practices</text>
+  
+  <!-- Templates -->
+  <rect x="300" y="280" width="200" height="100" class="box"/>
+  <text x="400" y="310" class="text">Templates</text>
+  <text x="400" y="330" class="small-text">• Functional requirements</text>
+  <text x="400" y="345" class="small-text">• Non-functional requirements</text>
+  <text x="400" y="360" class="small-text">• Screen specifications</text>
+  
+  <!-- Generated Documents -->
+  <rect x="100" y="450" width="150" height="80" class="box"/>
+  <text x="175" y="480" class="text">Generated</text>
+  <text x="175" y="495" class="text">Documents</text>
+  <text x="175" y="515" class="small-text">MDX files</text>
+  
+  <!-- Static Site -->
+  <rect x="550" y="450" width="150" height="80" class="box"/>
+  <text x="625" y="480" class="text">Static Site</text>
+  <text x="625" y="500" class="small-text">HTML/CSS/JS</text>
+  <text x="625" y="515" class="small-text">GitHub Pages</text>
+  
+  <!-- Arrows -->
+  <line x1="150" y1="220" x2="400" y2="280" class="arrow"/>
+  <line x1="400" y1="380" x2="175" y2="450" class="arrow"/>
+  <line x1="650" y1="220" x2="400" y2="280" class="arrow"/>
+  <line x1="400" y1="380" x2="625" y2="450" class="arrow"/>
+  <line x1="250" y1="490" x2="550" y2="490" class="arrow"/>
+  
+  <!-- Labels -->
+  <text x="275" y="250" class="small-text">uses</text>
+  <text x="525" y="250" class="small-text">showcases</text>
+  <text x="290" y="415" class="small-text">creates</text>
+  <text x="510" y="415" class="small-text">generates</text>
+  <text x="400" y="485" class="small-text">builds into</text>
+</svg>

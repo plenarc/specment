@@ -186,12 +186,49 @@ async function validateFile(filePath, config, fix) {
         console.log(chalk.yellow(`⚠ ${filePath}: Missing frontmatter`));
         issueCount++;
     }
-    // Check naming convention
+    // Check naming convention with flexibility for existing structure
     const filename = path.basename(filePath, path.extname(filePath));
-    if (config.naming && config.naming.pattern === 'kebab-case') {
-        if (!/^[a-z0-9-]+$/.test(filename)) {
-            console.log(chalk.yellow(`⚠ ${filePath}: Filename should use kebab-case`));
-            issueCount++;
+    if (config.naming) {
+        const { pattern, exceptions = [], allowedPatterns = [] } = config.naming;
+        // Check if filename matches any exception pattern
+        const isException = exceptions.some((exception) => {
+            if (exception.startsWith('*') && exception.endsWith('*')) {
+                return filename.includes(exception.slice(1, -1));
+            }
+            else if (exception.startsWith('*')) {
+                return filename.endsWith(exception.slice(1));
+            }
+            else if (exception.endsWith('*')) {
+                return filename.startsWith(exception.slice(0, -1));
+            }
+            else {
+                return filename === exception;
+            }
+        });
+        if (!isException) {
+            let isValidNaming = false;
+            if (pattern === 'flexible' && allowedPatterns.length > 0) {
+                // Check against multiple allowed patterns
+                isValidNaming = allowedPatterns.some((allowedPattern) => {
+                    switch (allowedPattern) {
+                        case 'kebab-case':
+                            return /^[a-z0-9-]+$/.test(filename);
+                        case 'snake_case':
+                            return /^[a-z0-9_]+$/.test(filename);
+                        case 'underscore-prefix':
+                            return /^_[a-z0-9-]+$/.test(filename);
+                        default:
+                            return false;
+                    }
+                });
+            }
+            else if (pattern === 'kebab-case') {
+                isValidNaming = /^[a-z0-9-]+$/.test(filename);
+            }
+            if (!isValidNaming) {
+                console.log(chalk.yellow(`⚠ ${filePath}: Filename doesn't match naming conventions`));
+                issueCount++;
+            }
         }
     }
     return issueCount;

@@ -1,4 +1,7 @@
 # https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+MD005: false # Disable list indent rule - リストインデントルールを無効化
+MD007: # Unordered list indentation - 順序なしリストのインデント
+  indent: 2 # Use 2 spaces for unordered list indentation - 順序なしリストのインデントを2スペースに設定
 MD013: false # Disable line length limit - 1行内の文字長さ制限解除
 MD022: # Zero blank lines at end of heading - 章最後の空白ゼロ
   lines_above: 0
@@ -21,3 +24,4 @@ MD033: # Prohibit HTML tags except specified ones - 指定したhtmlタグ以外
 MD034: false
 MD038: false # Allow spaces in code blocks - コードブロック内のスペース可
 MD040: false # Remove mandatory language specification for code blocks - コードブロックの言語指定強制を解除
+MD046: false # Disable code block style rule - コードブロックスタイルルールを無効化
