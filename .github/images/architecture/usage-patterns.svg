@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: #666; }
+      .pattern-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; text-anchor: middle; }
+      .standalone-box { fill: #e8f5e8; stroke: #4caf50; stroke-width: 2; rx: 8; }
+      .monorepo-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; rx: 8; }
+      .benefit-box { fill: #fff3e0; stroke: #ff9800; stroke-width: 1; rx: 4; }
+      .text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+      .small-text { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+      .benefit-text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="500" y="30" class="title">Specment Usage Patterns</text>
+  <text x="500" y="55" class="subtitle">Choose the pattern that fits your project needs</text>
+  
+  <!-- Standalone Pattern -->
+  <rect x="50" y="100" width="400" height="450" class="standalone-box"/>
+  <text x="250" y="130" class="pattern-title">Standalone Project Usage</text>
+  
+  <!-- Standalone Description -->
+  <text x="70" y="160" class="text">Perfect for dedicated documentation projects</text>
+  
+  <!-- Standalone Benefits -->
+  <text x="70" y="190" class="text">Benefits:</text>
+  <rect x="70" y="200" width="360" height="25" class="benefit-box"/>
+  <text x="80" y="217" class="benefit-text">• Clean separation of documentation from source code</text>
+  
+  <rect x="70" y="230" width="360" height="25" class="benefit-box"/>
+  <text x="80" y="247" class="benefit-text">• Easy to share and collaborate on specifications</text>
+  
+  <rect x="70" y="260" width="360" height="25" class="benefit-box"/>
+  <text x="80" y="277" class="benefit-text">• Lightweight setup for documentation-focused projects</text>
+  
+  <rect x="70" y="290" width="360" height="25" class="benefit-box"/>
+  <text x="80" y="307" class="benefit-text">• Independent versioning and release cycles</text>
+  
+  <!-- Standalone Best For -->
+  <text x="70" y="340" class="text">Best for:</text>
+  <text x="80" y="360" class="small-text">• API documentation projects</text>
+  <text x="80" y="375" class="small-text">• Product specification repositories</text>
+  <text x="80" y="390" class="small-text">• Cross-team documentation initiatives</text>
+  <text x="80" y="405" class="small-text">• External documentation sites</text>
+  
+  <!-- Standalone Setup -->
+  <text x="70" y="435" class="text">Quick Setup:</text>
+  <rect x="70" y="445" width="360" height="40" fill="#f5f5f5" stroke="#ddd" rx="4"/>
+  <text x="80" y="460" style="font-family: 'Courier New', monospace; font-size: 11px; fill: #d32f2f;">npm install -g @plenarc/specment</text>
+  <text x="80" y="475" style="font-family: 'Courier New', monospace; font-size: 11px; fill: #d32f2f;">specment init my-project</text>
+  
+  <!-- Monorepo Pattern -->
+  <rect x="550" y="100" width="400" height="450" class="monorepo-box"/>
+  <text x="750" y="130" class="pattern-title">Monorepo Integration</text>
+  
+  <!-- Monorepo Description -->
+  <text x="570" y="160" class="text">Ideal for integrating into existing monorepo workflow</text>
+  
+  <!-- Monorepo Benefits -->
+  <text x="570" y="190" class="text">Benefits:</text>
+  <rect x="570" y="200" width="360" height="25" class="benefit-box"/>
+  <text x="580" y="217" class="benefit-text">• Specifications live alongside the code they describe</text>
+  
+  <rect x="570" y="230" width="360" height="25" class="benefit-box"/>
+  <text x="580" y="247" class="benefit-text">• Unified development workflow</text>
+  
+  <rect x="570" y="260" width="360" height="25" class="benefit-box"/>
+  <text x="580" y="277" class="benefit-text">• Shared tooling and configuration</text>
+  
+  <rect x="570" y="290" width="360" height="25" class="benefit-box"/>
+  <text x="580" y="307" class="benefit-text">• Synchronized versioning with code changes</text>
+  
+  <!-- Monorepo Best For -->
+  <text x="570" y="340" class="text">Best for:</text>
+  <text x="580" y="360" class="small-text">• Large-scale applications with multiple components</text>
+  <text x="580" y="375" class="small-text">• Teams that prefer keeping docs close to code</text>
+  <text x="580" y="390" class="small-text">• Projects with complex interdependencies</text>
+  <text x="580" y="405" class="small-text">• Continuous integration workflows</text>
+  
+  <!-- Monorepo Setup -->
+  <text x="570" y="435" class="text">Quick Setup:</text>
+  <rect x="570" y="445" width="360" height="40" fill="#f5f5f5" stroke="#ddd" rx="4"/>
+  <text x="580" y="460" style="font-family: 'Courier New', monospace; font-size: 11px; fill: #d32f2f;">git clone https://github.com/plenarc/specment.git</text>
+  <text x="580" y="475" style="font-family: 'Courier New', monospace; font-size: 11px; fill: #d32f2f;">pnpm install && pnpm docs:start</text>
+</svg>
