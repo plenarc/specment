@@ -21,73 +21,73 @@
   <rect width="1000" height="600" fill="#ffffff"/>
   
   <!-- Title -->
-  <text x="500" y="30" class="title">Specment Usage Patterns</text>
-  <text x="500" y="55" class="subtitle">Choose the pattern that fits your project needs</text>
+  <text x="500" y="30" class="title">Specment 使用パターン</text>
+  <text x="500" y="55" class="subtitle">プロジェクトのニーズに合ったパターンを選択してください</text>
   
   <!-- Standalone Pattern -->
   <rect x="50" y="100" width="400" height="450" class="standalone-box"/>
-  <text x="250" y="130" class="pattern-title">Standalone Project Usage</text>
+  <text x="250" y="130" class="pattern-title">単独プロジェクト運用</text>
   
   <!-- Standalone Description -->
-  <text x="70" y="160" class="text">Perfect for dedicated documentation projects</text>
+  <text x="70" y="160" class="text">専用ドキュメントプロジェクトに最適</text>
   
   <!-- Standalone Benefits -->
-  <text x="70" y="190" class="text">Benefits:</text>
+  <text x="70" y="190" class="text">メリット:</text>
   <rect x="70" y="200" width="360" height="25" class="benefit-box"/>
-  <text x="80" y="217" class="benefit-text">Clean separation of documentation from source code</text>
+  <text x="80" y="217" class="benefit-text">ドキュメントとソースコードの明確な分離</text>
   
   <rect x="70" y="230" width="360" height="25" class="benefit-box"/>
-  <text x="80" y="247" class="benefit-text">Easy to share and collaborate on specifications</text>
+  <text x="80" y="247" class="benefit-text">仕様書の共有とコラボレーションが簡単</text>
   
   <rect x="70" y="260" width="360" height="25" class="benefit-box"/>
-  <text x="80" y="277" class="benefit-text">Lightweight setup for documentation-focused projects</text>
+  <text x="80" y="277" class="benefit-text">ドキュメント中心プロジェクトの軽量セットアップ</text>
   
   <rect x="70" y="290" width="360" height="25" class="benefit-box"/>
-  <text x="80" y="307" class="benefit-text">Independent versioning and release cycles</text>
+  <text x="80" y="307" class="benefit-text">独立したバージョン管理とリリースサイクル</text>
   
   <!-- Standalone Best For -->
-  <text x="70" y="340" class="text">Best for:</text>
-  <text x="80" y="360" class="small-text">API documentation projects</text>
-  <text x="80" y="375" class="small-text">Product specification repositories</text>
-  <text x="80" y="390" class="small-text">Cross-team documentation initiatives</text>
-  <text x="80" y="405" class="small-text">External documentation sites</text>
+  <text x="70" y="340" class="text">適用場面:</text>
+  <text x="80" y="360" class="small-text">APIドキュメントプロジェクト</text>
+  <text x="80" y="375" class="small-text">製品仕様書リポジトリ</text>
+  <text x="80" y="390" class="small-text">チーム横断ドキュメント取り組み</text>
+  <text x="80" y="405" class="small-text">外部ドキュメントサイト</text>
   
   <!-- Standalone Setup -->
-  <text x="70" y="435" class="text">Quick Setup:</text>
+  <text x="70" y="435" class="text">クイックセットアップ:</text>
   <rect x="70" y="445" width="360" height="40" fill="#f5f5f5" stroke="#ddd" rx="4"/>
   <text x="80" y="460" class="code-text">git clone https://github.com/plenarc/specment.git</text>
   <text x="80" y="475" class="code-text">cd specment &amp;&amp; pnpm install &amp;&amp; pnpm docs:start</text>
   
   <!-- Monorepo Pattern -->
   <rect x="550" y="100" width="400" height="450" class="monorepo-box"/>
-  <text x="750" y="130" class="pattern-title">Monorepo Integration</text>
+  <text x="750" y="130" class="pattern-title">Monorepo統合</text>
   
   <!-- Monorepo Description -->
-  <text x="570" y="160" class="text">Ideal for integrating into existing monorepo workflow</text>
+  <text x="570" y="160" class="text">既存のmonorepoワークフローへの統合に最適</text>
   
   <!-- Monorepo Benefits -->
-  <text x="570" y="190" class="text">Benefits:</text>
+  <text x="570" y="190" class="text">メリット:</text>
   <rect x="570" y="200" width="360" height="25" class="benefit-box"/>
-  <text x="580" y="217" class="benefit-text">Specifications live alongside the code they describe</text>
+  <text x="580" y="217" class="benefit-text">仕様書がそれを説明するコードと同じ場所に配置</text>
   
   <rect x="570" y="230" width="360" height="25" class="benefit-box"/>
-  <text x="580" y="247" class="benefit-text">Unified development workflow</text>
+  <text x="580" y="247" class="benefit-text">統一された開発ワークフロー</text>
   
   <rect x="570" y="260" width="360" height="25" class="benefit-box"/>
-  <text x="580" y="277" class="benefit-text">Shared tooling and configuration</text>
+  <text x="580" y="277" class="benefit-text">共有ツールと設定</text>
   
   <rect x="570" y="290" width="360" height="25" class="benefit-box"/>
-  <text x="580" y="307" class="benefit-text">Synchronized versioning with code changes</text>
+  <text x="580" y="307" class="benefit-text">コード変更と同期したバージョン管理</text>
   
   <!-- Monorepo Best For -->
-  <text x="570" y="340" class="text">Best for:</text>
-  <text x="580" y="360" class="small-text">Large-scale applications with multiple components</text>
-  <text x="580" y="375" class="small-text">Teams that prefer keeping docs close to code</text>
-  <text x="580" y="390" class="small-text">Projects with complex interdependencies</text>
-  <text x="580" y="405" class="small-text">Continuous integration workflows</text>
+  <text x="570" y="340" class="text">適用場面:</text>
+  <text x="580" y="360" class="small-text">複数コンポーネントを持つ大規模アプリケーション</text>
+  <text x="580" y="375" class="small-text">ドキュメントをコードの近くに置きたいチーム</text>
+  <text x="580" y="390" class="small-text">複雑な相互依存関係を持つプロジェクト</text>
+  <text x="580" y="405" class="small-text">継続的インテグレーションワークフロー</text>
   
   <!-- Monorepo Setup -->
-  <text x="570" y="435" class="text">Quick Setup:</text>
+  <text x="570" y="435" class="text">クイックセットアップ:</text>
   <rect x="570" y="445" width="360" height="40" fill="#f5f5f5" stroke="#ddd" rx="4"/>
   <text x="580" y="460" class="code-text">git submodule add https://github.com/plenarc/specment.git</text>
   <text x="580" y="475" class="code-text">cd specment &amp;&amp; pnpm install &amp;&amp; pnpm docs:start</text>
