@@ -1,6 +1,6 @@
 {
   "name": "specment",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -18,7 +18,17 @@
     "changeset:version": "changeset version",
     "changeset:publish": "pnpm specment:build && changeset publish",
     "changeset:status": "changeset status",
-    "release": "pnpm changeset:version && pnpm changeset:publish"
+    "release": "pnpm changeset:version && pnpm changeset:publish",
+    "test:workflow": "node scripts/run-workflow-tests.js",
+    "test:workflow:syntax": "node scripts/test-workflow-validation.js",
+    "test:workflow:branch": "node scripts/test-branch-workflow.js",
+    "test:workflow:npm": "node scripts/test-npm-publish.js",
+    "test:workflow:errors": "node scripts/test-error-scenarios.js",
+    "security:check": "node scripts/security-check.js",
+    "test:integration": "node scripts/run-integration-tests.js",
+    "test:integration:workflow": "node scripts/test-integration-workflow.js",
+    "test:integration:package": "node scripts/verify-published-package.js",
+    "test:integration:create-pr": "node scripts/create-test-pr.js"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.4",

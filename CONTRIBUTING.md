@@ -12,26 +12,26 @@ Specmentプロジェクトへの貢献をありがとうございます！この
 ### セットアップ手順
 
 1. **リポジトリのクローン**
-   ```bash
-   git clone https://github.com/plenarc/specment.git
-   cd specment
-   ```
+    ```bash
+    git clone https://github.com/plenarc/specment.git
+    cd specment
+    ```
 
 2. **依存関係のインストール**
-   ```bash
-   pnpm install
-   ```
+    ```bash
+    pnpm install
+    ```
 
 3. **ビルド**
-   ```bash
-   pnpm specment:build
-   ```
+    ```bash
+    pnpm specment:build
+    ```
 
 4. **動作確認**
-   ```bash
-   cd packages/specment
-   node bin/specment.js --version
-   ```
+    ```bash
+    cd packages/specment
+    node bin/specment.js --version
+    ```
 
 ## 開発フロー
 
