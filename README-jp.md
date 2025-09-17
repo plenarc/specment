@@ -9,44 +9,61 @@
 
 [English](README.md) | [日本語](README-jp.md)
 
-https://plenarc.github.io/specment/
+Demo: https://plenarc.github.io/specment/
 
 'specification' + 'document' => Specment
 
 </div>
 
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src=".github/images/screenshots/top-view.png" alt="トップビュー" width="250" />
+        <br>
+        <em>例: トップビュー</em>
+      </td>
+      <td align="center">
+        <img src=".github/images/screenshots/overview.png" alt="プロジェクト概要" width="250" />
+        <br>
+        <em>例: プロジェクト概要</em>
+      </td>
+      <td align="center">
+        <img src=".github/images/screenshots/as-is.png" alt="As-Is 現状分析" width="250" />
+        <br>
+        <em>例: As-Is 現状分析</em>
+      </td>
+    </tr>
+  </table>
+</div>
+
 ## Specmentについて
 
-Specmentは**markdown(mdx)で仕様サイトを作り、仕様をgit管理する**ためのリポジトリベースのソリューションです。ソフトウェアプロジェクトでよくある、一貫性のないドキュメント作成手法や散在する仕様ファイルの問題を解消します
+Specmentは**markdown(mdx)で仕様サイトを作り、仕様をgit管理する**ためのリポジトリベースのソリューションです。<br/>
+開発中プロジェクトの仕様がExcelで作られていたり、テキストで書かれていた場合、検索や閲覧がしづらくなりがちです<br/>
+Specmentを使うことで編集時だけではなく、閲覧や検索性のすぐれた仕様サイトが作れます。
 
 ### Specmentが解決する問題
 
 1. **一貫性のないドキュメント**: チームは多くの場合、プロジェクト間で異なるドキュメント形式や構造に悩まされています
 1. **テンプレート管理**: 一貫したドキュメントテンプレートの作成と維持には時間がかかります
-1. **ドキュメント生成**: 仕様書を読みやすいドキュメントサイトに変換するには手作業が必要です
-1. **検証と品質**: ドキュメントが標準や規約に従っているかを確認することは困難です
-
-### 基本コンセプト
-
-Specmentは2つの基本原則に従います：
-
-1. **markdown(MDX)で仕様サイトを作成** - 仕様書をプロフェッショナルなウェブサイトに変換
-1. **Gitで仕様を管理** - 完全なバージョン管理、ブランチ、コラボレーションワークフロー
+1. **ドキュメントのGit管理**: 仕様をソースと同じようにGitで管理することで、厳格に管理できるようになります
+1. **検証と品質**: ドキュメントが標準や規約に従っているか生成AIやlintを使うことで管理しやすくなります
 
 ### 主要機能
 
-1. **リポジトリベースアーキテクチャ**: このリポジトリが仕様書プロジェクトの基盤として機能
-1. **Markdown/MDXサポート**: 馴染みのあるmarkdownとReactコンポーネントサポートで仕様書を作成
+1. **リポジトリベースアーキテクチャ**: このリポジトリが仕様プロジェクトの基盤として機能
+1. **Markdown/MDXサポート**: 馴染みのあるmarkdownとReactコンポーネントサポートで仕様を作成
 1. **Docusaurus統合**: プロフェッショナルなドキュメントサイトの自動生成
 1. **Gitワークフロー**: ブランチ、マージ、コラボレーション機能を含む完全なバージョン管理
-1. **テンプレートシステム**: 一般的な仕様書タイプ用の事前構築されたテンプレートと構造
-1. **開発ツール**: 仕様書開発ワークフローをサポートするCLIユーティリティ
+1. **テンプレートシステム**: 一般的な仕様タイプ用の事前構築されたテンプレートと構造
+1. **開発ツール**: 仕様開発ワークフローをサポートするCLIユーティリティ
 
 <div align="center">
 
 <img src=".github/images/screenshots/cli-demo.svg" alt="CLIデモ" width="100%" style="max-width: 600px;" />
 
-*仕様書開発と検証のためのCLIツール*
+*仕様開発と検証のためのCLIツール*
 
 </div>
 
@@ -56,7 +73,7 @@ Specmentは、異なるプロジェクトのニーズに合わせて2つの主�
 
 <div align="center">
 
-<img src=".github/images/architecture/usage-patterns.svg" alt="使用パターン図" width="100%" style="max-width: 800px;" />
+<img src=".github/images/architecture/usage-patterns-jp.svg" alt="使用パターン図" width="100%" style="max-width: 800px;" />
 
 *2つの主要な使用パターン: 単独プロジェクト運用 vs Monorepo統合*
 
@@ -64,26 +81,26 @@ Specmentは、異なるプロジェクトのニーズに合わせて2つの主�
 
 ### 単独プロジェクト運用
 
-このリポジトリを専用の仕様書ウェブサイトプロジェクトの基盤として使用します。
+このリポジトリを専用の仕様ウェブサイトプロジェクトの基盤として使用できます
 
 **メリット:**
 1. ドキュメントとソースコードの明確な分離
-1. 仕様書での共有と共同作業が簡単
+1. 仕様での共有と共同作業が簡単
 1. ドキュメント中心のプロジェクトでの軽量なセットアップ
 1. 独立したバージョン管理とリリースサイクル
 
 **適用場面:**
 1. APIドキュメントプロジェクト
-1. 製品仕様書リポジトリ
+1. 製品仕様リポジトリ
 1. チーム横断のドキュメント取り組み
 1. 外部向けドキュメントサイト
 
 ### Monorepo統合
 
-既存のmonorepoワークフローに仕様書管理を直接統合する場合に理想的です
+既存のシステムがmonoreponで作られていた場合、packageの1つとしてspecmentを追加することができます
 
 **メリット:**
-1. 仕様書が説明対象のコードと同じ場所に存在
+1. 仕様が説明対象のコードと同じ場所に存在
 1. 統一された開発ワークフロー
 1. 共有されたツールと設定
 1. コード変更と同期したバージョン管理
@@ -135,7 +152,7 @@ Specmentは、異なるプロジェクトのニーズに合わせて2つの主�
 # ドキュメントプロジェクトを作成したい場所に移動
 cd ~/projects
 
-# このリポジトリをクローンして専用の仕様書サイトを作成
+# このリポジトリをクローンして専用の仕様サイトを作成
 git clone https://github.com/plenarc/specment.git my-spec-site
 cd my-spec-site
 
@@ -146,37 +163,13 @@ pnpm install
 pnpm docs:start
 ```
 
-<div align="center">
-
-<img src=".github/images/screenshots/top-view.png" alt="ドキュメントサイトトップビュー" width="100%" style="max-width: 800px;" />
-
-*生成されるドキュメントサイトのトップビュー*
-
-</div>
-
-<div align="center">
-
-<img src=".github/images/screenshots/overview.png" alt="プロジェクト概要" width="100%" style="max-width: 800px;" />
-
-*例: プロジェクト概要*
-
-</div>
-
-<div align="center">
-
-<img src=".github/images/screenshots/as-is.png" alt="As-Is 現状分析" width="100%" style="max-width: 800px;" />
-
-*例: As-Is 現状分析*
-
-</div>
-
 **フォルダー構成:**
 
 ```
 my-spec-site/
 ├── apps/
 │ └── website/              # Specment - ドキュメントサイト
-│   ├── docs/               # 仕様書ファイル(markdown/mdx)
+│   ├── docs/               # 仕様ファイル(markdown/mdx)
 │   ├── src/                # サイトカスタマイズ
 │   └── docusaurus.config.ts
 ├── packages/
@@ -187,7 +180,7 @@ my-spec-site/
 
 ### パターン2: Monorepo統合
 
-既存のmonorepoプロジェクトに仕様書サイトを追加したい場合：
+既存のmonorepoプロジェクトに仕様サイトを追加したい場合：
 
 ```bash
 # 既存のmonorepoフォルダーに移動

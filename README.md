@@ -9,10 +9,32 @@
 
 [English](README.md) | [日本語](README-jp.md)
 
-https://plenarc.github.io/specment/
+Demo: https://plenarc.github.io/specment/
 
 'specification' + 'document' => Specment
 
+</div>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src=".github/images/screenshots/top-view.png" alt="Documentation Site Top View" width="250" />
+        <br>
+        <em>Top view of the generated documentation site</em>
+      </td>
+      <td align="center">
+        <img src=".github/images/screenshots/overview.png" alt="Project Overview" width="250" />
+        <br>
+        <em>Example: Project Overview</em>
+      </td>
+      <td align="center">
+        <img src=".github/images/screenshots/as-is.png" alt="As-Is Current State Analysis" width="250" />
+        <br>
+        <em>Example: As-Is Current State Analysis</em>
+      </td>
+    </tr>
+  </table>
 </div>
 
 ## About Specment
@@ -145,30 +167,6 @@ pnpm install
 # Start the documentation site to verify
 pnpm docs:start
 ```
-
-<div align="center">
-
-<img src=".github/images/screenshots/top-view.png" alt="Documentation Site Top View" width="100%" style="max-width: 800px;" />
-
-*Top view of the generated documentation site*
-
-</div>
-
-<div align="center">
-
-<img src=".github/images/screenshots/overview.png" alt="Project Overview" width="100%" style="max-width: 800px;" />
-
-*Example: Project Overview*
-
-</div>
-
-<div align="center">
-
-<img src=".github/images/screenshots/as-is.png" alt="As-Is Current State Analysis" width="100%" style="max-width: 800px;" />
-
-*Example: As-Is Current State Analysis*
-
-</div>
 
 **Folder Structure:**
 
