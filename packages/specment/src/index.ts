@@ -278,4 +278,10 @@ program
     console.log('This feature will integrate with Docusaurus build process');
   });
 
-program.parse();
+// テスト環境では自動実行を回避
+if (process.env.NODE_ENV !== 'test' && !process.env.VITEST) {
+  program.parse();
+}
+
+// プログラムオブジェクトをエクスポートしてテストで利用可能にする
+export { program };
