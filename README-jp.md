@@ -1,7 +1,3 @@
-<div align="center">
-
-<img src=".github/images/logos/specment-logo.svg" alt="Specment Logo" width="200" height="200" />
-
 # Specment
 
 [![NPM Package](.github/images/icons/npm-badge.svg)](https://www.npmjs.com/package/@plenarc/specment)
@@ -12,8 +8,6 @@
 Demo: https://plenarc.github.io/specment/
 
 'specification' + 'document' => Specment
-
-</div>
 
 <div align="center">
   <table>
@@ -63,7 +57,7 @@ Specmentを使うことで編集時だけではなく、閲覧や検索性のす
 
 <img src=".github/images/screenshots/cli-demo.svg" alt="CLIデモ" width="100%" style="max-width: 600px;" />
 
-*仕様開発と検証のためのCLIツール*
+仕様開発と検証のためのCLIツール
 
 </div>
 
@@ -75,7 +69,7 @@ Specmentは、異なるプロジェクトのニーズに合わせて2つの主�
 
 <img src=".github/images/architecture/usage-patterns-jp.svg" alt="使用パターン図" width="100%" style="max-width: 800px;" />
 
-*2つの主要な使用パターン: 単独プロジェクト運用 vs Monorepo統合*
+2つの主要な使用パターン: 単独プロジェクト運用 or Monorepo統合
 
 </div>
 
@@ -140,7 +134,7 @@ Specmentは、異なるプロジェクトのニーズに合わせて2つの主�
 
 <img src=".github/images/architecture/usage-workflow.svg" alt="使用ワークフロー" width="100%" style="max-width: 700px;" />
 
-*Specmentを始めるためのステップバイステップワークフロー*
+Specmentを始めるためのステップバイステップワークフロー
 
 </div>
 
