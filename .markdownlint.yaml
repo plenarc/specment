@@ -16,11 +16,16 @@ MD033: # Prohibit HTML tags except specified ones - 指定したhtmlタグ以外
   allowed_elements:
     - br
     - code
+    - CodeBlock
+    - details
+    - div
+    - em
     - img
     - span
-    - details
     - summary
-    - CodeBlock
+    - table
+    - td
+    - tr
 MD034: false
 MD038: false # Allow spaces in code blocks - コードブロック内のスペース可
 MD040: false # Remove mandatory language specification for code blocks - コードブロックの言語指定強制を解除
