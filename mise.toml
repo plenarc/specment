@@ -1,4 +1,4 @@
 [tools]
-nodejs = 'lts'
+node = 'lts'
 pnpm = 'latest'
 

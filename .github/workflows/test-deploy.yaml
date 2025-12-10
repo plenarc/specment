@@ -5,7 +5,7 @@ name: Test deployment
 on:
   pull_request:
     branches:
-      - develop
+      - main
     types:
       - opened
       - synchronize
@@ -15,7 +15,7 @@ on:
       target-branch:
         description: 'Target branch for test deployment'
         required: true
-        default: develop
+        default: main
 jobs:
   test-deploy:
     runs-on: ubuntu-latest
