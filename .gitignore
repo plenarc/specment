@@ -19,3 +19,18 @@ tree.txt
 
 # Logs
 pnpm-debug.log*
+
+# Test reports
+INTEGRATION_TEST_RESULTS.md
+integration-test-report.json
+package-verification-report.json
+workflow-test-report.json
+scripts/integration-test-summary.json
+
+# Build artifacts
+*.d.ts.map
+*.js.map
+*.tgz
+
+# Test files in build output
+packages/specment/bin/test-error.*
