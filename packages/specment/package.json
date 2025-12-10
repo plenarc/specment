@@ -1,11 +1,12 @@
 {
   "name": "@plenarc/specment",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A CLI tool for managing specification documents and templates",
   "type": "module",
   "author": "Plenarc",
   "license": "MIT",
   "main": "./bin/specment.js",
+  "types": "./bin/index.d.ts",
   "bin": {
     "specment": "./bin/specment.js"
   },
@@ -66,6 +67,7 @@
   },
   "files": [
     "bin",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ]
 }

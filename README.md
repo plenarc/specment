@@ -1,7 +1,3 @@
-<div align="center">
-
-<img src=".github/images/logos/specment-logo.svg" alt="Specment Logo" width="200" height="200" />
-
 # Specment
 
 [![NPM Package](.github/images/icons/npm-badge.svg)](https://www.npmjs.com/package/@plenarc/specment)
@@ -9,10 +5,32 @@
 
 [English](README.md) | [日本語](README-jp.md)
 
-https://plenarc.github.io/specment/
+Demo: https://plenarc.github.io/specment/
 
 'specification' + 'document' => Specment
 
+</div>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src=".github/images/screenshots/top-view.png" alt="Documentation Site Top View" width="250" />
+        <br>
+        <em>Top view of the generated documentation site</em>
+      </td>
+      <td align="center">
+        <img src=".github/images/screenshots/overview.png" alt="Project Overview" width="250" />
+        <br>
+        <em>Example: Project Overview</em>
+      </td>
+      <td align="center">
+        <img src=".github/images/screenshots/as-is.png" alt="As-Is Current State Analysis" width="250" />
+        <br>
+        <em>Example: As-Is Current State Analysis</em>
+      </td>
+    </tr>
+  </table>
 </div>
 
 ## About Specment
@@ -46,7 +64,7 @@ Specment follows two fundamental principles:
 
 <img src=".github/images/screenshots/cli-demo.svg" alt="CLI Demo" width="100%" style="max-width: 600px;" />
 
-*CLI tools for specification development and validation*
+CLI tools for specification development and validation
 
 </div>
 
@@ -58,7 +76,7 @@ Specment supports two main usage patterns to fit different project needs:
 
 <img src=".github/images/architecture/usage-patterns.svg" alt="Usage Patterns Diagram" width="100%" style="max-width: 800px;" />
 
-*Two main usage patterns: Standalone Project vs Monorepo Integration*
+Two main usage patterns: Standalone Project vs Monorepo Integration
 
 </div>
 
@@ -123,7 +141,7 @@ Follow one of the procedures below depending on your usage pattern:
 
 <img src=".github/images/architecture/usage-workflow.svg" alt="Usage Workflow" width="100%" style="max-width: 700px;" />
 
-*Step-by-step workflow for getting started with Specment*
+Step-by-step workflow for getting started with Specment
 
 </div>
 
@@ -145,30 +163,6 @@ pnpm install
 # Start the documentation site to verify
 pnpm docs:start
 ```
-
-<div align="center">
-
-<img src=".github/images/screenshots/top-view.png" alt="Documentation Site Top View" width="100%" style="max-width: 800px;" />
-
-*Top view of the generated documentation site*
-
-</div>
-
-<div align="center">
-
-<img src=".github/images/screenshots/overview.png" alt="Project Overview" width="100%" style="max-width: 800px;" />
-
-*Example: Project Overview*
-
-</div>
-
-<div align="center">
-
-<img src=".github/images/screenshots/as-is.png" alt="As-Is Current State Analysis" width="100%" style="max-width: 800px;" />
-
-*Example: As-Is Current State Analysis*
-
-</div>
 
 **Folder Structure:**
 
