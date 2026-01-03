@@ -8,6 +8,8 @@
 # Generated files
 .cache-loader
 /apps/website/.docusaurus
+/.docusaurus
+/build
 tree.txt
 
 # Misc
@@ -19,6 +21,10 @@ tree.txt
 
 # Logs
 pnpm-debug.log*
+
+# Backup
+/backup
+*.backup
 
 # Test reports
 INTEGRATION_TEST_RESULTS.md
