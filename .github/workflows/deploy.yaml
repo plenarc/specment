@@ -31,12 +31,12 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: '[5/6] build'
-        run: pnpm --filter @specment/website build
+        run: pnpm build
 
       - name: '[6/6] upload Build Artifact'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/website/build
+          path: build
 
   deploy:
     name: deploy to GitHub Pages

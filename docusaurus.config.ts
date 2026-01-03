@@ -18,7 +18,8 @@ const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 const config: Config = {
   title: titleValue,
   tagline: descriptionValue,
-  favicon: 'img/favicon.ico',
+  // favicon: 'img/favicon.ico',
+  favicon: 'img/logo.ico',
 
   url: isGithubActions ? urlValue : 'http://localhost:3000',
   baseUrl: isGithubActions ? baseUrlValue : '/',
@@ -47,6 +48,21 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'api-spec',
+            spec: 'openapi/openapi-single.yaml',
+            route: '/api/',
+          },
+        ],
+        theme: {
+          primaryColor: '#1976d2',
+        },
+      },
     ],
   ],
 
@@ -90,19 +106,13 @@ const config: Config = {
           position: 'left',
           docId: 'internal/index',
         },
-        // {
-        //   label: 'API',
-        //   position: 'left',
-        //   to: '/api/',
-        //   // items: [
-        //   //   {
-        //   //     label: 'redoc example',
-        //   //     to: '/api/redoc-example/',
-        //   //   },
-        //   // ]
-        // },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          label: 'API',
+          position: 'left',
+          to: '/api/',
+        },
+        {
+          href: 'https://github.com/plenarc/create-specment',
           label: 'GitHub',
           position: 'right',
         },

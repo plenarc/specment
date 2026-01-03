@@ -1,0 +1,975 @@
+openapi: 3.0.3
+servers:
+  - url: //petstore.swagger.io/v2
+    description: デフォルトサーバー
+  - url: //petstore.swagger.io/sandbox
+    description: サンドボックスサーバー
+info:
+  description: |
+    これはサンプルのペットストアサーバーです。
+    Swaggerについて詳しくは [http://swagger.io](http://swagger.io) または [irc.freenode.net, #swagger](http://swagger.io/irc/) をご覧ください。
+    このサンプルでは、認証フィルターをテストするためにAPIキー `special-key` を使用できます。
+
+    # はじめに
+    このAPIは **OpenAPI形式** でドキュメント化されており、[swagger.io](http://swagger.io) チームが提供する
+    [Petstore sample](http://petstore.swagger.io/) をベースにしています。
+    [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo) ツールと
+    [ReDoc](https://github.com/Redocly/redoc) ドキュメントの機能を説明するために **拡張** されました。
+    標準的なOpenAPI構文に加えて、いくつかの [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md) を使用しています。
+
+    # OpenAPI仕様
+    このAPIは **OpenAPI形式** でドキュメント化されており、[swagger.io](http://swagger.io) チームが提供する
+    [Petstore sample](http://petstore.swagger.io/) をベースにしています。
+    [generator-openapi-repo](https://github.com/Rebilly/generator-openapi-repo) ツールと
+    [ReDoc](https://github.com/Redocly/redoc) ドキュメントの機能を説明するために **拡張** されました。
+    標準的なOpenAPI構文に加えて、いくつかの [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md) を使用しています。
+
+    # クロスオリジンリソース共有
+    このAPIは [W3C仕様](https://www.w3.org/TR/cors/) に準拠したクロスオリジンリソース共有（CORS）機能を備えています。
+    これにより、ブラウザからのクロスドメイン通信が可能になります。
+    すべてのレスポンスにはワイルドカード同一オリジンが設定されており、任意のサイトのコードを含む
+    すべてのユーザーが完全にパブリックでアクセス可能になっています。
+
+    # 認証
+
+    Petstoreでは2つの認証形式を提供しています：
+      - APIキー
+      - OAuth2
+    OAuth2 - ウェブ、モバイル、デスクトップアプリケーションから
+    シンプルで標準的な方法で安全な認証を可能にするオープンプロトコルです。
+
+    <SecurityDefinitions />
+
+  version: 1.0.0
+  title: Swagger Petstore
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: APIサポート
+    email: apiteam@swagger.io
+    url: https://github.com/Redocly/redoc
+  x-logo:
+    url: 'https://redocly.github.io/redoc/petstore-logo.png'
+    altText: ペットストアロゴ
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+externalDocs:
+  description: OpenAPI仕様用のGithubリポジトリの作成方法を確認してください。
+  url: 'https://github.com/Rebilly/generator-openapi-repo'
+tags:
+  - name: pet
+    description: ペットに関するすべて
+  - name: store
+    description: ペットストアの注文へのアクセス
+  - name: user
+    description: ユーザーに関する操作
+  - name: pet_model
+    x-displayName: ペットモデル
+    description: |
+      <SchemaDefinition schemaRef="#/components/schemas/Pet" />
+  - name: store_model
+    x-displayName: 注文モデル
+    description: |
+      <SchemaDefinition schemaRef="#/components/schemas/Order" exampleRef="#/components/examples/Order" showReadOnly={true} showWriteOnly={true} />
+x-tagGroups:
+  - name: 一般
+    tags:
+      - pet
+      - store
+  - name: ユーザー管理
+    tags:
+      - user
+  - name: モデル
+    tags:
+      - pet_model
+      - store_model
+paths:
+  /pet:
+    parameters:
+      - name: Accept-Language
+        in: header
+        description: "メッセージに使用する言語。サポートされている値は en-AU, en-CA, en-GB, en-US です"
+        example: en-US
+        required: false
+        schema:
+          type: string
+          default: en-AU
+      - name: cookieParam
+        in: cookie
+        description: 何らかのクッキー
+        required: true
+        schema:
+          type: integer
+          format: int64
+    post:
+      tags:
+        - pet
+      summary: ストアに新しいペットを追加
+      description: ストアの在庫に新しいペットを追加します。
+      operationId: addPet
+      responses:
+        '405':
+          description: 無効な入力
+      security:
+        - petstore_auth:
+            - 'write:pets'
+            - 'read:pets'
+      x-codeSamples:
+        - lang: 'C#'
+          source: |
+            PetStore.v1.Pet pet = new PetStore.v1.Pet();
+            pet.setApiKey("your api key");
+            pet.petType = PetStore.v1.Pet.TYPE_DOG;
+            pet.name = "Rex";
+            // その他のフィールドを設定
+            PetStoreResponse response = pet.create();
+            if (response.statusCode == HttpStatusCode.Created)
+            {
+              // 正常に作成されました
+            }
+            else
+            {
+              // 何か問題があります -- エラーのレスポンスを確認してください
+              Console.WriteLine(response.getRawResponse());
+            }
+        - lang: PHP
+          source: |
+            $form = new \PetStore\Entities\Pet();
+            $form->setPetType("Dog");
+            $form->setName("Rex");
+            // その他のフィールドを設定
+            try {
+                $pet = $client->pets()->create($form);
+            } catch (UnprocessableEntityException $e) {
+                var_dump($e->getErrors());
+            }
+      requestBody:
+        $ref: '#/components/requestBodies/Pet'
+    put:
+      tags:
+        - pet
+      summary: 既存のペットを更新
+      description: ''
+      operationId: updatePet
+      responses:
+        '400':
+          description: 無効なIDが提供されました
+        '404':
+          description: ペットが見つかりません
+        '405':
+          description: バリデーション例外
+      security:
+        - petstore_auth:
+            - 'write:pets'
+            - 'read:pets'
+      x-codeSamples:
+        - lang: PHP
+          source: |
+            $form = new \PetStore\Entities\Pet();
+            $form->setPetId(1);
+            $form->setPetType("Dog");
+            $form->setName("Rex");
+            // その他のフィールドを設定
+            try {
+                $pet = $client->pets()->update($form);
+            } catch (UnprocessableEntityException $e) {
+                var_dump($e->getErrors());
+            }
+      requestBody:
+        $ref: '#/components/requestBodies/Pet'
+  '/pet/{petId}':
+    get:
+      tags:
+        - pet
+      summary: IDでペットを検索
+      description: 単一のペットを返します
+      operationId: getPetById
+      parameters:
+        - name: petId
+          in: path
+          description: 返すペットのID
+          required: true
+          deprecated: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 正常な操作
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Pet'
+        '400':
+          description: 無効なIDが提供されました
+        '404':
+          description: ペットが見つかりません
+      security:
+        - api_key: []
+    post:
+      tags:
+        - pet
+      summary: フォームデータでストア内のペットを更新
+      description: ''
+      operationId: updatePetWithForm
+      parameters:
+        - name: petId
+          in: path
+          description: 更新が必要なペットのID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '405':
+          description: 無効な入力
+      security:
+        - petstore_auth:
+            - 'write:pets'
+            - 'read:pets'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  description: ペットの更新された名前
+                  type: string
+                status:
+                  description: ペットの更新されたステータス
+                  type: string
+    delete:
+      tags:
+        - pet
+      summary: ペットを削除
+      description: ''
+      operationId: deletePet
+      parameters:
+        - name: api_key
+          in: header
+          required: false
+          schema:
+            type: string
+          example: "Bearer <TOKEN>"
+        - name: petId
+          in: path
+          description: 削除するペットのID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: 無効なペット値
+      security:
+        - petstore_auth:
+            - 'write:pets'
+            - 'read:pets'
+  '/pet/{petId}/uploadImage':
+    post:
+      tags:
+        - pet
+      summary: 画像をアップロード
+      description: ''
+      operationId: uploadFile
+      parameters:
+        - name: petId
+          in: path
+          description: 更新するペットのID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 正常な操作
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      security:
+        - petstore_auth:
+            - 'write:pets'
+            - 'read:pets'
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+  /pet/findByStatus:
+    get:
+      tags:
+        - pet
+      summary: ステータスでペットを検索
+      description: 複数のステータス値をカンマ区切りの文字列で提供できます
+      operationId: findPetsByStatus
+      parameters:
+        - name: status
+          in: query
+          description: フィルターで考慮する必要があるステータス値
+          required: true
+          style: form
+          schema:
+            type: array
+            minItems: 1
+            maxItems: 3
+            items:
+              type: string
+              enum:
+                - available
+                - pending
+                - sold
+              default: available
+      responses:
+        '200':
+          description: 正常な操作
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+        '400':
+          description: 無効なステータス値
+      security:
+        - petstore_auth:
+            - 'write:pets'
+            - 'read:pets'
+  /pet/findByTags:
+    get:
+      tags:
+        - pet
+      summary: タグでペットを検索
+      description: >-
+        複数のタグをカンマ区切りの文字列で提供できます。テスト用にtag1,
+        tag2, tag3を使用してください。
+      operationId: findPetsByTags
+      deprecated: true
+      parameters:
+        - name: tags
+          in: query
+          description: フィルターするタグ
+          required: true
+          style: form
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: 正常な操作
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+        '400':
+          description: 無効なタグ値
+      security:
+        - petstore_auth:
+            - 'write:pets'
+            - 'read:pets'
+  /store/inventory:
+    get:
+      tags:
+        - store
+      summary: ステータス別のペット在庫を返す
+      description: ステータスコードから数量へのマップを返します
+      operationId: getInventory
+      responses:
+        '200':
+          description: 正常な操作
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: integer
+                  format: int32
+      security:
+        - api_key: []
+  /store/order:
+    post:
+      tags:
+        - store
+      summary: ペットの注文を行う
+      description: ''
+      operationId: placeOrder
+      responses:
+        '200':
+          description: 正常な操作
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          description: 無効な注文
+          content:
+            application/json:
+              example:
+                status: 400
+                message: "無効な注文"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+        description: ペット購入のために行われた注文
+        required: true
+  '/store/order/{orderId}':
+    get:
+      tags:
+        - store
+      summary: IDで購入注文を検索
+      description: >-
+        有効なレスポンスには、値が <= 5 または > 10 の整数IDを試してください。その他の値は
+        例外を生成します
+      operationId: getOrderById
+      parameters:
+        - name: orderId
+          in: path
+          description: 取得が必要なペットのID
+          required: true
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+            maximum: 5
+      responses:
+        '200':
+          description: 正常な操作
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          description: 無効なIDが提供されました
+        '404':
+          description: 注文が見つかりません
+    delete:
+      tags:
+        - store
+      summary: IDで購入注文を削除
+      description: >-
+        有効なレスポンスには、値が < 1000 の整数IDを試してください。1000以上または
+        非整数はAPIエラーを生成します
+      operationId: deleteOrder
+      parameters:
+        - name: orderId
+          in: path
+          description: 削除が必要な注文のID
+          required: true
+          schema:
+            type: string
+            minimum: 1
+      responses:
+        '400':
+          description: 無効なIDが提供されました
+        '404':
+          description: 注文が見つかりません
+  /user:
+    post:
+      tags:
+        - user
+      summary: ユーザーを作成
+      description: これはログインしたユーザーのみが実行できます。
+      operationId: createUser
+      responses:
+        default:
+          description: 正常な操作
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: 作成されたユーザーオブジェクト
+        required: true
+  '/user/{username}':
+    get:
+      tags:
+        - user
+      summary: ユーザー名でユーザーを取得
+      description: ''
+      operationId: getUserByName
+      parameters:
+        - name: username
+          in: path
+          description: '取得が必要な名前。テスト用にuser1を使用してください。 '
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 正常な操作
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: 無効なユーザー名が提供されました
+        '404':
+          description: ユーザーが見つかりません
+    put:
+      tags:
+        - user
+      summary: ユーザーを更新
+      description: これはログインしたユーザーのみが実行できます。
+      operationId: updateUser
+      parameters:
+        - name: username
+          in: path
+          description: 削除が必要な名前
+          required: true
+          schema:
+            type: string
+      responses:
+        '400':
+          description: 無効なユーザーが提供されました
+        '404':
+          description: ユーザーが見つかりません
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: 更新されたユーザーオブジェクト
+        required: true
+    delete:
+      tags:
+        - user
+      summary: ユーザーを削除
+      description: これはログインしたユーザーのみが実行できます。
+      operationId: deleteUser
+      parameters:
+        - name: username
+          in: path
+          description: 削除が必要な名前
+          required: true
+          schema:
+            type: string
+      responses:
+        '400':
+          description: 無効なユーザー名が提供されました
+        '404':
+          description: ユーザーが見つかりません
+  /user/createWithArray:
+    post:
+      tags:
+        - user
+      summary: 指定された入力配列でユーザーのリストを作成
+      description: ''
+      operationId: createUsersWithArrayInput
+      responses:
+        default:
+          description: 正常な操作
+      requestBody:
+        $ref: '#/components/requestBodies/UserArray'
+  /user/createWithList:
+    post:
+      tags:
+        - user
+      summary: 指定された入力配列でユーザーのリストを作成
+      description: ''
+      operationId: createUsersWithListInput
+      responses:
+        default:
+          description: 正常な操作
+      requestBody:
+        $ref: '#/components/requestBodies/UserArray'
+  /user/login:
+    get:
+      tags:
+        - user
+      summary: ユーザーをシステムにログイン
+      description: ''
+      operationId: loginUser
+      parameters:
+        - name: username
+          in: query
+          description: ログイン用のユーザー名
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          description: 平文でのログイン用パスワード
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 正常な操作
+          headers:
+            X-Rate-Limit:
+              description: ユーザーが許可される1時間あたりの呼び出し数
+              schema:
+                type: integer
+                format: int32
+            X-Expires-After:
+              description: トークンが期限切れになるUTCの日付
+              schema:
+                type: string
+                format: date-time
+          content:
+            application/json:
+              schema:
+                type: string
+              examples:
+                response:
+                  value: OK
+            application/xml:
+              schema:
+                type: string
+              examples:
+                response:
+                  value:  <Message> OK </Message>
+            text/plain:
+              examples:
+                response:
+                  value:  OK
+        '400':
+          description: 無効なユーザー名/パスワードが提供されました
+  /user/logout:
+    get:
+      tags:
+        - user
+      summary: 現在ログインしているユーザーセッションをログアウト
+      description: ''
+      operationId: logoutUser
+      responses:
+        default:
+          description: 正常な操作
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+    Cat:
+      description: 猫の表現
+      allOf:
+        - $ref: '#/components/schemas/Pet'
+        - type: object
+          properties:
+            huntingSkill:
+              type: string
+              description: 狩りの測定されたスキル
+              default: lazy
+              example: adventurous
+              enum:
+                - clueless
+                - lazy
+                - adventurous
+                - aggressive
+          required:
+            - huntingSkill
+    Category:
+      type: object
+      properties:
+        id:
+          description: カテゴリID
+          allOf:
+            - $ref: '#/components/schemas/Id'
+        name:
+          description: カテゴリ名
+          type: string
+          minLength: 1
+        sub:
+          description: テストサブカテゴリ
+          type: object
+          properties:
+            prop1:
+              type: string
+              description: ダミープロパティ
+      xml:
+        name: Category
+    Dog:
+      description: 犬の表現
+      allOf:
+        - $ref: '#/components/schemas/Pet'
+        - type: object
+          properties:
+            packSize:
+              type: integer
+              format: int32
+              description: 群れのサイズ
+              default: 0
+              minimum: 0
+    HoneyBee:
+      description: ミツバチの表現
+      allOf:
+        - $ref: '#/components/schemas/Pet'
+        - type: object
+          properties:
+            honeyPerDay:
+              type: number
+              description: 1日あたりの蜂蜜の平均量（リットル）
+              example: 3.14
+              multipleOf: 0.01
+          required:
+            - honeyPerDay
+    Id:
+      type: integer
+      format: int64
+      readOnly: true
+    Order:
+      type: object
+      properties:
+        id:
+          description: 注文ID
+          allOf:
+            - $ref: '#/components/schemas/Id'
+        petId:
+          description: ペットID
+          allOf:
+            - $ref: '#/components/schemas/Id'
+        quantity:
+          type: integer
+          format: int32
+          minimum: 1
+          default: 1
+        shipDate:
+          description: 推定出荷日
+          type: string
+          format: date-time
+        status:
+          type: string
+          description: 注文ステータス
+          enum:
+            - placed
+            - approved
+            - delivered
+        complete:
+          description: 注文が完了したかどうかを示します
+          type: boolean
+          default: false
+          readOnly: true
+        requestId:
+          description: 一意のリクエストID
+          type: string
+          writeOnly: true
+      xml:
+        name: Order
+    Pet:
+      type: object
+      required:
+        - name
+        - photoUrls
+      discriminator:
+        propertyName: petType
+        mapping:
+          cat: '#/components/schemas/Cat'
+          dog: '#/components/schemas/Dog'
+          bee: '#/components/schemas/HoneyBee'
+      properties:
+        id:
+          externalDocs:
+            description: "詳細情報はこちら"
+            url: "https://example.com"
+          description: ペットID
+          allOf:
+            - $ref: '#/components/schemas/Id'
+        category:
+          description: このペットが属するカテゴリ
+          allOf:
+            - $ref: '#/components/schemas/Category'
+        name:
+          description: ペットに付けられた名前
+          type: string
+          example: Guru
+        photoUrls:
+          description: ペットのかわいい写真のURLリスト
+          type: array
+          maxItems: 20
+          xml:
+            name: photoUrl
+            wrapped: true
+          items:
+            type: string
+            format: url
+        friend:
+          allOf:
+            - $ref: '#/components/schemas/Pet'
+        tags:
+          description: ペットに付けられたタグ
+          type: array
+          minItems: 1
+          xml:
+            name: tag
+            wrapped: true
+          items:
+            $ref: '#/components/schemas/Tag'
+        status:
+          type: string
+          description: ストア内のペットステータス
+          enum:
+            - available
+            - pending
+            - sold
+        petType:
+          description: ペットのタイプ
+          type: string
+      xml:
+        name: Pet
+    Tag:
+      type: object
+      properties:
+        id:
+          description: タグID
+          allOf:
+            - $ref: '#/components/schemas/Id'
+        name:
+          description: タグ名
+          type: string
+          minLength: 1
+      xml:
+        name: Tag
+    User:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        pet:
+          oneOf:
+            - $ref: '#/components/schemas/Pet'
+            - $ref: '#/components/schemas/Tag'
+        username:
+          description: ユーザー提供のユーザー名
+          type: string
+          minLength: 4
+          example: John78
+        firstName:
+          description: ユーザーの名
+          type: string
+          minLength: 1
+          example: John
+        lastName:
+          description: ユーザーの姓
+          type: string
+          minLength: 1
+          example: Smith
+        email:
+          description: ユーザーのメールアドレス
+          type: string
+          format: email
+          example: john.smith@example.com
+        password:
+          type: string
+          description: >-
+            ユーザーパスワード、大文字と小文字、
+            および数字の組み合わせを含む必要があります
+          format: password
+          minLength: 8
+          pattern: '/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/'
+          example: drowssaP123
+        phone:
+          description: 国際形式でのユーザー電話番号
+          type: string
+          pattern: '/^\+(?:[0-9]-?){6,14}[0-9]$/'
+          example: +1-202-555-0192
+        userStatus:
+          description: ユーザーステータス
+          type: integer
+          format: int32
+      xml:
+        name: User
+  requestBodies:
+    Pet:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - description: 私のペット
+                title: Pettie
+              - $ref: '#/components/schemas/Pet'
+        application/xml:
+          schema:
+            type: 'object'
+            properties:
+              name:
+                type: string
+                description: やったー
+      description: ストアに追加する必要があるペットオブジェクト
+      required: true
+    UserArray:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+      description: ユーザーオブジェクトのリスト
+      required: true
+  securitySchemes:
+    petstore_auth:
+      description: |
+        アカウント認証情報を保護しながらデータにアクセスできます。
+        OAuth2は、アクセスを提供するより安全で安全な方法でもあります。
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: 'http://petstore.swagger.io/api/oauth/dialog'
+          scopes:
+            'write:pets': アカウント内のペットを変更
+            'read:pets': ペットを読み取り
+    api_key:
+      description: >
+        このサンプルでは、APIキー `special-key` を使用して
+        認証フィルターをテストできます。
+      type: apiKey
+      name: api_key
+      in: header
+  examples:
+    Order:
+      value:
+        quantity: 1
+        shipDate: '2018-10-19T16:46:45Z'
+        status: placed
+        complete: false
+x-webhooks:
+  newPet:
+    post:
+      summary: ペット追加
+      description: システム内の新しいペットに関する情報
+      operationId: newPet
+      tags:
+        - pet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Pet"
+      responses:
+        "200":
+          description: データが正常に受信されたことを示すために200ステータスを返す
