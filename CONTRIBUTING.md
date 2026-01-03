@@ -1,144 +1,34 @@
-# 貢献ガイド
+# Specmentへの貢献
 
-Specmentプロジェクトへの貢献をありがとうございます！このガイドでは、プロジェクトに貢献する方法について説明します。
+## このリポジトリについて
 
-## 開発環境のセットアップ
+これは**サンプルリポジトリ**で、Specmentドキュメントサイトがどのようなものかを示しています。このリポジトリはSpecmentのメイン開発リポジトリではありません。
 
-### 必要な環境
+## 貢献方法
 
-- Node.js 22.0以上
-- pnpm 10.0以上
+Specmentプロジェクトへの貢献については、メイン開発リポジトリをご覧ください：
 
-### セットアップ手順
+**🚀 [Specmentに貢献する](https://github.com/plenarc/create-specment/blob/main/CONTRIBUTING.md)**
 
-1. **リポジトリのクローン**
-    ```bash
-    git clone https://github.com/plenarc/specment.git
-    cd specment
-    ```
+Specmentのメイン開発は[create-specment](https://github.com/plenarc/create-specment)リポジトリで行われています
 
-2. **依存関係のインストール**
-    ```bash
-    pnpm install
-    ```
+1. **メインCLIツール**: create-specmentコマンドラインツール
+1. **コア開発**: すべてのアクティブな開発と貢献
+1. **課題追跡**: バグ報告と機能要望
+1. **ドキュメント**: 完全な貢献ガイドライン
 
-3. **ビルド**
-    ```bash
-    pnpm specment:build
-    ```
+## このリポジトリの目的
 
-4. **動作確認**
-    ```bash
-    cd packages/specment
-    node bin/specment.js --version
-    ```
+このサンプルリポジトリは以下の役割を果たします：
 
-## 開発フロー
+1. **ライブサンプル**: 生成されたSpecmentサイトがどのようなものかを示す
+1. **ドキュメント**: 仕様ドキュメントの実例を提供
+1. **リファレンス**: 仕様の整理におけるベストプラクティスを実演
+1. **デモサイト**: https://plenarc.github.io/specment/ のライブデモを提供
 
-### 1. ブランチの作成
+## 質問や問題がある場合
 
-```bash
-git checkout -b feature/your-feature-name
-```
+- **Specment開発について**: [create-specmentリポジトリ](https://github.com/plenarc/create-specment)をご覧ください
+- **このサンプルサイトについて**: サンプル固有の質問についてはこのリポジトリでissueを開いてください
 
-### 2. 開発
-
-- `packages/specment/src/` でコードを編集
-- TypeScriptで開発
-- 適切なコメントとドキュメントを追加
-
-### 3. ビルドとテスト
-
-```bash
-# ビルド
-pnpm specment:build
-
-# 型チェック
-pnpm --filter @plenarc/specment typecheck
-
-# リント
-pnpm --filter @plenarc/specment lint:fix
-
-# フォーマット
-pnpm --filter @plenarc/specment format
-```
-
-### 4. changesetの作成
-
-変更内容に応じてchangesetを作成：
-
-```bash
-pnpm changeset
-```
-
-- **patch**: バグ修正
-- **minor**: 新機能追加
-- **major**: 破壊的変更
-
-### 5. コミットとプッシュ
-
-```bash
-git add .
-git commit -m "feat: 新機能の説明"
-git push origin feature/your-feature-name
-```
-
-### 6. プルリクエストの作成
-
-GitHub上でプルリクエストを作成してください。
-
-## コーディング規約
-
-### TypeScript
-
-- 厳密な型定義を使用
-- `any`の使用は避ける
-- 適切なインターフェースと型を定義
-
-### コードスタイル
-
-- Biomeを使用してフォーマット
-- ESLintルールに従う
-- 意味のある変数名と関数名を使用
-
-### コミットメッセージ
-
-Conventional Commitsに従ってください：
-
-- `feat:` 新機能
-- `fix:` バグ修正
-- `docs:` ドキュメント更新
-- `style:` コードスタイル変更
-- `refactor:` リファクタリング
-- `test:` テスト追加・修正
-- `chore:` その他の変更
-
-## プロジェクト構造
-
-```
-specment/
-├── packages/
-│   └── specment/           # メインCLIパッケージ
-│       ├── src/           # TypeScriptソースコード
-│       ├── bin/           # ビルド済みJavaScript
-│       ├── templates/     # テンプレートファイル
-│       └── package.json
-├── apps/
-│   └── website/           # ドキュメントサイト
-├── .changeset/            # changeset設定
-├── .github/workflows/     # GitHub Actions
-└── docs/                  # プロジェクトドキュメント
-```
-
-## リリースプロセス
-
-詳細は[RELEASE_PROCESS.md](./RELEASE_PROCESS.md)を参照してください。
-
-## 質問・サポート
-
-- **Issues**: バグ報告や機能要望は[GitHub Issues](https://github.com/plenarc/specment/issues)
-- **Discussions**: 質問や議論は[GitHub Discussions](https://github.com/plenarc/specment/discussions)
-
-## ライセンス
-
-このプロジェクトはMITライセンスの下で公開されています。詳細は[LICENSE](./LICENSE)ファイルを参照してください。
+Specmentへの貢献にご興味をお持ちいただき、ありがとうございます！

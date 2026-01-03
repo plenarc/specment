@@ -1,39 +1,42 @@
 {
   "name": "specment",
-  "version": "0.1.8",
+  "version": "1.0.1",
+  "description": "A Docusaurus-based documentation site template for specification documents - Sample Repository",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "check": "exec biome check --apply .",
-    "format": "exec biome format . --write",
-    "lint": "exec biome lint .",
-    "lint:fix": "exec biome lint . --fix",
-    "docs:start": "pnpm --filter @specment/website start",
-    "docs:build": "pnpm --filter @specment/website build",
-    "docs:serve": "pnpm --filter @specment/website serve",
-    "specment:build": "pnpm --filter @plenarc/specment build",
-    "build:all": "pnpm --filter @plenarc/specment build && pnpm --filter @specment/website build",
-    "typecheck": "tsc",
-    "changeset": "changeset",
-    "changeset:version": "changeset version",
-    "changeset:publish": "pnpm specment:build && changeset publish",
-    "changeset:status": "changeset status",
-    "release": "pnpm changeset:version && pnpm changeset:publish",
-    "test:workflow": "node scripts/run-workflow-tests.js",
-    "test:workflow:syntax": "node scripts/test-workflow-validation.js",
-    "test:workflow:branch": "node scripts/test-branch-workflow.js",
-    "test:workflow:npm": "node scripts/test-npm-publish.js",
-    "test:workflow:errors": "node scripts/test-error-scenarios.js",
-    "security:check": "node scripts/security-check.js",
-    "test:integration": "node scripts/run-integration-tests.js",
-    "test:integration:workflow": "node scripts/test-integration-workflow.js",
-    "test:integration:package": "node scripts/verify-published-package.js",
-    "test:integration:create-pr": "node scripts/create-test-pr.js"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.9.2",
+    "@docusaurus/preset-classic": "3.9.2",
+    "@easyops-cn/docusaurus-search-local": "^0.52.1",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "docusaurus-theme-plantuml": "^1.0.2",
+    "js-yaml": "^4.1.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "redocusaurus": "^2.5.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.4",
-    "@changesets/cli": "^2.29.6",
+    "@biomejs/biome": "^2.3.10",
+    "@docusaurus/module-type-aliases": "3.9.2",
+    "@docusaurus/tsconfig": "3.9.2",
+    "@docusaurus/types": "3.9.2",
     "@types/node": "^24.2.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "typescript": "~5.9.2"
   },
   "browserslist": {
@@ -50,16 +53,5 @@
   },
   "engines": {
     "node": ">=22.0"
-  },
-  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "@biomejs/biome",
-      "core-js",
-      "core-js-pure"
-    ],
-    "onlyBuiltDependencies": [
-      "core-js-pure"
-    ]
   }
 }
