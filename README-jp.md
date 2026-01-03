@@ -1,6 +1,5 @@
-# Specment
+# Specment サンプルリポジトリ
 
-[![NPM Package](.github/images/icons/npm-badge.svg)](https://www.npmjs.com/package/@plenarc/specment)
 [![MIT License](.github/images/icons/license-badge.svg)](LICENSE)
 
 [English](README.md) | [日本語](README-jp.md)
@@ -13,17 +12,17 @@ Demo: https://plenarc.github.io/specment/
   <table>
     <tr>
       <td align="center">
-        <img src=".github/images/screenshots/top-view.png" alt="トップビュー" width="250" />
+        <img src="img/screenshot-top.png" alt="生成されたドキュメントサイトのトップビュー" width="250" />
         <br>
-        <em>例: トップビュー</em>
+        <em>生成されたドキュメントサイトのトップビュー</em>
       </td>
       <td align="center">
-        <img src=".github/images/screenshots/overview.png" alt="プロジェクト概要" width="250" />
+        <img src="img/screenshot-overview.png" alt="例: プロジェクト概要" width="250" />
         <br>
         <em>例: プロジェクト概要</em>
       </td>
       <td align="center">
-        <img src=".github/images/screenshots/as-is.png" alt="As-Is 現状分析" width="250" />
+        <img src="img/screenshot-as-is.png" alt="例: As-Is 現状分析" width="250" />
         <br>
         <em>例: As-Is 現状分析</em>
       </td>
@@ -31,198 +30,62 @@ Demo: https://plenarc.github.io/specment/
   </table>
 </div>
 
-## Specmentについて
+## このリポジトリについて
 
-Specmentは**markdown(mdx)で仕様サイトを作り、仕様をgit管理する**ためのリポジトリベースのソリューションです。<br/>
-開発中プロジェクトの仕様がExcelで作られていたり、テキストで書かれていた場合、検索や閲覧がしづらくなりがちです<br/>
-Specmentを使うことで編集時だけではなく、閲覧や検索性のすぐれた仕様サイトが作れます。
+**これはサンプルリポジトリです**。完全にセットアップされたSpecmentドキュメントサイトがどのようなものかを示しています。このリポジトリは、[create-specment](https://github.com/plenarc/create-specment)ツールを使用したときに作成されるドキュメントサイトの実例として機能します。
+
+### Specmentとは？
+
+Specmentは**markdown(MDX)で仕様サイトを作成し、Gitで仕様を管理する**ためのリポジトリベースのソリューションです。ソフトウェアプロジェクトにおける一貫性のないドキュメント慣行や散在する仕様ファイルの一般的な問題を解決します。
 
 ### Specmentが解決する問題
 
 1. **一貫性のないドキュメント**: チームは多くの場合、プロジェクト間で異なるドキュメント形式や構造に悩まされています
 1. **テンプレート管理**: 一貫したドキュメントテンプレートの作成と維持には時間がかかります
-1. **ドキュメントのGit管理**: 仕様をソースと同じようにGitで管理することで、厳格に管理できるようになります
-1. **検証と品質**: ドキュメントが標準や規約に従っているか生成AIやlintを使うことで管理しやすくなります
+1. **ドキュメント生成**: 仕様を読みやすいドキュメントサイトに変換するには手動作業が必要です
+1. **検証と品質**: ドキュメントが標準や規約に従っているかを確認することは困難です
 
-### 主要機能
+### 主な機能
 
-1. **リポジトリベースアーキテクチャ**: このリポジトリが仕様プロジェクトの基盤として機能
-1. **Markdown/MDXサポート**: 馴染みのあるmarkdownとReactコンポーネントサポートで仕様を作成
-1. **Docusaurus統合**: プロフェッショナルなドキュメントサイトの自動生成
-1. **Gitワークフロー**: ブランチ、マージ、コラボレーション機能を含む完全なバージョン管理
-1. **テンプレートシステム**: 一般的な仕様タイプ用の事前構築されたテンプレートと構造
-1. **開発ツール**: 仕様開発ワークフローをサポートするCLIユーティリティ
+1. **Markdown/MDXサポート**: mdx(markdown)でで仕様を記述
+1. **Docusaurus統合**: ドキュメントサイトの生成
+1. **Gitワークフロー**: mdxにすることで仕様をGitrl管理
+1. **テンプレートシステム**: 仕様作成時によく使うフォーマットをテンプレート(サンプル)として表示
 
-<div align="center">
+## はじめに
 
-<img src=".github/images/screenshots/cli-demo.svg" alt="CLIデモ" width="100%" style="max-width: 600px;" />
+Specmentでドキュメントサイトを作成するには公式のcreate-specmentツールをご利用ください：
 
-仕様開発と検証のためのCLIツール
+### 🚀 [Specmentサイトを作成](https://github.com/plenarc/create-specment)
 
-</div>
-
-## 使用パターン
-
-Specmentは、異なるプロジェクトのニーズに合わせて2つの主要な使用パターンをサポートしています
-
-<div align="center">
-
-<img src=".github/images/architecture/usage-patterns-jp.svg" alt="使用パターン図" width="100%" style="max-width: 800px;" />
-
-2つの主要な使用パターン: 単独プロジェクト運用 or Monorepo統合
-
-</div>
-
-### 単独プロジェクト運用
-
-このリポジトリを専用の仕様ウェブサイトプロジェクトの基盤として使用できます
-
-**メリット:**
-1. ドキュメントとソースコードの明確な分離
-1. 仕様での共有と共同作業が簡単
-1. ドキュメント中心のプロジェクトでの軽量なセットアップ
-1. 独立したバージョン管理とリリースサイクル
-
-**適用場面:**
-1. APIドキュメントプロジェクト
-1. 製品仕様リポジトリ
-1. チーム横断のドキュメント取り組み
-1. 外部向けドキュメントサイト
-
-### Monorepo統合
-
-既存のシステムがmonoreponで作られていた場合、packageの1つとしてspecmentを追加することができます
-
-**メリット:**
-1. 仕様が説明対象のコードと同じ場所に存在
-1. 統一された開発ワークフロー
-1. 共有されたツールと設定
-1. コード変更と同期したバージョン管理
-
-**適用場面:**
-1. 複数のコンポーネントを持つ大規模アプリケーション
-1. ドキュメントをコードの近くに置くことを好むチーム
-1. 複雑な相互依存関係を持つプロジェクト
-1. 継続的インテグレーションワークフロー
-
-## 前準備
-
-### 推奨ツール
-
-> [!INFO]
-> 推奨: mise
-> GitHub: https://github.com/jdx/mise
-
-### 必要なツール
-1. Node.js (>=22.0)
-   1. LTS推奨
-   1. ```bash
-      mise use node@lts
-      ```
-
-### 推奨のパッケージマネージャー
-1. pnpm
-   1. ```bash
-      mise use pnpm@latest
-      ```
-
-## クイックスタート
-
-使用パターンに応じて、以下のいずれかの手順に従ってください：
-
-<div align="center">
-
-<img src=".github/images/architecture/usage-workflow.svg" alt="使用ワークフロー" width="100%" style="max-width: 700px;" />
-
-Specmentを始めるためのステップバイステップワークフロー
-
-</div>
-
-### パターン1: 単独プロジェクト運用
-
-専用のドキュメントプロジェクトを作成する場合：
+create-specmentツールは、このサンプルリポジトリと同様のドキュメントサイトを、あなたのプロジェクトのニーズに合わせてカスタマイズして生成します。
 
 ```bash
-# ドキュメントプロジェクトを作成したい場所に移動
-cd ~/projects
-
-# このリポジトリをクローンして専用の仕様サイトを作成
-git clone https://github.com/plenarc/specment.git my-spec-site
+# 新しいSpecmentドキュメントサイトを作成
+npx create-specment@latest my-spec-site
 cd my-spec-site
-
-# 依存関係をインストール
-pnpm install
-
-# ドキュメントサイトを起動して確認
-pnpm docs:start
+npm start
 ```
 
-**フォルダー構成:**
+結果として、このサンプルリポジトリのようなドキュメントサイトが作成され、独自の仕様やコンテンツでカスタマイズできるようになります。
 
-```
-my-spec-site/
-├── apps/
-│ └── website/              # Specment - ドキュメントサイト
-│   ├── docs/               # 仕様ファイル(markdown/mdx)
-│   ├── src/                # サイトカスタマイズ
-│   └── docusaurus.config.ts
-├── packages/
-│ └── specment/             # CLI開発ツール
-├── package.json            # ワークスペース設定
-└── pnpm-workspace.yaml
-```
+## このサンプルリポジトリについて
 
-### パターン2: Monorepo統合
+このリポジトリでは以下のことを確認できます：
 
-既存のmonorepoプロジェクトに仕様サイトを追加したい場合：
+1. **ドキュメント構造**: Specmentサイトがどのように整理されているかを確認
+1. **実際の例**: 実際の仕様ドキュメントとテンプレートを閲覧
+1. **ライブデモ**: https://plenarc.github.io/specment/ で生成されたドキュメントサイトを体験
+1. **ベストプラクティス**: この例を元に必要な仕様の確認
+1. **ソースを確認**: `docs/`フォルダーで仕様がどのように構造化されているか
+1. **設定を理解**: 仕様サイト用のDocusaurusの設定方法
 
-```bash
-# 既存のmonorepoフォルダーに移動
-cd ~/projects/my-existing-monorepo
+## カスタマイズ
 
-# monorepoの適切な場所にSpecmentをクローン
-#  turborepoなら apps/、
-#  Nx なら apps/ または libs/、
-#  独自構成なら packages/ など
-git clone https://github.com/plenarc/specment.git apps/specment
-
-# 依存関係をインストール
-pnpm install
-
-# ドキュメントサイトを起動
-pnpm --filter specment docs:start
-```
-
-**統合後のフォルダー構成例:**
-
-```
-my-existing-monorepo/
-├── apps/
-│ ├── web/                  # 既存のWebアプリなど
-│ ├── api/                  # 既存のAPIなど
-│ └── specment/             # Specment - ドキュメントサイト
-├── packages/
-│ └── shared/               # 既存の共有パッケージ
-└── package.json            # 既存のワークスペース設定
-```
-
-## 詳細情報
-
-### CLI開発ツール
-
-インストール、コマンド、設定、高度なCLI使用方法については：
-
-**🔧 [CLIツールドキュメント](packages/specment/README-jp.md)** - 完全なCLIリファレンスと開発ツール
-
-### 実際の実装例
-
-このSpecmentプロジェクトは自身のドキュメントワークフローを通じて実用的な使用方法を実演しています：
-
-**🔗 [ドッグフード運用ガイド](apps/website/README-specment-jp.md)** - 実際の使用パターンとベストプラクティス
-
-### 完全なドキュメント
-
-**🌐 [Specment公式サイト](https://plenarc.github.io/specment/)** - 包括的なガイド、チュートリアル、APIリファレンス
+1. **カスタマイズ方法**: すべてDocusaurusの機能で実現しているため、カスタマイズオプションについては[公式Docusaurusドキュメント](https://docusaurus.io/docs)を参照
+1. **テーマ設定**: ビジュアルカスタマイズについては[Docusaurusテーマ設定](https://docusaurus.io/docs/styling-layout)を学習
+1. **Config設定**: 高度なセットアップについては[Docusaurus設定ガイド](https://docusaurus.io/docs/configuration)を確認
+1. **プラグイン**: 機能拡張のために[Docusaurusプラグイン](https://docusaurus.io/docs/using-plugins)
 
 ## ライセンス
 
