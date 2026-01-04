@@ -5,13 +5,12 @@
  * import { Highlight } from '@site/src/components/Highlight';
  * <Highlight color='#25C2A0'>Green</Highlight>
  * <Highlight color='#1877F2'>Blue</Highlight>
- * <TBD/>
  */
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 type HighlightProps = {
   /** 強調したい文字列（子要素） */
-  children: React.ReactNode;
+  children: ReactNode;
   /** 背景色（16進数表記 #RRGGBB か #RGB） */
   color: string;
 };

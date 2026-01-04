@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
 // GitHub pages deployment config.
-// ToDo: The first part that needs to be edited.
+// ToDo: 最初に編集する必要がある箇所
 const titleValue = 'プロジェクト名';
 const descriptionValue = 'プロジェクト概要。xxxのためのシステムです';
 const organizationValue = 'plenarc';
@@ -42,7 +42,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-        },
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,        },
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
@@ -125,13 +126,34 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Slack (Sample)',
+              href: 'https://slack.com/intl/ja-jp',
+            },
+            {
+              label: 'GitHub Discussions',
+              href: 'https://github.com/plenarc/create-specment/discussions',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Changelog',
+              href: 'https://github.com/plenarc/create-specment/blob/main/CHANGELOG.md',
+            },
+            {
+              label: 'GitHub: Create Specment',
+              href: 'https://github.com/plenarc/create-specment',
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io/',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ${titleValue}, Inc. Built with Specment.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${titleValue}, Inc. Built with Create Specment.`,
     },
     prism: {
       theme: prismThemes.github,

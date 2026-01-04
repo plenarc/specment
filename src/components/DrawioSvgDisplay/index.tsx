@@ -5,7 +5,6 @@
  * import { DrawioSvgDisplay } from '@site/src/components/DrawioSvgDisplay';
  * <DrawioSvgDisplay src='#25C2A0'>Green</Highlight>
  * <DrawioSvgDisplay src='#1877F2'>Blue</Highlight>
- * <TBD/>
  */
 import type { ReactElement } from 'react';
 
