@@ -1,0 +1,5 @@
+# pnpm設定ファイル
+
+# 信頼できるパッケージのビルドスクリプトを許可
+# core-jsは広く使用されているpolyfillライブラリで安全です
+ignored-build-scripts=false
