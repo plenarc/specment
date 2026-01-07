@@ -60,11 +60,22 @@ To create a documentation site with Specment, please use the official create-spe
 
 The create-specment tool will generate a documentation site similar to this sample repository, customized for your project needs.
 
+#### Using npm
+
 ```bash
-# Create a new Specment documentation site
 npx create-specment@latest my-spec-site
 cd my-spec-site
+npm install
 npm start
+```
+
+#### Using pnpm
+
+```bash
+pnpm dlx create-specment@latest my-spec-site
+cd my-spec-site
+pnpm install --ignore-scripts
+pnpm start
 ```
 
 The result will be a documentation site like this sample repository, ready for you to customize with your own specifications and content.
