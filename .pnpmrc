@@ -1,5 +1,10 @@
 # pnpm設定ファイル
 
-# 信頼できるパッケージのビルドスクリプトを許可
-# core-jsは広く使用されているpolyfillライブラリで安全です
-ignored-build-scripts=false
+# core-jsパッケージのビルドスクリプト警告を抑制
+# これらのパッケージは安全で、ビルドスクリプトは通常不要
+# 警告を避けるため、インストール時に --ignore-scripts を使用することを推奨
+
+# 代替案: 以下のコマンドを使用
+# pnpm install --ignore-scripts
+# または
+# pnpm run install:clean
