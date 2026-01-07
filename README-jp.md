@@ -60,11 +60,22 @@ Specmentでドキュメントサイトを作成するには公式のcreate-specm
 
 create-specmentツールは、このサンプルリポジトリと同様のドキュメントサイトを、あなたのプロジェクトのニーズに合わせてカスタマイズして生成します。
 
+#### npmの場合
+
 ```bash
-# 新しいSpecmentドキュメントサイトを作成
 npx create-specment@latest my-spec-site
 cd my-spec-site
+npm install
 npm start
+```
+
+#### pnpmの場合
+
+```bash
+pnpm dlx create-specment@latest my-spec-site
+cd my-spec-site
+pnpm install --ignore-scripts
+pnpm start
 ```
 
 結果として、このサンプルリポジトリのようなドキュメントサイトが作成され、独自の仕様やコンテンツでカスタマイズできるようになります。
