@@ -1,15 +1,14 @@
+# en: To update mise, ni, and pnpm, run `mise update`.
+# jp: miseやni, pnpmをアップデートしたい時は `mise update` を実行する
+
 [tools]
 node = "lts"
 pnpm = "latest"
 
 [settings]
-# 自動アップデートを有効化
+# Enable automatic updates
 auto_install = true
 
 [tasks.pnpm-update]
 description = "Update pnpm to latest version"
 run = "mise install pnpm@latest"
-
-[hooks]
-# プロジェクト開始時に最新版に更新
-enter = "mise install pnpm@latest"
