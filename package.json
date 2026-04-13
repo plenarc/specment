@@ -1,6 +1,6 @@
 {
   "name": "specment",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Docusaurus-based documentation site template for specification documents - Sample Repository",
   "private": true,
   "license": "MIT",
@@ -17,12 +17,12 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "3.9.2",
-    "@docusaurus/preset-classic": "3.9.2",
-    "@easyops-cn/docusaurus-search-local": "^0.52.2",
+    "@docusaurus/core": "3.10.0",
+    "@docusaurus/preset-classic": "3.10.0",
+    "@easyops-cn/docusaurus-search-local": "^0.55.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
-    "docusaurus-theme-plantuml": "^1.0.2",
+    "docusaurus-theme-plantuml": "^1.2.0",
     "js-yaml": "^4.1.1",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
@@ -30,14 +30,14 @@
     "redocusaurus": "^2.5.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.10",
-    "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/tsconfig": "3.9.2",
-    "@docusaurus/types": "3.9.2",
+    "@biomejs/biome": "^2.4.11",
+    "@docusaurus/module-type-aliases": "3.10.0",
+    "@docusaurus/tsconfig": "3.10.0",
+    "@docusaurus/types": "3.10.0",
     "@types/node": "^24.2.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.2"
   },
   "browserslist": {
     "production": [
