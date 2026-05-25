@@ -29,16 +29,7 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
-
-  future: {
-    v4: true,
-  },
-
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'throw',
-    },
-  },
+  onBrokenMarkdownLinks: 'throw',
 
   i18n: {
     defaultLocale: 'ja',
