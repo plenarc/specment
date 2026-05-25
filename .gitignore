@@ -30,6 +30,9 @@ tsconfig.json.backup
 # Local workflow files
 .github/workflows/release-on-merge.yaml
 
+# Claude Code local settings (contains machine-specific paths)
+.claude/settings.json
+
 # Test reports
 INTEGRATION_TEST_RESULTS.md
 integration-test-report.json
