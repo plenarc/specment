@@ -2,8 +2,8 @@
 # jp: miseやni, pnpmをアップデートしたい時は `mise update` を実行する
 
 [tools]
-node = "lts"
-pnpm = "latest"
+node = '22'
+pnpm = 'latest'
 
 [settings]
 # Enable automatic updates
