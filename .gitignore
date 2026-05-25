@@ -4,11 +4,20 @@
 
 # Production
 /apps/website/build
+/build
 
 # Generated files
 .cache-loader
 /apps/website/.docusaurus
+/.docusaurus
 tree.txt
+
+# Backup files
+/backup
+tsconfig.json.backup
+
+# Local workflow files
+.github/workflows/release-on-merge.yaml
 
 # Misc
 .DS_Store
