@@ -4,14 +4,12 @@
     "baseUrl": ".",
     "paths": {
       "@site/*": ["./*"]
-    },
-    "jsx": "react-jsx",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "resolveJsonModule": true
+    }
   },
-  "include": ["src/**/*", "docs/**/*"],
-  "exclude": [".docusaurus", "build", "node_modules"]
+  "include": [
+    "src/**/*",
+    "docs/**/*",
+    "docusaurus.config.ts",
+    "sidebars.ts"
+  ]
 }

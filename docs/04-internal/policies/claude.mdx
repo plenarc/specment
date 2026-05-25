@@ -1,0 +1,91 @@
+---
+sidebar_position: 4
+tags:
+  - claude
+  - ai
+---
+
+# Claudeの使い方
+
+このプロジェクトでは[Claude Code](https://claude.ai/code)を使ってドキュメント作成を効率化しています。
+
+## スラッシュコマンド
+
+ドキュメントの新規作成はスラッシュコマンドで行います。
+ファイル作成と `index.mdx` への登録を自動で行います。
+
+### /new-table
+
+テーブル定義ドキュメントを新規作成します。
+
+```
+/new-table <physical_name> <logical_name> <schema> <description>
+```
+
+1. 作成先: `docs/04-internal/tables/{physical_name}.mdx`
+1. index登録: `docs/04-internal/tables/index.mdx`
+
+例
+
+```
+/new-table orders 注文 public 注文情報を管理するテーブル
+```
+
+### /new-screen
+
+画面定義ドキュメントを新規作成します。
+
+```
+/new-screen <physical_name> <logical_name>
+```
+
+1. 作成先: `docs/04-internal/screens/{physical_name}.mdx`
+1. index登録: `docs/04-internal/screens/index.mdx`
+
+例
+
+```
+/new-screen order-list 注文一覧
+```
+
+### /new-batch
+
+バッチ定義ドキュメントを新規作成します。
+
+```
+/new-batch <id> <logical_name>
+```
+
+1. 作成先: `docs/04-internal/batches/{id}.mdx`
+1. index登録: `docs/04-internal/batches/index.mdx`
+
+例
+
+```
+/new-batch import-orders 注文取込
+```
+
+## Claudeが参照するルール
+
+Claudeは `.claude/rules/` 配下のファイルを参照してドキュメントを作成します。
+各ルールの詳細は以下のドキュメントが権威ある情報源です。
+
+| ルールファイル | 参照先 |
+| -------------- | ------ |
+| `.claude/rules/markdown.md` | [Markdown](./markdown.mdx) ※ルートのrulesを参照 |
+| `.claude/rules/git.md` | [ブランチ命名規約](./branch-naming-rules.mdx)、[PR運用フロー](./pull-request-operation-flow.mdx) |
+| `.claude/rules/database.md` | [データベース](../rules/database.mdx) |
+| `.claude/rules/document-creation.md` | [ドキュメント作成ルール](../rules/document-creation-rules.mdx) |
+| `.claude/rules/review.md` | [レビュープロセス](../rules/review-process.mdx) |
+
+## Claudeの操作範囲
+
+Claudeが自律的に行ってよい操作と禁止操作を明確にしています。
+
+| 操作 | 可否 |
+| ---- | :--: |
+| ファイルの作成・編集・削除 | :o: |
+| `git add`(ステージング) | :o: |
+| `git fetch`、`git checkout` | :o: |
+| `git commit` | :x: |
+| `git push` | :x: |

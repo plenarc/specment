@@ -12,13 +12,6 @@
 /.docusaurus
 tree.txt
 
-# Backup files
-/backup
-tsconfig.json.backup
-
-# Local workflow files
-.github/workflows/release-on-merge.yaml
-
 # Misc
 .DS_Store
 .env.local
@@ -28,6 +21,14 @@ tsconfig.json.backup
 
 # Logs
 pnpm-debug.log*
+
+# Backup
+/backup
+*.backup
+tsconfig.json.backup
+
+# Local workflow files
+.github/workflows/release-on-merge.yaml
 
 # Test reports
 INTEGRATION_TEST_RESULTS.md
