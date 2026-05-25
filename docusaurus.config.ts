@@ -28,8 +28,8 @@ const config: Config = {
   projectName: projectValue,
   trailingSlash: false,
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   i18n: {
     defaultLocale: 'ja',
@@ -167,7 +167,7 @@ const config: Config = {
       /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
       {
         // blogRouteBasePath: '/',
-        language: ['jp'],
+        language: ['ja'],
         hashed: true,
         // blogDir: '/blog',
         highlightSearchTermsOnTargetPage: true,
