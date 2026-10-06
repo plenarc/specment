@@ -1,4 +1,4 @@
-import type { Requirement } from '@site/types/requirements';
+import type { Requirement } from '@site/src/types/requirements';
 
 export const validateRequirement = (_req: Requirement): boolean => {
   // 要求の妥当性チェックロジック
