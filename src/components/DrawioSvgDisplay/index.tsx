@@ -22,8 +22,6 @@ export interface DrawioSvgDisplayProps {
 function unwrapModule(mod: unknown): string {
   let v: unknown = mod;
   while (typeof v === 'object' && v !== null && 'default' in v) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: dynamic traversal of nested `default`
     v = v.default;
   }
   if (typeof v !== 'string') {
