@@ -10,5 +10,3 @@ export interface SuccessCriterion {
   status: Status;
   priority: Priority;
 }
-
-
