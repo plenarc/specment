@@ -1,6 +1,6 @@
 {
   "name": "specment",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A Docusaurus-based documentation site template for specification documents - Sample Repository",
   "private": true,
   "license": "MIT",
@@ -24,12 +24,12 @@
     "clsx": "^2.0.0",
     "docusaurus-theme-plantuml": "^1.5.3",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "redocusaurus": "^2.5.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.15",
+    "@biomejs/biome": "^2.6.8",
     "@docusaurus/module-type-aliases": "3.10.2",
     "@docusaurus/tsconfig": "3.10.2",
     "@docusaurus/types": "3.10.2",
