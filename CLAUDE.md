@@ -103,8 +103,8 @@
 
 ## ドキュメント執筆ルール
 
-1. 作成、編集時は `docs/internal/rules/` 配下のルールに従う
-1. 画面仕様は `docs/internal/frontend/screens/_screen-temlate.mdx` 、テーブル定義は `docs/internal/backend/tables/_table-template.mdx` のテンプレートに準拠
+1. 作成、編集時は `docs/04-internal/rules/` 配下のルールに従う
+1. 画面仕様は `templates/screen-specification.mdx` 、テーブル定義は `templates/table-specification.mdx` のテンプレートに準拠
 
 ## 工程別サブエージェント
 
